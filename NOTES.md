@@ -26,6 +26,12 @@ The layout:
 - main area
 - footer: contains photo of the author with transparent bg and a small about text
 
+## Tech Requirements
+
+Should have Makefile to serve and build project with docker
+
+Should have a command in this Makefile to re-generate project with smol-dev. Command name: `smol-rewrite`, command: `python3 ../developer/main_no_modal.py  --prompt ./NOTES.md --model=gpt-4`
+
 
 ## Functional Requirements
 
