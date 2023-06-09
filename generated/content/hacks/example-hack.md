@@ -1,21 +1,35 @@
 ---
-title: "Example Hack: CLI Power Moves"
+title: "Example Hack: CLI Magic"
 date: 2022-01-01
-tags: ["cli", "power-usage", "git-tricks"]
+tags: ["cli", "git", "power-usage"]
 ---
 
-Welcome to this example hack, where we'll explore some powerful CLI moves and git tricks. Let's dive in!
+Welcome to the world of CLI magic! In this hack, we'll explore some powerful command-line tricks that will make your life as a developer easier and more fun.
 
 ## Padawan's Playground
 
-![Padawan](/images/placeholder-padawan.png)
+![Padawan](/images/padawan-placeholder.png)
 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer nec odio. Praesent libero. Sed cursus ante dapibus diam. Sed nisi. Nulla quis sem at nibh elementum imperdiet. Duis sagittis ipsum. Praesent mauris. Fusce nec tellus sed augue semper porta. Mauris massa. Vestibulum lacinia arcu eget nulla.
+For those who are new to the command line, here's a quick tip to get you started. To navigate through your file system, you can use the `cd` command followed by the directory you want to go to. For example:
+
+```
+cd my-awesome-project
+```
+
+And to go back to the previous directory, just type:
+
+```
+cd ..
+```
 
 ## Hackerman's Tip
 
-![Hackerman](/images/placeholder-hackerman.png)
+![Hackerman](/images/hackerman-placeholder.png)
 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer nec odio. Praesent libero. Sed cursus ante dapibus diam. Sed nisi. Nulla quis sem at nibh elementum imperdiet. Duis sagittis ipsum. Praesent mauris. Fusce nec tellus sed augue semper porta. Mauris massa. Vestibulum lacinia arcu eget nulla.
+Now, let's dive into some more advanced CLI magic. Did you know you can create a new Git branch and switch to it in one command? Just use the `-b` flag with `git checkout`:
 
-That's it for this example hack! Keep exploring and have fun with your newfound CLI power moves and git tricks.
+```
+git checkout -b my-new-feature-branch
+```
+
+That's it! You've now created a new branch and switched to it. Happy coding!

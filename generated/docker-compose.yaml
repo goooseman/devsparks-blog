@@ -1,0 +1,31 @@
+version: "2"
+
+services:
+  remark:
+    build: .
+    image: umputun/remark42:latest
+    container_name: "remark42"
+    hostname: "remark42"
+    restart: always
+
+    logging:
+      driver: json-file
+      options:
+        max-size: "10m"
+        max-file: "5"
+
+    environment:
+      - REMARK_URL=https://remark42.goooseman.dev
+      - SECRET
+      - DEBUG=true
+      - AUTH_ANON=true 
+      - AUTH_GOOGLE_CID
+      - AUTH_GOOGLE_CSEC
+      - AUTH_GITHUB_CID
+      - AUTH_GITHUB_CSEC
+      - AUTH_FACEBOOK_CID
+      - AUTH_FACEBOOK_CSEC
+      - AUTH_DISQUS_CID
+      - AUTH_DISQUS_CSEC
+    volumes:
+      - ./var:/srv/var

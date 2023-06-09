@@ -1,24 +1,34 @@
-baseURL = "https://devsparks-blog.com"
+baseURL = "https://devsparks.goooseman.dev"
 languageCode = "en-us"
 title = "DevSparks Blog"
 theme = "devsparks"
 
 [params]
   mainColor = "#ffc000"
-  font = "Fira Code"
+  lightThemeBg = "#ffc000"
+  lightThemeText = "graphite"
+  darkThemeBg = "graphite"
+  darkThemeText = "#ffc000"
+  authorPhoto = "http://placekitten.com/200/200"
+  authorAbout = "Hello, I'm Alex. Welcome to DevSparks, a cosy corner of the web where code meets fun. I've always believed that the best way to learn is by doing, and the best way to do is by having fun. That's why I've created DevSparks - to share the joy and the power of development with you. Here, you'll find bite-sized lifehacks about everything from CLI power usage to git tricks, all crafted with a dash of humor and a bucketload of passion. So grab a cup of coffee, get comfy, and let's explore the incredible world of coding together!"
 
-[markup]
-  [markup.goldmark.renderer]
-    unsafe = true
+[[menu.main]]
+  name = "Home"
+  url = "/"
+  weight = 1
 
-[outputFormats.REMARK42]
-  mediaType = "application/json"
-  baseName = "remark42"
-  isPlainText = true
-  notAlternative = true
+[[menu.main]]
+  name = "Hacks"
+  url = "/hacks/"
+  weight = 2
 
-[outputs]
-  home = ["HTML", "REMARK42"]
-  section = ["HTML", "REMARK42"]
-  taxonomy = ["HTML", "REMARK42"]
-  term = ["HTML", "REMARK42"]
+[[menu.main]]
+  name = "About"
+  url = "/about/"
+  weight = 3
+
+[[menu.main]]
+  name = "Fix Typo"
+  url = "https://github.com/goooseman/devsparks-blog/issues/new?title=DevSparks+Feedback&body=I+found+something+wrong+on+this+page%3A%0A%0A++{CURRENT_PAGE}%0A%0A++Here%27s+what+it+is%3A"
+  weight = 4
+  target = "_blank"

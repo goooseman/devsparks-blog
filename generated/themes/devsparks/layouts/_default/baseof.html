@@ -3,17 +3,20 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>{{ .Title }} | DevSparks</title>
+    <title>{{ .Title }}</title>
     <link rel="stylesheet" href="/css/main.css">
     <script src="/js/theme-toggle.js" defer></script>
+    <script src="/js/remark42-integration.js" defer></script>
 </head>
-<body class="bg-white dark:bg-gray-800 text-gray-900 dark:text-gray-100">
-    <div class="container mx-auto px-4">
+<body>
+    <header>
         {{ partial "header.html" . }}
-        <main>
-            {{ block "main" . }}{{ end }}
-        </main>
+    </header>
+    <main>
+        {{ block "main" . }}{{ end }}
+    </main>
+    <footer>
         {{ partial "footer.html" . }}
-    </div>
+    </footer>
 </body>
 </html>

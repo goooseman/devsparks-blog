@@ -1,0 +1,105 @@
+@import url('https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;700&display=swap');
+
+:root {
+  --amber: #ffc000;
+  --graphite: #2c3e50;
+  --lighten-color: rgba(255, 255, 255, 0.5);
+}
+
+body {
+  font-family: 'Fira Code', monospace;
+  margin: 0;
+  padding: 0;
+}
+
+.light-theme {
+  background-color: var(--amber);
+  color: var(--graphite);
+}
+
+.dark-theme {
+  background-color: var(--graphite);
+  color: var(--amber);
+}
+
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem;
+}
+
+header a {
+  text-decoration: none;
+  color: inherit;
+  margin-right: 1rem;
+}
+
+header a.active {
+  text-decoration: underline;
+}
+
+header a:not(.active):hover {
+  color: var(--lighten-color);
+}
+
+header input[type="search"] {
+  border: none;
+  border-bottom: 1px solid currentColor;
+  background-color: transparent;
+  color: inherit;
+  outline: none;
+}
+
+header input[type="search"]:focus,
+header input[type="search"]:hover {
+  border-bottom: 1px solid currentColor;
+  border-top: 1px solid currentColor;
+  border-left: 1px solid currentColor;
+  border-right: 1px solid currentColor;
+}
+
+main {
+  background-color: inherit;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1), 0 -5px 15px rgba(0, 0, 0, 0.1);
+  padding: 2rem;
+}
+
+footer {
+  display: flex;
+  align-items: center;
+  padding: 1rem;
+}
+
+footer img {
+  width: 200px;
+  height: 200px;
+  object-fit: cover;
+  margin-right: 1rem;
+}
+
+footer p {
+  border: 1px solid currentColor;
+  padding: 1rem;
+  margin: 0;
+}
+
+.hackermans-tip,
+.padawans-playground {
+  position: relative;
+  border: 1px solid currentColor;
+  padding: 1rem;
+  margin: 1rem 0;
+}
+
+.hackermans-tip::before,
+.padawans-playground::before {
+  content: "";
+  position: absolute;
+  width: 50px;
+  height: 50px;
+  background-image: url('placeholder-image.png');
+  background-size: cover;
+  top: -25px;
+  left: -25px;
+}

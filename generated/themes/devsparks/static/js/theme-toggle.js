@@ -1,15 +1,19 @@
-document.addEventListener('DOMContentLoaded', () => {
-  const themeToggle = document.getElementById('theme-toggle');
+document.addEventListener('DOMContentLoaded', function () {
+  const themeToggle = document.querySelector('#theme-toggle');
 
-  const setTheme = (theme) => {
+  function setTheme(theme) {
     document.documentElement.setAttribute('data-theme', theme);
     localStorage.setItem('theme', theme);
-  };
+    if (window.REMARK42) {
+      window.REMARK42.changeTheme(theme);
+    }
+  }
 
-  const toggleTheme = () => {
+  function toggleTheme() {
     const currentTheme = localStorage.getItem('theme') || (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
-    setTheme(currentTheme === 'dark' ? 'light' : 'dark');
-  };
+    const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
+    setTheme(newTheme);
+  }
 
   themeToggle.addEventListener('click', toggleTheme);
 
