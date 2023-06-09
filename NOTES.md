@@ -15,16 +15,25 @@ And some may contain "Padawan's Playground" sections, which contains some more j
 
 The design is minimalistic and contains two themes: light and dark. By default the system theme is used, but website should have a special toggle.
 
-Main color is Amber: #ffc000.
+Main color is Amber: #ffc000. 
 
 A monospace Fira Code font with ligatures should be used.
 
-Design should be simple and mostly reuse Tailwind basic components. 
+For light theme the background is Amber and text color is graphite.
+For dark theme the background is graphite and text color is amber. 
 
 The layout:
-- header: contains navigation links Home, Hacks, Search box, Fix typo
+- header: 
+  - contains navigation links Home, Hacks, Search box, Fix typo
+  - Active link should be underlined 
+  - Non-active links to be with lighten color
+  - When hover, active design is applied
+  - search is a horizontal line when not active/hover, and bordered when active/hover. color of line/border should match text color for current theme
+  - Fix typo link should be on the right, all other elements on the left
 - main area
-- footer: contains photo of the author with transparent bg and a small about text
+  - background color matches other areas of the website. but it has background shadow on top/bottom to make it look like lower then header and footer
+- footer
+  - contains photo of the author with transparent bg and a small about text. text is wrapped with a border of current color text for the current theme
 
 ## Tech Requirements
 
@@ -37,7 +46,13 @@ Should have a command in this Makefile to re-generate project with smol-dev. Com
 
 ### Home page
 
-Contains a "Hacks" title and a list of hacks groupped by year
+Contains a "Hacks" title and a list of hacks groupped by year in the format:
+
+```
+YEAR
+
+hack title (date)
+```
 
 ### Hack page
 
@@ -59,16 +74,104 @@ Please create one example of a hack with Lorem Ipsum text containing both Padawa
 
 ### Footer
 
-The footer should consist of my photo 160x160 with transparent background and following about text: 
+The footer should consist of my photo (http://placekitten.com/200/200) with transparent background and following about text: 
 
 > Hello, I'm Alex. 
 > Welcome to DevSparks, a cosy corner of the web where code meets fun. I've always believed that the best way to learn is by doing, and the best way to do is by having fun. That's why I've created DevSparks - to share the joy and the power of development with you.
 > Here, you'll find bite-sized lifehacks about everything from CLI power usage to git tricks, all crafted with a dash of humor and a bucketload of passion.
 > So grab a cup of coffee, get comfy, and let's explore the incredible world of coding together!
 
-Instead of a photo, please use an image placeholder. I will replace it afterwards.
-
 ## Technology Stack
 
-- Back-end: Go, Hugo
-- Front-end: HTML, CSS (Tailwind), JavaScript (for interactive elements)
+Blog address: `devsparks.goooseman.dev`.
+
+- Back-end: Go, Hugo, Remark42
+- Front-end: HTML, CSS, JavaScript (for interactive elements)
+
+### Remark42 integration
+
+Remark42 is a comments engine which has a special backend and a frontend integration.
+
+### Backend
+
+In the projects `docker-compose.yaml` please add following service:
+
+```
+version: "2"
+
+services:
+  remark:
+    # remove the next line in case you want to use this docker-compose separately
+    # as otherwise it would complain for absence of Dockerfile
+    build: .
+    image: umputun/remark42:latest
+    container_name: "remark42"
+    hostname: "remark42"
+    restart: always
+
+    logging:
+      driver: json-file
+      options:
+        max-size: "10m"
+        max-file: "5"
+
+    # uncomment to expose directly (no proxy)
+    #ports:
+    #  - "80:8080"
+    #  - "443:8443"
+
+    environment:
+      - REMARK_URL=https://remark42.goooseman.dev
+      - SECRET
+      - DEBUG=true
+      - AUTH_ANON=true 
+      - AUTH_GOOGLE_CID
+      - AUTH_GOOGLE_CSEC
+      - AUTH_GITHUB_CID
+      - AUTH_GITHUB_CSEC
+      - AUTH_FACEBOOK_CID
+      - AUTH_FACEBOOK_CSEC
+      - AUTH_DISQUS_CID
+      - AUTH_DISQUS_CSEC
+      # Enable it only for the initial comment import or for manual backups.
+      # Do not leave the server running with the ADMIN_PASSWD set if you don't have an intention
+      # to keep creating backups manually!
+      # - ADMIN_PASSWD=<your secret password>
+    volumes:
+      - ./var:/srv/var
+```
+
+### Frontend integration
+
+Add following snippets to end of the body:
+
+```
+<script>
+  // https://remark42.com/docs/configuration/frontend/
+  var remark_config = {
+    host: 'https://remark42.goooseman.dev',
+    site_id: 'dev_sparks',
+    components: ['embed', 'last-comments']
+    max_shown_comments: 100,
+    theme: {HUGO_THEME},
+    page_title: {HUGO_PAGE_TITLE},
+    show_email_subscription: false,
+    simple_view: true,
+    no_footer: false
+  }
+</script>
+```
+
+```
+<script>!function(e,n){for(var o=0;o<e.length;o++){var r=n.createElement("script"),c=".js",d=n.head||n.body;"noModule"in r?(r.type="module",c=".mjs"):r.async=!0,r.defer=!0,r.src=remark_config.host+"/web/"+e[o]+c,d.appendChild(r)}}(remark_config.components||["embed"],document);</script>
+```
+
+And then add the following `<div>` to the place where footer should be rendered:
+
+```
+<div id="remark42"></div>
+```
+
+### Frontend theme
+
+Remark42 theme should be syncronised with website theme. When toggle button is clicked, please run the following code: `window.REMARK42.changeTheme("light" | "dark")`
