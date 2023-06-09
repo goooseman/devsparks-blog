@@ -28,9 +28,9 @@ The layout:
 
 ## Tech Requirements
 
-Should have Makefile to serve and build project with docker
+Should have Makefile to serve and build project. Both commands should use docker. 
 
-Should have a command in this Makefile to re-generate project with smol-dev. Command name: `smol-rewrite`, command: `python3 ../developer/main_no_modal.py  --prompt ./NOTES.md --model=gpt-4`
+Should have a command in this Makefile to re-generate project with smol-dev. Command name: `smol-rewrite`, command: `python3 ../developer/main_no_modal.py ./NOTES.md `
 
 
 ## Functional Requirements
