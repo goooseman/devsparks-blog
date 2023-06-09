@@ -1,0 +1,16 @@
+{
+	"provider": "openai",
+	"gpt4_32k": true,
+	"short_description": "DevSparks: A blog and video project presenting concise and useful lifehacks for developers, covering CLI, git, and software development principles.",
+	"spec_dir": ".",
+	"src_include": [
+		"**"
+	],
+	"src_exclude": [
+		"**/.*",
+		"**/*.bin",
+		"**/node_modules/**",
+		"**/build/**",
+		"**/bin/**"
+	]
+}
