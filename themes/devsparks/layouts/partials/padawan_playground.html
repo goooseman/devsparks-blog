@@ -1,0 +1,11 @@
+<!-- The padawan_playground.html file contains the partial for displaying Padawan's Playground sections in hack pages. -->
+
+{{ define "padawan_playground" }}
+<div class="border-2 border-opacity-30 border-amber-500 rounded-md p-4 pb-10">
+  <div class="float-right ml-4 mb-4">
+    <img class="w-32 h-auto" src="/images/placeholder.png" alt="Padawan">
+  </div>
+  <h3 class="text-2xl font-bold">Padawan's Playground</h3>
+  {{ .Inner }}
+</div>
+{{ end }}
