@@ -3,13 +3,18 @@
 :root {
   --amber: #ffc000;
   --graphite: #2c3e50;
-  --lighten-color: rgba(255, 255, 255, 0.5);
 }
 
 body {
   font-family: 'Fira Code', monospace;
   margin: 0;
   padding: 0;
+}
+
+.container {
+  max-width: 600px;
+  margin: 0 auto;
+  padding: 20px;
 }
 
 .light-theme {
@@ -26,80 +31,103 @@ header {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 1rem;
 }
 
-header a {
-  text-decoration: none;
-  color: inherit;
-  margin-right: 1rem;
-}
-
-header a.active {
+.link-active,
+a:hover {
   text-decoration: underline;
 }
 
-header a:not(.active):hover {
-  color: var(--lighten-color);
-}
-
-header input[type="search"] {
+.search {
   border: none;
-  border-bottom: 1px solid currentColor;
-  background-color: transparent;
-  color: inherit;
+  background: none;
   outline: none;
+  border-bottom: 1px solid transparent;
 }
 
-header input[type="search"]:focus,
-header input[type="search"]:hover {
-  border-bottom: 1px solid currentColor;
-  border-top: 1px solid currentColor;
-  border-left: 1px solid currentColor;
-  border-right: 1px solid currentColor;
+.search:focus,
+.search:hover {
+  border-bottom-color: currentColor;
 }
 
 main {
   background-color: inherit;
-  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1), 0 -5px 15px rgba(0, 0, 0, 0.1);
-  padding: 2rem;
+  box-shadow: 0 -5px 5px rgba(0, 0, 0, 0.1), 0 5px 5px rgba(0, 0, 0, 0.1);
 }
 
 footer {
   display: flex;
+  flex-wrap: wrap;
   align-items: center;
-  padding: 1rem;
+  justify-content: center;
+  text-align: center;
 }
 
-footer img {
+.author-photo {
   width: 200px;
   height: 200px;
-  object-fit: cover;
-  margin-right: 1rem;
+  background-image: url('http://placekitten.com/200/200');
+  background-size: cover;
+  background-position: center;
 }
 
-footer p {
+.about-text {
   border: 1px solid currentColor;
-  padding: 1rem;
-  margin: 0;
+  padding: 10px;
+  margin: 20px;
 }
 
-.hackermans-tip,
-.padawans-playground {
+@media screen and (min-width: 680px) {
+  .container {
+    padding: 0;
+  }
+
+  footer {
+    justify-content: space-between;
+    text-align: left;
+  }
+
+  .author-photo {
+    margin-right: 20px;
+  }
+}
+
+.hackerman-tip,
+.padawan-playground {
   position: relative;
   border: 1px solid currentColor;
-  padding: 1rem;
-  margin: 1rem 0;
+  margin-top: 25px;
+  margin-bottom: 5px;
+  padding: 10px;
 }
 
-.hackermans-tip::before,
-.padawans-playground::before {
-  content: "";
+.hackerman-tip::before,
+.padawan-playground::before {
+  content: '';
   position: absolute;
-  width: 50px;
-  height: 50px;
-  background-image: url('placeholder-image.png');
-  background-size: cover;
-  top: -25px;
-  left: -25px;
+  left: 20%;
+  top: 0;
+  width: 20px;
+  height: 20px;
+}
+
+.light-theme .hackerman-tip::before {
+  background-image: url('http://placekitten.com/20/20');
+}
+
+.dark-theme .hackerman-tip::before {
+  background-image: url('http://placekitten.com/21/21');
+}
+
+.light-theme .padawan-playground::before {
+  background-image: url('http://placekitten.com/20/20');
+}
+
+.dark-theme .padawan-playground::before {
+  background-image: url('http://placekitten.com/21/21');
+}
+
+.hackerman-tip h3,
+.padawan-playground h3 {
+  font-style: italic;
 }

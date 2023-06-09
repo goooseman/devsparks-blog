@@ -1,11 +1,10 @@
-HUGO_VERSION := 0.89.4
-DOCKER_IMAGE := klakegg/hugo:${HUGO_VERSION}-ext-alpine
+.PHONY: serve build smol-rewrite
 
 serve:
-	docker run --rm -it -v $(PWD):/src -p 1313:1313 ${DOCKER_IMAGE} server --bind 0.0.0.0
+	docker run --rm -it -v $(PWD):/src -p 1313:1313 klakegg/hugo:0.89.4 serve
 
 build:
-	docker run --rm -it -v $(PWD):/src -u hugo jguyomard/hugo-builder:0.80.0 hugo
+	docker run --rm -it -v $(PWD):/src klakegg/hugo:0.89.4
 
 smol-rewrite:
 	python3 ../developer/main_no_modal.py ./NOTES.md

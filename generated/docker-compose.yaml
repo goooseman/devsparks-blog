@@ -7,13 +7,11 @@ services:
     container_name: "remark42"
     hostname: "remark42"
     restart: always
-
     logging:
       driver: json-file
       options:
         max-size: "10m"
         max-file: "5"
-
     environment:
       - REMARK_URL=https://remark42.goooseman.dev
       - SECRET
@@ -29,3 +27,11 @@ services:
       - AUTH_DISQUS_CSEC
     volumes:
       - ./var:/srv/var
+  hugo:
+    image: klakegg/hugo:0.89.4
+    container_name: "hugo"
+    volumes:
+      - .:/src
+    command: "server --bind 0.0.0.0 --disableFastRender"
+    ports:
+      - "1313:1313"

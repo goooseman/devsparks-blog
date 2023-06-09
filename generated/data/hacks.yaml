@@ -1,7 +1,0 @@
-hacks:
-  - year: 2022
-    posts:
-      - title: "Example Hack: Mastering the CLI"
-        date: "2022-01-01"
-        tags: ["cli", "power-usage"]
-        file: "example-hack.md"

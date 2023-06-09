@@ -1,12 +1,12 @@
 {{ define "main" }}
 <article>
   <h1>{{ .Title }}</h1>
-  <p>{{ .Date.Format "January 2, 2006" }}</p>
-  <ul class="tags">
+  <p class="date">{{ .Date.Format "January 2, 2006" }}</p>
+  <div class="tags">
     {{ range .Params.tags }}
-      <li>{{ . }}</li>
+      <span class="tag">{{ . }}</span>
     {{ end }}
-  </ul>
+  </div>
   <div class="content">
     {{ .Content }}
   </div>
