@@ -8,11 +8,11 @@ PWD ?= $(shell pwd)
 .PHONY: serve build deploy
 
 serve:
-	podman run --rm -it -v "$(PWD)":/src -p "1313:1313" $(HUGO_BASE_DOCKER_IMAGE) server --buildDrafts
+	docker run --rm -it -v "$(PWD)":/src -p "1313:1313" $(HUGO_BASE_DOCKER_IMAGE) server --buildDrafts
 
 build:
-	podman build -t $(HUGO_IMAGE) .
-	podman run --rm -v "$(PWD)":/src -p "1313:1313" $(HUGO_IMAGE) --minify --gc --cleanDestinationDir
+	docker build -t $(HUGO_IMAGE) .
+	docker run --rm -v "$(PWD)":/src -p "1313:1313" $(HUGO_IMAGE) --minify --gc --cleanDestinationDir
 
 deploy:
 	@if ! command -v ssh >/dev/null ; then \
