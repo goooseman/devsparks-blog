@@ -1,0 +1,24 @@
+baseURL = "https://devsparks-blog.com"
+languageCode = "en-us"
+title = "DevSparks Blog"
+theme = "devsparks"
+
+[params]
+  mainColor = "#ffc000"
+  font = "Fira Code"
+
+[markup]
+  [markup.goldmark.renderer]
+    unsafe = true
+
+[outputFormats.REMARK42]
+  mediaType = "application/json"
+  baseName = "remark42"
+  isPlainText = true
+  notAlternative = true
+
+[outputs]
+  home = ["HTML", "REMARK42"]
+  section = ["HTML", "REMARK42"]
+  taxonomy = ["HTML", "REMARK42"]
+  term = ["HTML", "REMARK42"]

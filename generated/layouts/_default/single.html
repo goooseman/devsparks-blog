@@ -1,0 +1,49 @@
+{{ define "main" }}
+<article class="prose lg:prose-xl mx-auto">
+  <h1>{{ .Title }}</h1>
+  <p class="text-gray-500">{{ .Date.Format "January 2, 2006" }}</p>
+  <div class="space-x-2">
+    {{ range .Params.tags }}
+      <span class="inline-block bg-amber-500 text-white px-2 py-1 rounded">{{ . }}</span>
+    {{ end }}
+  </div>
+  <div class="mt-8">
+    {{ .Content }}
+  </div>
+  {{ with .Params.hackermans_tip }}
+    <div class="relative mt-8 p-4 border-2 border-amber-500">
+      <img src="/images/placeholder-hackerman.png" alt="Hackerman" class="absolute top-0 left-0 w-16 h-16">
+      <div class="ml-20">
+        <h2 class="text-amber-500">Hackerman's tip</h2>
+        <p>{{ . }}</p>
+      </div>
+    </div>
+  {{ end }}
+  {{ with .Params.padawans_playground }}
+    <div class="relative mt-8 p-4 border-2 border-amber-500">
+      <img src="/images/placeholder-padawan.png" alt="Padawan" class="absolute top-0 left-0 w-16 h-16">
+      <div class="ml-20">
+        <h2 class="text-amber-500">Padawan's Playground</h2>
+        <p>{{ . }}</p>
+      </div>
+    </div>
+  {{ end }}
+  <div id="remark42" class="mt-8"></div>
+</article>
+<script>
+  const remark_config = {
+    host: "https://remark42.example.com",
+    site_id: "devsparks-blog",
+    components: ["embed"],
+    url: "{{ .Permalink }}",
+  };
+  (function (c) {
+    for (var i = 0; i < c.length; i++) {
+      var d = document, s = d.createElement("script");
+      s.src = remark_config.host + "/web/" + c[i] + ".js";
+      s.defer = true;
+      d.body.appendChild(s);
+    }
+  })(remark_config.components);
+</script>
+{{ end }}

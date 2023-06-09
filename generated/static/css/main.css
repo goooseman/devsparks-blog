@@ -1,0 +1,80 @@
+@import 'https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;700&display=swap';
+
+:root {
+  --main-color: #ffc000;
+  --font-family: 'Fira Code', monospace;
+  --light-bg: #ffffff;
+  --light-text: #333333;
+  --dark-bg: #1a1a1a;
+  --dark-text: #f5f5f5;
+}
+
+body {
+  font-family: var(--font-family);
+  background-color: var(--light-bg);
+  color: var(--light-text);
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+[data-theme='dark'] {
+  background-color: var(--dark-bg);
+  color: var(--dark-text);
+}
+
+h1, h2, h3, h4, h5, h6 {
+  color: var(--main-color);
+}
+
+a {
+  color: var(--main-color);
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem;
+}
+
+.header a {
+  margin-right: 1rem;
+}
+
+.header a:last-child {
+  margin-right: 0;
+}
+
+.footer {
+  display: flex;
+  align-items: center;
+  padding: 1rem;
+}
+
+.footer img {
+  width: 160px;
+  height: 160px;
+  margin-right: 1rem;
+}
+
+.hackerman-tip,
+.padawan-playground {
+  position: relative;
+  border: 2px solid var(--main-color);
+  padding: 1rem;
+  margin: 1rem 0;
+}
+
+.hackerman-tip img,
+.padawan-playground img {
+  position: absolute;
+  top: -20px;
+  right: -20px;
+  width: 80px;
+  height: 80px;
+  opacity: 0.5;
+}
