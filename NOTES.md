@@ -19,21 +19,25 @@ Main color is Amber: #ffc000.
 
 A monospace Fira Code font with ligatures should be used.
 
-For light theme the background is Amber and text color is graphite.
-For dark theme the background is graphite and text color is amber. 
+For light theme (`.light-theme`) the background is Amber and text color is graphite.
+For dark theme (`.dark-theme`) the background is graphite and text color is amber. 
 
 The layout:
+- breakpoints: >680px - desktop, <680px mobile
+- container: 600px on desktop, or 100% with 20px padding on mobile
 - header: 
-  - contains navigation links Home, Hacks, Search box, Fix typo
-  - Active link should be underlined 
-  - Non-active links to be with lighten color
-  - When hover, active design is applied
-  - search is a horizontal line when not active/hover, and bordered when active/hover. color of line/border should match text color for current theme
-  - Fix typo link should be on the right, all other elements on the left
+  - contains navigation links Hacks, Search box, Fix typo
+  - Currently opened link should have `.link-active` class
+  - .link-active/hovered link should be underlined 
+  - search is a horizontal line when not active/hover, and bordered when active/hover. color of line/border should match text color for current theme. placeholder text should also be of text color
+  - Fix typo link and switch theme switch should be on the right, all other elements on the left
 - main area
   - background color matches other areas of the website. but it has background shadow on top/bottom to make it look like lower then header and footer
 - footer
-  - contains photo of the author with transparent bg and a small about text. text is wrapped with a border of current color text for the current theme
+  - contains photo of the author with transparent bg and a small about text. text is wrapped with a single border around whole text, not single parapgraph, of current color text for the current theme
+  - should have flex layout
+  - for desktop photo on the left column, text on the right
+  - for mobile photo is aligned to center and above the text
 
 ## Tech Requirements
 
@@ -54,6 +58,22 @@ YEAR
 hack title (date)
 ```
 
+Here is some sample code to list items:
+
+```
+{{ range (where .Site.RegularPages "Type" "in" (slice "hacks")).GroupByDate "2006" }}
+<h2>{{ .Key }}</h2>
+<ul>
+  {{ range .Pages }}
+  <li>
+    <span class="date">{{ .Date.Format (.Site.Params.dateFormat | default "January 2, 2006" ) }}</span>
+    <a class="title" href="{{ .Params.externalLink | default .RelPermalink }}">{{ .Title }}</a>
+  </li>
+  {{- end -}}
+</ul>
+{{ end }}
+```
+
 ### Hack page
 
 A specific hack page contains:
@@ -64,13 +84,22 @@ A specific hack page contains:
 - Text content
 - Comments (remark42 integration)
 
-Some blog posts can contain "Hackerman's tip" and "Padawan's Playground" sections, which should be highlighted with a border. Outside of a border there should be a transparent image of Hackerman or Padawan. As of now use a placeholder image, I will replace it with a real image later.
+Some blog posts can contain "Hackerman's tip" and "Padawan's Playground" sections, which should be highlighted with a border around the text. Border should be of text color which is different for ligth and dark themes Outside of a border there should be a transparent image of Hackerman or Padawan. As of now use a placeholder (http://placekitten.com/20/20) image for light theme and http://placekitten.com/21/21 for dark theme, I will replace them with a real image later. This image should be absolute positioned on a border with left: 20% and top: 0. Section should be relative. Section should have 25px margin top and 5px margin bottom to fix image position overflow. Title inside section should be italic.
 
 Please create one example of a hack with Lorem Ipsum text containing both Padawan and Hackerman sections.
 
 ### Header
 
 - Fix typo button just opens following link in a new tab: "https://github.com/goooseman/devsparks-blog/issues/new?title=DevSparks+Feedback&body=I+found+something+wrong+on+this+page%3A%0A%0A++{CURRENT_PAGE}%0A%0A++Here%27s+what+it+is%3A"
+- Toogle theme switch:
+  - Adds `data-theme` attr to document
+  - Adds `light-theme` or `dark-theme` class to body
+  - `window.REMARK42.changeTheme("light" | "dark")`
+  - Should consist of 🌞 icon if active theme is dark and 🌒 icon if current theme is light
+  - Should have aria-label: 'Switch to light theme' if current theme is dark and 'Switch to dark theme' if current theme is light
+  - Default theme should be selected from system one:
+    - `window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches` -> dark mode if true
+    - `window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', event =>  event.matches ? "dark" : "light";` to watch for changes
 
 ### Footer
 
@@ -140,6 +169,8 @@ services:
     volumes:
       - ./var:/srv/var
 ```
+
+But enrich this file with hugo image to serve and build commands.
 
 ### Frontend integration
 
