@@ -2,7 +2,6 @@ the app is: DevSparks Blog
 
 the files we have decided to generate are: 
 - Makefile
-- docker-compose.yaml
 - config.toml
 - content/hacks/example-hack.md
 - content/_index.md

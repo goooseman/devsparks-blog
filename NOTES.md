@@ -134,15 +134,10 @@ Blog address: `devsparks.goooseman.dev`.
 - Front-end: HTML, CSS, JavaScript (for interactive elements)
 
 Should have Makefile to serve project with docker-compose and build project with docker.
-Should have docker-compose to serve the project together with remark42.
 
 ### Remark42 integration
 
-Remark42 is a comments engine which has a special backend and a frontend integration.
-
-### Backend
-
-In the projects `docker-compose.yaml` please add following service with `umputun/remark42:latest` image next to basic hugo image.
+Remark42 is a comments engine which has a special backend and a frontend integration. We have already deployed version at https://remark42.goooseman.dev
 
 ### Frontend integration
 
@@ -152,7 +147,7 @@ Add following snippets to end of the body:
 <script>
   // https://remark42.com/docs/configuration/frontend/
   var remark_config = {
-    host: 'https://remark42.goooseman.dev', // SHOULD BE ENV TO USE OTHER ADDRESS LOCALLY
+    host: 'https://remark42.goooseman.dev',
     site_id: 'dev_sparks',
     components: ['embed', 'last-comments']
     max_shown_comments: 100,
