@@ -176,8 +176,10 @@ ID names of DOM elements:
    - remark42 (for Remark42 comments integration)
 
 Classnames:
-   - .container
-   - .link-active
+- .container
+- .link-active
+- .hackermans-tip
+- .padawans-playground
 
 ### Remark42 integration
 
