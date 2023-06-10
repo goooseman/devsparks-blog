@@ -30,8 +30,8 @@ Two themes: light and dark.
 - Links: text color both when normal or hovered
 - Links: always have border bottom 2px
 - Links: never underline, not on hover also
-- Navigation links in header: should have `.link-active` class, when page active
-- .link-active link should have border 2px left/right/top/bottom
+- Navigation links in header: should have `.layout__link__active` class, when page active
+- .layout__link__active link should have border 2px left/right/top/bottom
 - breakpoints: >680px - desktop, <680px mobile
 - inputs:
     - horizontal line of `border-color` when not active/hover
@@ -42,7 +42,7 @@ Two themes: light and dark.
 ### Site layout
 
 - `<header>`:
-  - everything inside should be wrapped in `.container`
+  - everything inside should be wrapped in `.layout__container`
   - contains navigation links: Hacks, About, [GitHub](https://github.com/goooseman/devsparks-blog). Also Fix typo link, switch theme switch on the right.
   - should contain `.layout__header` class and then `.layout__header_left`, `.layout__header_right` 
   - Fix typo button just opens following link in a new tab: "https://github.com/goooseman/devsparks-blog/issues/new?title=DevSparks+Feedback&body=I+found+something+wrong+on+this+page%3A%0A%0A++{CURRENT_PAGE}%0A%0A++Here%27s+what+it+is%3A"
@@ -52,11 +52,11 @@ Two themes: light and dark.
     - Should have aria-label: 'Switch to light theme' if current theme is dark and 'Switch to dark theme' if current theme is light
     - Should have pointer: cursor when hovered
 - `<main>`
-  - everything inside should be wrapped in `.container`
+  - everything inside should be wrapped in `.layout__container`
   - background color matches other areas of the website. but it has background shadow on top/bottom to make it look like lower then header and footer
   - should have padding top and bottom with 50px
 - `<footer>`
-  - everything inside should be wrapped in `.container`
+  - everything inside should be wrapped in `.layout__container`
   - contains photo of the author with transparent bg and a small about text: Footer Ipsum
   - text is wrapped with a single border around whole text, not single parapgraph, of `border-color`
   - photo of author: http://placekitten.com/200/200
@@ -155,27 +155,27 @@ Classnames:
 - .layout__header_left
 - .layout__header_right
 - .header__theme_switch
-- .container
-- .link-active
-- .hackermans-tip
-- .padawans-playground
-- .tip-container
-- .tip-title
-- .tip-image
+- .layout__container
+- .layout__link__active
+- .section__tip__hackerman
+- .section__tip__padawan
+- .tip__container
+- .tip__title
+- .tip__image
 
 Classname specs:
 
-- `.container` class (wraps all content inside `<header>`, `<footer>`, `<main>`):
+- .layout__container class:
   - 600px width on desktop, aligned center
   - 100% width with 20px left/right padding on mobile
-- .tip-image should be absolute positioned on a border with left: 20% and top: 0. 
-- .tip-container should be relative. 
-- .tip-container should have 25px margin top and 5px margin bottom to fix image position overflow. 
-- .tip-title inside section should be italic.
-- .tip-container should have border of border-color
-- .tip-container should be relative
-- .tip-image should be absolute with top: 0, left: 20%
-- .tip-container should have margin-top: 30px;
+- .tip__image should be absolute positioned on a border with left: 20% and top: 0. 
+- .tip__container should be relative. 
+- .tip__container should have 25px margin top and 5px margin bottom to fix image position overflow. 
+- .tip__title inside section should be italic.
+- .tip__container should have border of border-color
+- .tip__container should be relative
+- .tip__image should be absolute with top: 0, left: 20%
+- .tip__container should have margin-top: 30px;
 - .header__theme_switch
   - should have no background, only 2px border
   - should be square
