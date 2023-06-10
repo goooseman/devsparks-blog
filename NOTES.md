@@ -94,11 +94,6 @@ Here is some sample code to list items:
 
 On the home page footer should be rendered before main content, not after.
 
-### About page
-
-A page with following text content:
-About Ipsum
-
 ### Hack page
 
 A specific hack page contains:
@@ -111,23 +106,7 @@ A specific hack page contains:
 
 Tags should be links, when clicked other hacks by the same tag should be listed.
 
-Some blog posts can contain "Hackerman's tip" and "Padawan's Playground" sections:
-
-- This image should be absolute positioned on a border with left: 20% and top: 0. 
-- Section should be relative. 
-- Section should have 25px margin top and 5px margin bottom to fix image position overflow. 
-- Title inside section should be italic.
-- Please create reusable `{{< hackermans-tip >}}` and `{{< padawans-playground >}}` shortcodes to wrap content inside blog article to give it unique styling with the following dom:
-    - <div class="tip-container>
-      - <h4 class="tip-title">Hackerman's tip or Padawan's Playground
-      - <img class="tip-image" /> (Use http://placekitten.com/20/20?theme=light image for light theme and http://placekitten.com/20/20?theme=dark for dark theme.)
-      - inner contents of the tip passed from blog post
-  - tip-container should have border of border-color
-  - tip-container should be relative
-  - tip-image should be absolute with top: 0, left: 20%
-  - tip-container should have margin-top: 30px;
-
-Please create one example of a hack with Lorem Ipsum text containing both Padawan and Hackerman sections.
+Do not generate hack itself, only the layout.
 
 ## Technology Stack
 
@@ -180,6 +159,20 @@ Classnames:
 Shortcodes:
 - hackermans-tip
 - padawans-playground
+
+- hackermans-tip and padawans-playground shortcode should wrap inner content in the following template:
+  - <div class="tip-container">
+    - <h4 class="tip-title">Hackerman's tip or Padawan's Playground
+    - <img class="tip-image" /> (Use http://placekitten.com/20/20?theme=light image for light theme and http://placekitten.com/20/20?theme=dark for dark theme.)
+    - inner contents of the tip passed from blog post
+- .tip-image should be absolute positioned on a border with left: 20% and top: 0. 
+- .tip-container should be relative. 
+- .tip-container should have 25px margin top and 5px margin bottom to fix image position overflow. 
+- tip-title inside section should be italic.
+- tip-container should have border of border-color
+- tip-container should be relative
+- tip-image should be absolute with top: 0, left: 20%
+- tip-container should have margin-top: 30px;
 
 ### Remark42 integration
 
