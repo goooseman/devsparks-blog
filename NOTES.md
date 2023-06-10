@@ -180,7 +180,7 @@ Shortcodes:
 
 ### Remark42 integration
 
-Remark42 is a comments engine which has a special backend and a frontend integration. We have already deployed version at https://remark42.goooseman.dev
+Remark42 is a comments engine which has a special backend and a frontend integration. We have already deployed version at https://r42.goooseman.dev
 
 ### Frontend integration
 
@@ -188,9 +188,9 @@ Add following snippets to end of the body:
 
 ```
 <script>
-  // https://remark42.com/docs/configuration/frontend/
+  // https://r42.com/docs/configuration/frontend/
   var remark_config = {
-    host: 'https://remark42.goooseman.dev',
+    host: 'https://r42.goooseman.dev',
     site_id: 'dev_sparks',
     components: ['embed', 'last-comments']
     max_shown_comments: 100,
@@ -215,4 +215,4 @@ And then add the following `<div>` to the place where footer should be rendered:
 
 ### Frontend theme
 
-Remark42 theme should be syncronised with website theme. When toggle button is clicked, please run the following code: `window.REMARK42.changeTheme("light" | "dark")`
+Remark42 theme should be syncronised with website theme. When toggle button is clicked, please run the following code: `window.r42.changeTheme("light" | "dark")`
