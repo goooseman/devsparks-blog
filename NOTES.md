@@ -143,6 +143,7 @@ Should have Makefile to serve project and build hugo project with docker.
 ### Project structure
 
 - Makefile
+- .gitignore (`.hugo_build.lock`)
 - config.toml
 - content/hacks/example-hack.md
 - content/_index.md
@@ -153,8 +154,8 @@ Should have Makefile to serve project and build hugo project with docker.
 - themes/devsparks/layouts/_default/single.html
 - themes/devsparks/layouts/partials/footer.html
 - themes/devsparks/layouts/partials/header.html
-- themes/devsparks/layouts/shortcodes/hackermans-tip.html
-- themes/devsparks/layouts/shortcodes/padawans-playground.html
+- themes/devsparks/layouts/shortcodes/hackermans-tip.html (should contain only contents, without shortcode tag)
+- themes/devsparks/layouts/shortcodes/padawans-playground.html (should contain only contents, without shortcode tag)
 - themes/devsparks/static/css/main.css
 - themes/devsparks/static/css/theme-light.css
 - themes/devsparks/static/css/theme-dark.css
