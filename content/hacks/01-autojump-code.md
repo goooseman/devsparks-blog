@@ -2,6 +2,7 @@
 title: "Jump Around Your Filesystem Like a Pro"
 tags: ["cli", "autojump", "ide"]
 category: "lifehack"
+date: "2023-06-10T16:20:11.379Z"
 ---
 
 Yo, devs! Ever felt tired of typing long paths in your terminal to navigate between projects? Wanna switch between directories faster than a ninja? Your prayers have been answered. Introducing the *Autojump* CLI tool! This bad boy is gonna make your life a whole lot easier. 🚀
