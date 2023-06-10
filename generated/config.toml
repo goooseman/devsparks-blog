@@ -1,7 +1,6 @@
 baseURL = "https://devsparks.goooseman.dev"
 languageCode = "en-us"
 title = "DevSparks Blog"
-theme = "devsparks"
 
 [params]
   dateFormat = "January 2, 2006"
