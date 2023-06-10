@@ -11,42 +11,66 @@ The blog itself is strictly technical for at least medium-level developers. Topi
 Some blog post may contain "Hackerman's tip" sections, which contains some more advanced information for more advanced readers.
 And some may contain "Padawan's Playground" sections, which contains some more junior-level info.
 
-## Design Requirements
+## Requirements
 
-The design is minimalistic and contains two themes: light and dark. By default the system theme is used, but website should have a special toggle.
+### Theming
 
-Main color is Amber: #ffc000. 
+Two themes: light and dark.
+- When site is loaded, system theme should be checked. If it is dark (`window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches`), dark theme should be the default. 
+- To watch for system theme changes `window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', event =>  event.matches ? "dark" : "light";)`, should change theme of the website.
+- Adds `data-theme=light|dark` attr to document
+- Adds `light-theme` or `dark-theme` class to body
+- theme variblaes:
+    - light:
+        - `background-color`: `amber` (`#ffc000`)
+        - `text-color`: `graphite` (`#40414e`)
+        - `border-color`: `graphite` (`#40414e`)
+    - dark:
+        - `background-color`: `graphite` (`#40414e`)
+        - `text-color`: `amber` (`#ffc000`)
+        - `border-color`: `amber` (`#ffc000`)
 
-A monospace Fira Code font with ligatures should be used.
+### Common styling:
 
-For light theme (`.light-theme`) the background is Amber and text color is graphite.
-For dark theme (`.dark-theme`) the background is graphite and text color is amber. 
-
-The layout:
+- Fira Code font
+- Links: text color both when normal or hovered
+- Underline when hovered
+- Navigation links in header: should have `.link-active` class
+- .link-active link should be bordered
 - breakpoints: >680px - desktop, <680px mobile
-- container: 600px on desktop, or 100% with 20px padding on mobile
-- header: 
-  - contains navigation links Hacks, Search box, Fix typo
-  - Currently opened link should have `.link-active` class
-  - .link-active/hovered link should be underlined 
-  - search is a horizontal line when not active/hover, and bordered when active/hover. color of line/border should match text color for current theme. placeholder text should also be of text color
+- site .container (wraps all other divs):
+    - 600px width on desktop, aligned center
+    - 100% width with 20px left/right padding on mobile
+- inputs:
+    - horizontal line of `border-color` when not active/hover
+    - bordered when active/hover
+    - placeholder text should also be of `text-color`
+
+### Site layour
+
+- `<header>`:
+  - contains navigation links: Hacks. Also a Search box, Fix typo link, switch theme switch
   - Fix typo link and switch theme switch should be on the right, all other elements on the left
-- main area
+  - Fix typo button just opens following link in a new tab: "https://github.com/goooseman/devsparks-blog/issues/new?title=DevSparks+Feedback&body=I+found+something+wrong+on+this+page%3A%0A%0A++{CURRENT_PAGE}%0A%0A++Here%27s+what+it+is%3A"
+  - switch theme switch
+    - Should only have 🌞 icon if active theme is dark and 🌒 icon if current theme is light
+    - Should have aria-label: 'Switch to light theme' if current theme is dark and 'Switch to dark theme' if current theme is light
+- `<main>`
   - background color matches other areas of the website. but it has background shadow on top/bottom to make it look like lower then header and footer
-- footer
-  - contains photo of the author with transparent bg and a small about text. text is wrapped with a single border around whole text, not single parapgraph, of current color text for the current theme
+  - should have padding top and bottom with 20px
+- `<footer>`
+  - contains photo of the author with transparent bg and a small about text
+  - text is wrapped with a single border around whole text, not single parapgraph, of `border-color`
+  - photo of author: http://placekitten.com/200/200
+  - photo of author when hovered: http://placekitten.com/200/200?foo=hover
   - should have flex layout
-  - for desktop photo on the left column, text on the right
-  - for mobile photo is aligned to center and above the text
-
-## Tech Requirements
-
-Should have Makefile to serve and build project. Both commands should use docker. 
-
-Should have a command in this Makefile to re-generate project with smol-dev. Command name: `smol-rewrite`, command: `python3 ../developer/main_no_modal.py ./NOTES.md `
-
-
-## Functional Requirements
+  - for desktop breakpoint photo on the left column, text on the right
+  - for mobile brealpoint photo is aligned to center and above the text
+  - text for the footer:
+        > Hello, I'm Alex. 
+        > Welcome to DevSparks, a cosy corner of the web where code meets fun. I've always believed that the best way to learn is by doing, and the best way to do is by having fun. That's why I've created DevSparks - to share the joy and the power of development with you.
+        > Here, you'll find bite-sized lifehacks about everything from CLI power usage to git tricks, all crafted with a dash of humor and a bucketload of passion.
+        > So grab a cup of coffee, get comfy, and let's explore the incredible world of coding together!
 
 ### Home page
 
@@ -74,41 +98,29 @@ Here is some sample code to list items:
 {{ end }}
 ```
 
+On the home page footer should be rendered before main content, not after.
+
 ### Hack page
 
 A specific hack page contains:
 
 - Title
 - Date
-- Tags
+- Tags (listed inline, not as bullet items)
 - Text content
 - Comments (remark42 integration)
 
-Some blog posts can contain "Hackerman's tip" and "Padawan's Playground" sections, which should be highlighted with a border around the text. Border should be of text color which is different for ligth and dark themes Outside of a border there should be a transparent image of Hackerman or Padawan. As of now use a placeholder (http://placekitten.com/20/20) image for light theme and http://placekitten.com/21/21 for dark theme, I will replace them with a real image later. This image should be absolute positioned on a border with left: 20% and top: 0. Section should be relative. Section should have 25px margin top and 5px margin bottom to fix image position overflow. Title inside section should be italic.
+Tags should be links, when clicked other hacks by the same tag should be listed.
+
+Some blog posts can contain "Hackerman's tip" and "Padawan's Playground" sections:
+- Those sections have a border of `border-color`. 
+- Outside of a border there should be a transparent image of Hackerman or Padawan. Use http://placekitten.com/20/20?theme=light image for light theme and http://placekitten.com/20/20?theme=dark for dark theme.
+- This image should be absolute positioned on a border with left: 20% and top: 0. 
+- Section should be relative. 
+- Section should have 25px margin top and 5px margin bottom to fix image position overflow. 
+- Title inside section should be italic.
 
 Please create one example of a hack with Lorem Ipsum text containing both Padawan and Hackerman sections.
-
-### Header
-
-- Fix typo button just opens following link in a new tab: "https://github.com/goooseman/devsparks-blog/issues/new?title=DevSparks+Feedback&body=I+found+something+wrong+on+this+page%3A%0A%0A++{CURRENT_PAGE}%0A%0A++Here%27s+what+it+is%3A"
-- Toogle theme switch:
-  - Adds `data-theme` attr to document
-  - Adds `light-theme` or `dark-theme` class to body
-  - `window.REMARK42.changeTheme("light" | "dark")`
-  - Should consist of 🌞 icon if active theme is dark and 🌒 icon if current theme is light
-  - Should have aria-label: 'Switch to light theme' if current theme is dark and 'Switch to dark theme' if current theme is light
-  - Default theme should be selected from system one:
-    - `window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches` -> dark mode if true
-    - `window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', event =>  event.matches ? "dark" : "light";` to watch for changes
-
-### Footer
-
-The footer should consist of my photo (http://placekitten.com/200/200) with transparent background and following about text: 
-
-> Hello, I'm Alex. 
-> Welcome to DevSparks, a cosy corner of the web where code meets fun. I've always believed that the best way to learn is by doing, and the best way to do is by having fun. That's why I've created DevSparks - to share the joy and the power of development with you.
-> Here, you'll find bite-sized lifehacks about everything from CLI power usage to git tricks, all crafted with a dash of humor and a bucketload of passion.
-> So grab a cup of coffee, get comfy, and let's explore the incredible world of coding together!
 
 ## Technology Stack
 
@@ -116,6 +128,8 @@ Blog address: `devsparks.goooseman.dev`.
 
 - Back-end: Go, Hugo, Remark42
 - Front-end: HTML, CSS, JavaScript (for interactive elements)
+
+Should have Makefile to serve and build project. Both commands should use docker.
 
 ### Remark42 integration
 
