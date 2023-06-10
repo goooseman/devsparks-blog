@@ -155,19 +155,24 @@ Hugo theme: `devsparks`
 
 Should have Makefile to serve project and build hugo project with docker.
 
-### Project structure (can be extended to create shortcodes)
+### Project structure
 
 - Makefile
 - config.toml
 - content/hacks/example-hack.md
 - content/_index.md
+- content/about.md
 - themes/devsparks/index.html
 - themes/devsparks/layouts/_default/baseof.html
 - themes/devsparks/layouts/_default/list.html
 - themes/devsparks/layouts/_default/single.html
 - themes/devsparks/layouts/partials/footer.html
 - themes/devsparks/layouts/partials/header.html
+- themes/devsparks/layouts/shortcodes/hackermans-tip.html
+- themes/devsparks/layouts/shortcodes/padawans-playground.html
 - themes/devsparks/static/css/main.css
+- themes/devsparks/static/css/theme-light.css
+- themes/devsparks/static/css/theme-dark.css
 - themes/devsparks/static/js/remark42-integration.js
 - themes/devsparks/static/js/theme-switcher.js
 
@@ -182,6 +187,10 @@ Classnames:
 - .link-active
 - .hackermans-tip
 - .padawans-playground
+
+Shortcodes:
+- hackermans-tip
+- padawans-playground
 
 ### Remark42 integration
 
