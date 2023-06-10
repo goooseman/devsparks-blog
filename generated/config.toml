@@ -6,6 +6,11 @@ theme = "devsparks"
 [params]
   dateFormat = "January 2, 2006"
 
+[markup]
+  [markup.goldmark]
+    [markup.goldmark.renderer]
+      unsafe = true
+
 [[menu.main]]
   name = "Hacks"
   url = "/"
@@ -20,3 +25,22 @@ theme = "devsparks"
   name = "GitHub"
   url = "https://github.com/goooseman/devsparks-blog"
   weight = 3
+
+[[menu.main]]
+  name = "Fix Typo"
+  url = "https://github.com/goooseman/devsparks-blog/issues/new?title=DevSparks+Feedback&body=I+found+something+wrong+on+this+page%3A%0A%0A++{CURRENT_PAGE}%0A%0A++Here%27s+what+it+is%3A"
+  weight = 4
+  target = "_blank"
+
+[outputFormats]
+  [outputFormats.REMARK42]
+    mediaType = "text/html"
+    baseName = "index"
+    isHTML = true
+    notAlternative = true
+
+[outputs]
+  home = ["HTML", "REMARK42"]
+  section = ["HTML", "REMARK42"]
+  taxonomy = ["HTML", "REMARK42"]
+  term = ["HTML", "REMARK42"]

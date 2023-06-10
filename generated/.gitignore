@@ -2,5 +2,5 @@
 node_modules/
 public/
 resources/
-themes/devsparks/static/css/*.min.css
-themes/devsparks/static/js/*.min.js
+themes/devsparks/static/css/*.map
+themes/devsparks/static/js/*.map

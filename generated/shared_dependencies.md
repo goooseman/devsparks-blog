@@ -16,3 +16,12 @@ Shortcodes:
 
 Function names:
 - changeTheme (for Remark42 theme synchronization)
+
+Message names:
+- N/A
+
+Data schemas:
+- N/A
+
+Exported variables:
+- N/A

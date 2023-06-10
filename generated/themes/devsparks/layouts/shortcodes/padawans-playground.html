@@ -1,5 +1,7 @@
-<div class="tip-container padawans-playground">
+{{< padawans-playground >}}
+<div class="tip-container">
   <h4 class="tip-title">Padawan's Playground</h4>
-  <img class="tip-image" src="{{ if eq .Site.Data.theme "light" }}http://placekitten.com/20/20?theme=light{{ else }}http://placekitten.com/20/20?theme=dark{{ end }}" alt="Padawan's Playground Icon">
+  <img class="tip-image" src="{{ if eq .Page.Site.Params.theme "light" }}http://placekitten.com/20/20?theme=light{{ else }}http://placekitten.com/20/20?theme=dark{{ end }}" alt="Padawan's Playground Icon">
   {{ .Inner }}
 </div>
+{{< /padawans-playground >}}

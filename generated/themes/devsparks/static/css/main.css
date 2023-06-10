@@ -1,16 +1,18 @@
 @import url('https://fonts.googleapis.com/css2?family=Fira+Code&display=swap');
 
-:root {
-  --border-width: 2px;
+* {
+  box-sizing: border-box;
+  font-family: 'Fira Code', monospace;
 }
 
 body {
-  font-family: 'Fira Code', monospace;
+  margin: 0;
+  padding: 0;
 }
 
 a {
   text-decoration: none;
-  border-bottom: var(--border-width) solid;
+  border-bottom: 2px solid;
 }
 
 a:hover {
@@ -18,7 +20,7 @@ a:hover {
 }
 
 .link-active {
-  border: var(--border-width) solid;
+  border: 2px solid;
 }
 
 .container {
@@ -29,13 +31,13 @@ a:hover {
 
 input {
   border: none;
-  border-bottom: var(--border-width) solid;
+  outline: none;
   background-color: transparent;
 }
 
 input:focus,
 input:hover {
-  border: var(--border-width) solid;
+  border: 2px solid;
 }
 
 input::placeholder {
@@ -48,71 +50,44 @@ header {
   align-items: center;
 }
 
-header .theme-switch {
-  width: 24px;
-  height: 24px;
-  border: var(--border-width) solid;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  cursor: pointer;
-}
-
 main {
   padding: 50px 0;
-  position: relative;
-  z-index: 1;
-}
-
-main::before,
-main::after {
-  content: "";
-  position: absolute;
-  left: 0;
-  right: 0;
-  height: 20px;
-  z-index: -1;
-}
-
-main::before {
-  top: 0;
-  background: linear-gradient(to top, rgba(0, 0, 0, 0.1), transparent);
-}
-
-main::after {
-  bottom: 0;
-  background: linear-gradient(to bottom, rgba(0, 0, 0, 0.1), transparent);
 }
 
 footer {
   display: flex;
-  flex-wrap: wrap;
+  flex-direction: column;
   align-items: center;
-  justify-content: center;
 }
 
 footer img {
   width: 200px;
   height: 200px;
-  margin: 20px;
 }
 
-footer p {
-  border: var(--border-width) solid;
-  padding: 20px;
-  margin: 20px;
+footer img:hover {
+  content: url('http://placekitten.com/200/200?foo=hover');
 }
 
-@media (min-width: 680px) {
+.tip-container {
+  position: relative;
+  border: 2px solid;
+  margin-top: 30px;
+  margin-bottom: 5px;
+}
+
+.tip-title {
+  font-style: italic;
+}
+
+.tip-image {
+  position: absolute;
+  top: 0;
+  left: 20%;
+}
+
+@media screen and (min-width: 680px) {
   footer {
-    justify-content: space-between;
-  }
-
-  footer img {
-    order: 1;
-  }
-
-  footer p {
-    order: 2;
+    flex-direction: row;
   }
 }
