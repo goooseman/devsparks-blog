@@ -1,0 +1,40 @@
+baseURL = "https://devsparks.goooseman.dev"
+languageCode = "en-us"
+title = "DevSparks Blog"
+theme = "devsparks"
+
+[params]
+  dateFormat = "January 2, 2006"
+
+[markup]
+  [markup.goldmark]
+    [markup.goldmark.renderer]
+      unsafe = true
+
+[outputFormats]
+  [outputFormats.REMARK42]
+    mediaType = "text/html"
+    baseName = "index"
+    isHTML = true
+    notAlternative = true
+    permalinkable = false
+
+[outputs]
+  home = ["HTML", "REMARK42"]
+  section = ["HTML", "REMARK42"]
+  taxonomy = ["HTML", "REMARK42"]
+  term = ["HTML", "REMARK42"]
+
+[mediaTypes]
+  [mediaTypes."text/html"]
+    suffixes = ["html"]
+
+[imaging]
+  resampleFilter = "lanczos"
+  quality = 75
+
+[permalinks]
+  hacks = "/:filename/"
+
+[taxonomies]
+  tag = "tags"

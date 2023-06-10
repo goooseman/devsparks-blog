@@ -1,0 +1,16 @@
+<div class="hackermans-tip" style="position: relative; margin-top: 25px; margin-bottom: 5px; border: 2px solid var(--border-color);">
+  <img src="/images/hackerman-light.png" alt="Hackerman" style="position: absolute; left: 20%; top: 0; display: none;" class="hackerman-light">
+  <img src="/images/hackerman-dark.png" alt="Hackerman" style="position: absolute; left: 20%; top: 0; display: none;" class="hackerman-dark">
+  <h3 style="font-style: italic;">Hackerman's Tip</h3>
+  <p>{{ . }}</p>
+</div>
+<script>
+  document.addEventListener('DOMContentLoaded', function() {
+    var theme = document.documentElement.getAttribute('data-theme');
+    if (theme === 'light') {
+      document.querySelector('.hackerman-light').style.display = 'block';
+    } else {
+      document.querySelector('.hackerman-dark').style.display = 'block';
+    }
+  });
+</script>
