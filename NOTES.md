@@ -129,7 +129,8 @@ Blog address: `devsparks.goooseman.dev`.
 - Back-end: Go, Hugo, Remark42
 - Front-end: HTML, CSS, JavaScript (for interactive elements)
 
-Should have Makefile to serve and build project. Both commands should use docker.
+Should have Makefile to serve and build project.
+Should have docker-compose to serve the project together with remark42.
 
 ### Remark42 integration
 
@@ -137,54 +138,7 @@ Remark42 is a comments engine which has a special backend and a frontend integra
 
 ### Backend
 
-In the projects `docker-compose.yaml` please add following service:
-
-```
-version: "2"
-
-services:
-  remark:
-    # remove the next line in case you want to use this docker-compose separately
-    # as otherwise it would complain for absence of Dockerfile
-    build: .
-    image: umputun/remark42:latest
-    container_name: "remark42"
-    hostname: "remark42"
-    restart: always
-
-    logging:
-      driver: json-file
-      options:
-        max-size: "10m"
-        max-file: "5"
-
-    # uncomment to expose directly (no proxy)
-    #ports:
-    #  - "80:8080"
-    #  - "443:8443"
-
-    environment:
-      - REMARK_URL=https://remark42.goooseman.dev
-      - SECRET
-      - DEBUG=true
-      - AUTH_ANON=true 
-      - AUTH_GOOGLE_CID
-      - AUTH_GOOGLE_CSEC
-      - AUTH_GITHUB_CID
-      - AUTH_GITHUB_CSEC
-      - AUTH_FACEBOOK_CID
-      - AUTH_FACEBOOK_CSEC
-      - AUTH_DISQUS_CID
-      - AUTH_DISQUS_CSEC
-      # Enable it only for the initial comment import or for manual backups.
-      # Do not leave the server running with the ADMIN_PASSWD set if you don't have an intention
-      # to keep creating backups manually!
-      # - ADMIN_PASSWD=<your secret password>
-    volumes:
-      - ./var:/srv/var
-```
-
-But enrich this file with hugo image to serve and build commands.
+In the projects `docker-compose.yaml` please add following service with `umputun/remark42:latest` image next to basic hugo image.
 
 ### Frontend integration
 
