@@ -138,16 +138,19 @@ Hugo theme: `devsparks`
 - Back-end: Go, Hugo, Remark42
 - Front-end: HTML, CSS, JavaScript (for interactive elements)
 
-Should have Makefile to serve project and build hugo project with docker.
+Should have Makefile
+- serve
+  - to run `ln -s ../content ./content` and then run hugo with docker
+- build
+  - to build project with docker
+
+Should NOT create content folder.
 
 ### Project structure
 
 - Makefile
 - .gitignore (`.hugo_build.lock`)
 - config.toml
-- content/hacks/example-hack.md
-- content/_index.md
-- content/about.md
 - themes/devsparks/index.html
 - themes/devsparks/layouts/_default/baseof.html
 - themes/devsparks/layouts/_default/list.html
