@@ -1,6 +1,20 @@
 the app is: DevSparks Blog
 
-the files we have decided to generate are: index.html, hack.html, style.css, script.js, Makefile, docker-compose.yaml
+the files we have decided to generate are: 
+- Makefile
+- docker-compose.yaml
+- config.toml
+- content/hacks/example-hack.md
+- content/_index.md
+- themes/devsparks/index.html
+- themes/devsparks/layouts/_default/baseof.html
+- themes/devsparks/layouts/_default/list.html
+- themes/devsparks/layouts/_default/single.html
+- themes/devsparks/layouts/partials/footer.html
+- themes/devsparks/layouts/partials/header.html
+- themes/devsparks/static/css/main.css
+- themes/devsparks/static/js/remark42-integration.js
+- themes/devsparks/static/js/theme-switcher.js
 
 Shared dependencies:
 
@@ -24,3 +38,12 @@ Shared dependencies:
    - `toggleTheme`
    - `initTheme`
    - `watchSystemThemeChange`
+
+6. ARIA labels:
+   - 'Switch to light theme'
+   - 'Switch to dark theme'
+
+7. CSS classes:
+   - light-theme
+   - dark-theme
+   - link-active
