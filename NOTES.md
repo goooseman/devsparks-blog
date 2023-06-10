@@ -138,7 +138,7 @@ Hugo theme: `devsparks`
 
 Should have Makefile to serve project and build hugo project with docker.
 
-### Project structure
+### Project structure (can be extended to create shortcodes)
 
 - Makefile
 - config.toml
