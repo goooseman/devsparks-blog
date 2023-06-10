@@ -129,6 +129,7 @@ Please create one example of a hack with Lorem Ipsum text containing both Padawa
 ## Technology Stack
 
 Blog address: `devsparks.goooseman.dev`.
+Project structure: hugo blog
 
 - Back-end: Go, Hugo, Remark42
 - Front-end: HTML, CSS, JavaScript (for interactive elements)
