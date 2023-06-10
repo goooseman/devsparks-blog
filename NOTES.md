@@ -2,15 +2,7 @@
 
 ## Overview
 
-DevSparks - short, but meaningful lifehacks for developers. Each lifehack is a short, but fun blog post and a small 5-15 mins video. 
-
-This project is a static blog, which mainly consists of those lifehacks. The posts are written in a coool way with usage of slang. Also blog has "About" page.
-
-The blog itself is strictly technical for at least medium-level developers. Topics are power usage of cli, git tricks, software development principles. 
-
-Some blog post may contain "Hackerman's tip" sections, which contains some more advanced information for more advanced readers.
-And some may contain "Padawan's Playground" sections, which contains some more junior-level info.
-
+DevSparks - short, but meaningful lifehacks for developers. 
 ## Requirements
 
 ### Theming
@@ -72,11 +64,7 @@ Two themes: light and dark.
   - should have flex layout: photo on the left, text on the right
   - for desktop breakpoint photo on the left column, text on the right
   - for mobile brealpoint photo is aligned to center and above the text
-  - text for the footer:
-        Hello, I'm Alex. 
-        Welcome to DevSparks, a cosy corner of the web where code meets fun. I've always believed that the best way to learn is by doing, and the best way to do is by having fun. That's why I've created DevSparks - to share the joy and the power of development with you.
-        Here, you'll find bite-sized lifehacks about everything from CLI power usage to git tricks, all crafted with a dash of humor and a bucketload of passion.
-        So grab a cup of coffee, get comfy, and let's explore the incredible world of coding together!
+  - text for the footer: Footer Ipsum
 
 ### Home page
 
@@ -108,18 +96,8 @@ On the home page footer should be rendered before main content, not after.
 
 ### About page
 
-
-Hello and welcome to the 'About' page of DevSparks! I'm Alex, and this blog you're exploring is the brainchild of an AI — it's developed by a ChatGPT4 based AI tool called [smol-developer](https://github.com/smol-ai/developer). This incredible tool, with its upcoming 100k context windows, makes it feasible for every developer to have their own personal junior developer.
-
-More info: [GitHub](https://github.com/goooseman/devsparks-blog)
-
-You might notice that the blog's aesthetics aren't your typical sleek and polished design. That's intentional! The somewhat unconventional look is part of the project's charm. The blog regenerates in different versions on a monthly basis, constantly evolving and reshaping, just like the field of AI itself.
-
-While the blog's form changes, we don't forget our past. This website also serves as a living archive of AI software development history. You can journey through time and explore the backups of all previous versions of this website below:
-
-- [20230610-v1.0.0-initial-gpt4](https://1.0.0.devsparks.goooseman.dev)
-
-Keep an eye on this space as we continue to evolve and push the boundaries of AI in software development!
+A page with following text content:
+About Ipsum
 
 ### Hack page
 
@@ -134,13 +112,20 @@ A specific hack page contains:
 Tags should be links, when clicked other hacks by the same tag should be listed.
 
 Some blog posts can contain "Hackerman's tip" and "Padawan's Playground" sections:
-- Those sections have a border of `border-color`. 
-- Outside of a border there should be a transparent image of Hackerman or Padawan. Use http://placekitten.com/20/20?theme=light image for light theme and http://placekitten.com/20/20?theme=dark for dark theme.
+
 - This image should be absolute positioned on a border with left: 20% and top: 0. 
 - Section should be relative. 
 - Section should have 25px margin top and 5px margin bottom to fix image position overflow. 
 - Title inside section should be italic.
-- Please create reusable `{{< hackermans-tip >}}` and `{{< padawans-playground >}}` shortcodes
+- Please create reusable `{{< hackermans-tip >}}` and `{{< padawans-playground >}}` shortcodes to wrap content inside blog article to give it unique styling with the following dom:
+    - <div class="tip-container>
+      - <h4 class="tip-title">Hackerman's tip or Padawan's Playground
+      - <img class="tip-image" /> (Use http://placekitten.com/20/20?theme=light image for light theme and http://placekitten.com/20/20?theme=dark for dark theme.)
+      - inner contents of the tip passed from blog post
+  - tip-container should have border of border-color
+  - tip-container should be relative
+  - tip-image should be absolute with top: 0, left: 20%
+  - tip-container should have margin-top: 30px;
 
 Please create one example of a hack with Lorem Ipsum text containing both Padawan and Hackerman sections.
 
