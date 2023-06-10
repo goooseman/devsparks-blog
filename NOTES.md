@@ -33,12 +33,14 @@ Two themes: light and dark.
 ### Common styling:
 
 - Fira Code font
+- Border width: 2px (global variable)
 - Links: text color both when normal or hovered
-- Underline when hovered
-- Navigation links in header: should have `.link-active` class
-- .link-active link should be bordered
+- Links: always have border bottom 2px
+- Links: never underline, not on hover also
+- Navigation links in header: should have `.link-active` class, when page active
+- .link-active link should have border 2px left/right/top/bottom
 - breakpoints: >680px - desktop, <680px mobile
-- site .container (wraps all other divs):
+- `.container` class (wraps all content inside `<header>`, `<footer>`, `<main>`):
     - 600px width on desktop, aligned center
     - 100% width with 20px left/right padding on mobile
 - inputs:
@@ -49,28 +51,30 @@ Two themes: light and dark.
 ### Site layour
 
 - `<header>`:
-  - contains navigation links: Hacks. Also a Search box, Fix typo link, switch theme switch
-  - Fix typo link and switch theme switch should be on the right, all other elements on the left
+  - contains navigation links: Hacks. Also a Search box, Fix typo link, switch theme switch.
+  - Should have `display: flex` layout: fix typo link, search and switch theme switch should be on the right, all other elements on the left
   - Fix typo button just opens following link in a new tab: "https://github.com/goooseman/devsparks-blog/issues/new?title=DevSparks+Feedback&body=I+found+something+wrong+on+this+page%3A%0A%0A++{CURRENT_PAGE}%0A%0A++Here%27s+what+it+is%3A"
   - switch theme switch
+    - should have no background, only 2px border
+    - should be square
     - Should only have 🌞 icon if active theme is dark and 🌒 icon if current theme is light
     - Should have aria-label: 'Switch to light theme' if current theme is dark and 'Switch to dark theme' if current theme is light
 - `<main>`
   - background color matches other areas of the website. but it has background shadow on top/bottom to make it look like lower then header and footer
-  - should have padding top and bottom with 20px
+  - should have padding top and bottom with 50px
 - `<footer>`
   - contains photo of the author with transparent bg and a small about text
   - text is wrapped with a single border around whole text, not single parapgraph, of `border-color`
   - photo of author: http://placekitten.com/200/200
   - photo of author when hovered: http://placekitten.com/200/200?foo=hover
-  - should have flex layout
+  - should have flex layout: photo on the left, text on the right
   - for desktop breakpoint photo on the left column, text on the right
   - for mobile brealpoint photo is aligned to center and above the text
   - text for the footer:
-        > Hello, I'm Alex. 
-        > Welcome to DevSparks, a cosy corner of the web where code meets fun. I've always believed that the best way to learn is by doing, and the best way to do is by having fun. That's why I've created DevSparks - to share the joy and the power of development with you.
-        > Here, you'll find bite-sized lifehacks about everything from CLI power usage to git tricks, all crafted with a dash of humor and a bucketload of passion.
-        > So grab a cup of coffee, get comfy, and let's explore the incredible world of coding together!
+        Hello, I'm Alex. 
+        Welcome to DevSparks, a cosy corner of the web where code meets fun. I've always believed that the best way to learn is by doing, and the best way to do is by having fun. That's why I've created DevSparks - to share the joy and the power of development with you.
+        Here, you'll find bite-sized lifehacks about everything from CLI power usage to git tricks, all crafted with a dash of humor and a bucketload of passion.
+        So grab a cup of coffee, get comfy, and let's explore the incredible world of coding together!
 
 ### Home page
 
