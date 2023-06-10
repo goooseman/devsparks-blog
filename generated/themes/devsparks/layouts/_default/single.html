@@ -1,0 +1,15 @@
+{{ define "main" }}
+<main class="container">
+  <article>
+    <h1>{{ .Title }}</h1>
+    <span class="date">{{ .Date.Format (.Site.Params.dateFormat | default "January 2, 2006" ) }}</span>
+    <div class="tags">
+      {{ range .Params.tags }}
+        <a href="{{ $.Site.BaseURL }}tags/{{ . | urlize }}">{{ . }}</a>
+      {{ end }}
+    </div>
+    {{ .Content }}
+  </article>
+  <div id="remark42"></div>
+</main>
+{{ end }}

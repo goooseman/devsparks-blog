@@ -1,0 +1,38 @@
+body.light-theme {
+  background-color: #ffc000;
+  color: #40414e;
+}
+
+.light-theme a {
+  color: #40414e;
+  text-decoration: none;
+  border-bottom: 2px solid #40414e;
+}
+
+.light-theme a:hover {
+  color: #40414e;
+}
+
+.light-theme .link-active {
+  border: 2px solid #40414e;
+}
+
+.light-theme input {
+  background-color: #ffc000;
+  color: #40414e;
+  border: none;
+  border-bottom: 2px solid #40414e;
+}
+
+.light-theme input:focus,
+.light-theme input:hover {
+  border: 2px solid #40414e;
+}
+
+.light-theme input::placeholder {
+  color: #40414e;
+}
+
+.light-theme .tip-container {
+  border: 2px solid #40414e;
+}

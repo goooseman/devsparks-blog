@@ -1,0 +1,102 @@
+@import url('https://fonts.googleapis.com/css2?family=Fira+Code&display=swap');
+
+/* Global styles */
+body {
+  font-family: 'Fira Code', monospace;
+  margin: 0;
+}
+
+a {
+  text-decoration: none;
+  border-bottom: 2px solid;
+}
+
+a:hover {
+  text-decoration: none;
+}
+
+.container {
+  max-width: 600px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.link-active {
+  border: 2px solid;
+}
+
+input {
+  border: none;
+  outline: none;
+  background-color: transparent;
+}
+
+input:focus,
+input:hover {
+  border: 2px solid;
+}
+
+input::placeholder {
+  color: inherit;
+}
+
+/* Header styles */
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+header .theme-switch {
+  width: 24px;
+  height: 24px;
+  border: 2px solid;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+}
+
+/* Main styles */
+main {
+  padding: 50px 0;
+  position: relative;
+  z-index: 1;
+}
+
+/* Footer styles */
+footer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+footer .author-photo {
+  width: 200px;
+  height: 200px;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+footer .about-text {
+  border: 2px solid;
+  padding: 20px;
+  text-align: center;
+}
+
+/* Responsive styles */
+@media screen and (min-width: 680px) {
+  footer {
+    flex-direction: row;
+    justify-content: space-between;
+  }
+
+  footer .author-photo {
+    order: 1;
+  }
+
+  footer .about-text {
+    order: 2;
+  }
+}

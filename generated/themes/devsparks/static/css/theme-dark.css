@@ -1,0 +1,42 @@
+body.dark-theme {
+  background-color: #40414e;
+  color: #ffc000;
+}
+
+body.dark-theme a {
+  color: #ffc000;
+  text-decoration: none;
+  border-bottom: 2px solid #ffc000;
+}
+
+body.dark-theme a:hover {
+  color: #ffc000;
+}
+
+body.dark-theme .link-active {
+  border: 2px solid #ffc000;
+}
+
+body.dark-theme input {
+  background-color: #40414e;
+  color: #ffc000;
+  border: none;
+  border-bottom: 2px solid #ffc000;
+}
+
+body.dark-theme input:focus,
+body.dark-theme input:hover {
+  border: 2px solid #ffc000;
+}
+
+body.dark-theme input::placeholder {
+  color: #ffc000;
+}
+
+body.dark-theme .tip-container {
+  border: 2px solid #ffc000;
+}
+
+body.dark-theme .tip-image {
+  content: url("http://placekitten.com/20/20?theme=dark");
+}

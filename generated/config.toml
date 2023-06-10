@@ -1,0 +1,29 @@
+baseURL = "https://devsparks.goooseman.dev"
+languageCode = "en-us"
+title = "DevSparks"
+theme = "devsparks"
+
+[params]
+  dateFormat = "January 2, 2006"
+
+[menu]
+  [[menu.main]]
+    identifier = "hacks"
+    name = "Hacks"
+    url = "/"
+    weight = 1
+  [[menu.main]]
+    identifier = "about"
+    name = "About"
+    url = "/about"
+    weight = 2
+  [[menu.main]]
+    identifier = "github"
+    name = "GitHub"
+    url = "https://github.com/goooseman/devsparks-blog"
+    weight = 3
+
+[markup]
+  [markup.goldmark]
+    [markup.goldmark.renderer]
+      unsafe = true
