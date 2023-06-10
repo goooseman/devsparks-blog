@@ -3,40 +3,40 @@ body.dark-theme {
   color: #ffc000;
 }
 
-body.dark-theme a {
+.dark-theme a {
   color: #ffc000;
   text-decoration: none;
   border-bottom: 2px solid #ffc000;
 }
 
-body.dark-theme a:hover {
+.dark-theme a:hover {
   color: #ffc000;
 }
 
-body.dark-theme .link-active {
+.dark-theme .layout__link__active {
   border: 2px solid #ffc000;
 }
 
-body.dark-theme input {
+.dark-theme input {
   background-color: #40414e;
   color: #ffc000;
   border: none;
   border-bottom: 2px solid #ffc000;
 }
 
-body.dark-theme input:focus,
-body.dark-theme input:hover {
+.dark-theme input:focus,
+.dark-theme input:hover {
   border: 2px solid #ffc000;
 }
 
-body.dark-theme input::placeholder {
+.dark-theme input::placeholder {
   color: #ffc000;
 }
 
-body.dark-theme .tip-container {
+.dark-theme .header__theme_switch {
   border: 2px solid #ffc000;
 }
 
-body.dark-theme .tip-image {
-  content: url("http://placekitten.com/20/20?theme=dark");
+.dark-theme .tip__container {
+  border: 2px solid #ffc000;
 }

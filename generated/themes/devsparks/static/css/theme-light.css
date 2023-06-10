@@ -13,7 +13,7 @@ body.light-theme {
   color: #40414e;
 }
 
-.light-theme .link-active {
+.light-theme .layout__link__active {
   border: 2px solid #40414e;
 }
 
@@ -33,17 +33,6 @@ body.light-theme {
   color: #40414e;
 }
 
-.light-theme .tip-container {
+.light-theme .header__theme_switch {
   border: 2px solid #40414e;
-}
-
-.light-theme .tip-title {
-  font-style: italic;
-}
-
-.light-theme .tip-image {
-  position: absolute;
-  top: 0;
-  left: 20%;
-  content: url("http://placekitten.com/20/20?theme=light");
 }

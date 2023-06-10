@@ -1,6 +1,5 @@
-
-<div class="tip-container">
-  <h4 class="tip-title">Padawan's Playground</h4>
-  <img class="tip-image" src="{{ if eq .Page.Site.Params.theme "light" }}http://placekitten.com/20/20?theme=light{{ else }}http://placekitten.com/20/20?theme=dark{{ end }}" alt="Padawan's Playground Icon">
+<div class="tip__container section__tip__padawan">
+  <h4 class="tip__title">Padawan's Playground</h4>
+  <img class="tip__image" src="http://placekitten.com/20/20?theme=light" data-theme-light-src="http://placekitten.com/20/20?theme=light" data-theme-dark-src="http://placekitten.com/20/20?theme=dark" alt="Padawan's Playground Icon">
   {{ .Inner }}
 </div>

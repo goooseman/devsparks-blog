@@ -1,13 +1,9 @@
 @import url('https://fonts.googleapis.com/css2?family=Fira+Code&display=swap');
 
-* {
-  box-sizing: border-box;
-  font-family: 'Fira Code', monospace;
-}
-
+/* Global styles */
 body {
+  font-family: 'Fira Code', monospace;
   margin: 0;
-  padding: 0;
 }
 
 a {
@@ -17,16 +13,6 @@ a {
 
 a:hover {
   text-decoration: none;
-}
-
-.link-active {
-  border: 2px solid;
-}
-
-.container {
-  max-width: 600px;
-  margin: 0 auto;
-  padding: 0 20px;
 }
 
 input {
@@ -44,50 +30,53 @@ input::placeholder {
   color: inherit;
 }
 
-header {
+.layout__container {
+  max-width: 600px;
+  width: 100%;
+  padding-left: 20px;
+  padding-right: 20px;
+  margin: 0 auto;
+}
+
+.layout__header {
   display: flex;
   justify-content: space-between;
-  align-items: center;
 }
 
-main {
-  padding: 50px 0;
+.header__theme_switch {
+  display: inline-block;
+  width: 24px;
+  height: 24px;
+  border: 2px solid;
+  text-align: center;
+  cursor: pointer;
 }
 
-footer {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+.layout__link__active {
+  border: 2px solid;
 }
 
-footer img {
-  width: 200px;
-  height: 200px;
-}
-
-footer img:hover {
-  content: url('http://placekitten.com/200/200?foo=hover');
-}
-
-.tip-container {
+.tip__container {
   position: relative;
   border: 2px solid;
-  margin-top: 30px;
+  margin-top: 25px;
   margin-bottom: 5px;
 }
 
-.tip-title {
+.tip__title {
   font-style: italic;
 }
 
-.tip-image {
+.tip__image {
   position: absolute;
   top: 0;
   left: 20%;
 }
 
+/* Breakpoints */
 @media screen and (min-width: 680px) {
-  footer {
-    flex-direction: row;
+  .layout__container {
+    padding-left: 0;
+    padding-right: 0;
   }
 }

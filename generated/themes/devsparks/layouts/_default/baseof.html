@@ -5,21 +5,29 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>{{ .Site.Title }}</title>
   <link href="https://fonts.googleapis.com/css2?family=Fira+Code&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="{{ "css/main.css" | absURL }}">
-  <link rel="stylesheet" href="{{ "css/theme-light.css" | absURL }}" id="light-theme">
-  <link rel="stylesheet" href="{{ "css/theme-dark.css" | absURL }}" id="dark-theme" disabled>
-  <script src="{{ "js/theme-switcher.js" | absURL }}" defer></script>
+  <link rel="stylesheet" href="/themes/devsparks/static/css/main.css">
+  <link rel="stylesheet" href="/themes/devsparks/static/css/theme-light.css" id="theme-stylesheet">
+  <script src="/themes/devsparks/static/js/theme-switcher.js" defer></script>
 </head>
 <body>
-  <header>
-    {{ partial "header.html" . }}
+  <header class="layout__header">
+    <div class="layout__container">
+      <div class="layout__header_left">
+        <a href="/" class="{{ if eq .Section "home" }}layout__link__active{{ end }}">Hacks</a>
+        <a href="/about" class="{{ if eq .Section "about" }}layout__link__active{{ end }}">About</a>
+        <a href="https://github.com/goooseman/devsparks-blog">GitHub</a>
+        <a href="https://github.com/goooseman/devsparks-blog/issues/new?title=DevSparks+Feedback&body=I+found+something+wrong+on+this+page%3A%0A%0A++{{ .Permalink }}%0A%0A++Here%27s+what+it+is%3A" target="_blank">Fix typo</a>
+      </div>
+      <div class="layout__header_right">
+        <button id="theme-switch" class="header__theme_switch" aria-label="Switch to dark theme">🌞</button>
+      </div>
+    </div>
   </header>
   <main>
-    {{ block "main" . }}{{ end }}
+    <div class="layout__container">
+      {{ block "main" . }}{{ end }}
+    </div>
   </main>
-  <footer>
-    {{ partial "footer.html" . }}
-  </footer>
-  <script src="{{ "js/remark42-integration.js" | absURL }}" defer></script>
+  {{ partial "footer.html" . }}
 </body>
 </html>
