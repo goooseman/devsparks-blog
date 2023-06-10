@@ -118,7 +118,7 @@ Hugo theme: `devsparks`
 
 Should have Makefile
 - serve
-  - to run `[ ! -e ./content ] && ln -sf ../content/ ./content` and then run hugo with docker
+  - to run then run hugo with docker, but add additional mount: `$(PWD)/../content:/src/content`
 - build
   - to build project with docker
 
@@ -131,6 +131,10 @@ Should NOT create content folder.
 - config.toml
 - themes/devsparks/index.html
 - themes/devsparks/layouts/_default/baseof.html
+  - use `<link rel="stylesheet" href="{{ "css/main.css" | absURL }}">` to connect styles
+  - do not use `disabled` on any css
+  - connect both themes
+  - use `<script src="{{ "js/theme-switcher.js" | absURL }}" defer></script>` to connect JS
 - themes/devsparks/layouts/_default/list.html
 - themes/devsparks/layouts/_default/single.html
 - themes/devsparks/layouts/partials/footer.html
@@ -191,5 +195,5 @@ Shortcodes (html file without shortcode itself, contents only):
   - <div class="tip-container (hackermans-tip | padawans-playground)">
     - <h4 class="tip-title">Hackerman's tip or Padawan's Playground
     - <img class="tip-image" /> (Use http://placekitten.com/20/20?theme=light image for light theme and http://placekitten.com/20/20?theme=dark for dark theme.)
-    - inner contents of the tip passed from blog post
+    - `{{ .Inner | markdownify }}`
 
