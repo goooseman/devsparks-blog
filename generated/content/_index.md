@@ -2,8 +2,6 @@
 title: "Home"
 ---
 
-# Hacks
-
 {{ range (where .Site.RegularPages "Type" "in" (slice "hacks")).GroupByDate "2006" }}
 <h2>{{ .Key }}</h2>
 <ul>

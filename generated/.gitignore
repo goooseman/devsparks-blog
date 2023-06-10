@@ -1,0 +1,6 @@
+.hugo_build.lock
+node_modules/
+public/
+resources/
+themes/devsparks/static/css/*.min.css
+themes/devsparks/static/js/*.min.js

@@ -1,5 +1,9 @@
 <div class="tip-container">
   <h4 class="tip-title">Hackerman's tip</h4>
-  <img class="tip-image" src="{{ if eq .Site.Data.theme "light" }}http://placekitten.com/20/20?theme=light{{ else }}http://placekitten.com/20/20?theme=dark{{ end }}" alt="Hackerman's tip icon">
+  {{ if eq .Page.Params.theme "light" }}
+    <img class="tip-image" src="http://placekitten.com/20/20?theme=light" alt="Hackerman's tip icon">
+  {{ else }}
+    <img class="tip-image" src="http://placekitten.com/20/20?theme=dark" alt="Hackerman's tip icon">
+  {{ end }}
   {{ .Inner }}
 </div>

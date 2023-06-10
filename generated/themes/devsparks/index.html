@@ -6,8 +6,7 @@
     <title>DevSparks</title>
     <link href="https://fonts.googleapis.com/css2?family=Fira+Code&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="/css/main.css">
-    <link rel="stylesheet" href="/css/theme-light.css" id="theme-light">
-    <link rel="stylesheet" href="/css/theme-dark.css" id="theme-dark" disabled>
+    <link rel="stylesheet" href="/css/theme-light.css" id="theme-stylesheet">
     <script src="/js/theme-switcher.js" defer></script>
 </head>
 <body>
@@ -35,7 +34,12 @@
             {{ end }}
         </div>
     </main>
-    {{ partial "footer.html" . }}
+    <footer>
+        <div class="container">
+            <img src="http://placekitten.com/200/200" alt="Author photo" class="author-photo">
+            <p class="about-text">Footer Ipsum</p>
+        </div>
+    </footer>
     <script src="/js/remark42-integration.js" defer></script>
 </body>
 </html>

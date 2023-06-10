@@ -7,4 +7,4 @@ serve:
 	docker run --rm -it -v $(PWD):/src -p 1313:1313 $(DOCKER_IMAGE) server --bind 0.0.0.0
 
 build:
-	docker run --rm -it -v $(PWD):/src $(DOCKER_IMAGE)
+	docker run --rm -it -v $(PWD):/src $(DOCKER_IMAGE) --minify

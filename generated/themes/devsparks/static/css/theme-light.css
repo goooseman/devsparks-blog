@@ -24,13 +24,13 @@ body.light-theme {
   border-bottom: 2px solid #40414e;
 }
 
+.light-theme input::placeholder {
+  color: #40414e;
+}
+
 .light-theme input:focus,
 .light-theme input:hover {
   border: 2px solid #40414e;
-}
-
-.light-theme input::placeholder {
-  color: #40414e;
 }
 
 .light-theme .tip-container {
