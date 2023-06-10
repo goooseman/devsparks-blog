@@ -133,7 +133,7 @@ Blog address: `devsparks.goooseman.dev`.
 - Back-end: Go, Hugo, Remark42
 - Front-end: HTML, CSS, JavaScript (for interactive elements)
 
-Should have Makefile to serve and build project with docker.
+Should have Makefile to serve project with docker-compose and build project with docker.
 Should have docker-compose to serve the project together with remark42.
 
 ### Remark42 integration
@@ -152,7 +152,7 @@ Add following snippets to end of the body:
 <script>
   // https://remark42.com/docs/configuration/frontend/
   var remark_config = {
-    host: 'https://remark42.goooseman.dev',
+    host: 'https://remark42.goooseman.dev', // SHOULD BE ENV TO USE OTHER ADDRESS LOCALLY
     site_id: 'dev_sparks',
     components: ['embed', 'last-comments']
     max_shown_comments: 100,
