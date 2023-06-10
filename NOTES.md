@@ -32,7 +32,7 @@ Two themes: light and dark.
 
 ### Common styling:
 
-- Fira Code font
+- Fira Code font (`https://fonts.googleapis.com/css2?family=Fira+Code&display=swap`)
 - Border width: 2px (global variable)
 - Links: text color both when normal or hovered
 - Links: always have border bottom 2px
