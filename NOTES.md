@@ -48,7 +48,7 @@ Two themes: light and dark.
     - bordered when active/hover
     - placeholder text should also be of `text-color`
 
-### Site layour
+### Site layout
 
 - `<header>`:
   - contains navigation links: Hacks. Also a Search box, Fix typo link, switch theme switch.
@@ -123,6 +123,7 @@ Some blog posts can contain "Hackerman's tip" and "Padawan's Playground" section
 - Section should be relative. 
 - Section should have 25px margin top and 5px margin bottom to fix image position overflow. 
 - Title inside section should be italic.
+- Please create reusable `{{< hackermans-tip >}}` and `{{< padawans-playground >}}` shortcodes
 
 Please create one example of a hack with Lorem Ipsum text containing both Padawan and Hackerman sections.
 
@@ -130,11 +131,28 @@ Please create one example of a hack with Lorem Ipsum text containing both Padawa
 
 Blog address: `devsparks.goooseman.dev`.
 Project structure: hugo blog
+Hugo theme: `devsparks`
 
 - Back-end: Go, Hugo, Remark42
 - Front-end: HTML, CSS, JavaScript (for interactive elements)
 
-Should have Makefile to serve project with docker-compose and build project with docker.
+Should have Makefile to serve project and build hugo project with docker.
+
+### Project structure
+
+- Makefile
+- config.toml
+- content/hacks/example-hack.md
+- content/_index.md
+- themes/devsparks/index.html
+- themes/devsparks/layouts/_default/baseof.html
+- themes/devsparks/layouts/_default/list.html
+- themes/devsparks/layouts/_default/single.html
+- themes/devsparks/layouts/partials/footer.html
+- themes/devsparks/layouts/partials/header.html
+- themes/devsparks/static/css/main.css
+- themes/devsparks/static/js/remark42-integration.js
+- themes/devsparks/static/js/theme-switcher.js
 
 ### Remark42 integration
 
