@@ -2,7 +2,13 @@
 
 :root {
   --border-width: 2px;
-  --breakpoint: 680px;
+  --desktop-breakpoint: 680px;
+}
+
+body {
+  font-family: 'Fira Code', monospace;
+  margin: 0;
+  padding: 0;
 }
 
 .light-theme {
@@ -17,8 +23,7 @@
   --border-color: #ffc000;
 }
 
-body {
-  font-family: 'Fira Code', monospace;
+body, input {
   background-color: var(--background-color);
   color: var(--text-color);
 }
@@ -27,6 +32,10 @@ a {
   color: var(--text-color);
   text-decoration: none;
   border-bottom: var(--border-width) solid var(--text-color);
+}
+
+a:hover {
+  color: var(--text-color);
 }
 
 .link-active {
@@ -39,11 +48,22 @@ a {
   padding: 0 20px;
 }
 
+@media (min-width: 680px) {
+  .container {
+    padding: 0;
+  }
+}
+
 input {
   border: none;
   border-bottom: var(--border-width) solid var(--border-color);
-  color: var(--text-color);
   outline: none;
+  background-color: transparent;
+  color: var(--text-color);
+}
+
+input::placeholder {
+  color: var(--text-color);
 }
 
 input:focus,
@@ -51,46 +71,15 @@ input:hover {
   border: var(--border-width) solid var(--border-color);
 }
 
-input::placeholder {
-  color: var(--text-color);
-}
-
-header {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
-
-header .theme-switch {
+#theme-switch {
+  background: none;
+  border: var(--border-width) solid var(--border-color);
   width: 24px;
   height: 24px;
-  border: var(--border-width) solid var(--border-color);
   display: flex;
   justify-content: center;
   align-items: center;
   cursor: pointer;
-}
-
-main {
-  padding: 50px 0;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1), 0 -2px 4px rgba(0, 0, 0, 0.1);
-}
-
-footer {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  text-align: center;
-}
-
-footer img {
-  width: 200px;
-  height: 200px;
-}
-
-footer p {
-  border: var(--border-width) solid var(--border-color);
-  padding: 20px;
 }
 
 .hackermans-tip,
@@ -114,28 +103,10 @@ footer p {
   top: 0;
   width: 20px;
   height: 20px;
-  background-image: url('../images/hackerman-light.png');
-  background-repeat: no-repeat;
-  background-size: cover;
+  background-image: url(http://placekitten.com/20/20?theme=light);
 }
 
 .dark-theme .hackermans-tip::before,
 .dark-theme .padawans-playground::before {
-  background-image: url('../images/hackerman-dark.png');
-}
-
-@media screen and (min-width: var(--breakpoint)) {
-  footer {
-    flex-direction: row;
-    justify-content: space-between;
-    text-align: left;
-  }
-
-  footer img {
-    order: 1;
-  }
-
-  footer p {
-    order: 2;
-  }
+  background-image: url(http://placekitten.com/20/20?theme=dark);
 }

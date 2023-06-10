@@ -1,0 +1,22 @@
+<header>
+  <nav class="container">
+    <a href="{{ "/" | relURL }}" class="{{ if eq .Kind "home" }}link-active{{ end }}">Hacks</a>
+    <a href="{{ "/about" | relURL }}" class="{{ if eq .Kind "about" }}link-active{{ end }}">About</a>
+    <a href="https://github.com/goooseman/devsparks-blog">GitHub</a>
+    <a href="https://github.com/goooseman/devsparks-blog/issues/new?title=DevSparks+Feedback&body=I+found+something+wrong+on+this+page%3A%0A%0A++{{ .Permalink | urlize }}%0A%0A++Here%27s+what+it+is%3A" target="_blank" rel="noopener noreferrer">Fix typo</a>
+    <button id="theme-switch" aria-label="Switch to light theme" onclick="switchTheme()">
+      🌞
+    </button>
+  </nav>
+</header>
+<script>
+  function switchTheme() {
+    const themeSwitch = document.getElementById('theme-switch');
+    const currentTheme = document.documentElement.getAttribute('data-theme');
+    const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
+    document.documentElement.setAttribute('data-theme', newTheme);
+    themeSwitch.setAttribute('aria-label', newTheme === 'dark' ? 'Switch to light theme' : 'Switch to dark theme');
+    themeSwitch.textContent = newTheme === 'dark' ? '🌞' : '🌒';
+    window.REMARK42.changeTheme(newTheme);
+  }
+</script>
