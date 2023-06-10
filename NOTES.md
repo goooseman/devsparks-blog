@@ -29,6 +29,7 @@ Two themes: light and dark.
         - `background-color`: `graphite` (`#40414e`)
         - `text-color`: `amber` (`#ffc000`)
         - `border-color`: `amber` (`#ffc000`)
+- `background-color` should be background of whole website
 
 ### Common styling:
 
@@ -47,6 +48,7 @@ Two themes: light and dark.
     - horizontal line of `border-color` when not active/hover
     - bordered when active/hover
     - placeholder text should also be of `text-color`
+    - background color same as site background
 
 ### Site layout
 
@@ -166,6 +168,16 @@ Should have Makefile to serve project and build hugo project with docker.
 - themes/devsparks/static/css/main.css
 - themes/devsparks/static/js/remark42-integration.js
 - themes/devsparks/static/js/theme-switcher.js
+
+### Shared dependencies
+
+ID names of DOM elements:
+   - theme-switch (for theme toggle button)
+   - remark42 (for Remark42 comments integration)
+
+Classnames:
+   - .container
+   - .link-active
 
 ### Remark42 integration
 
