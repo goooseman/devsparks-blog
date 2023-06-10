@@ -1,37 +1,23 @@
-version: "2"
-
+version: '3.8'
 services:
-  remark:
-    build: .
-    image: umputun/remark42:latest
-    container_name: "remark42"
-    hostname: "remark42"
-    restart: always
-    logging:
-      driver: json-file
-      options:
-        max-size: "10m"
-        max-file: "5"
-    environment:
-      - REMARK_URL=https://remark42.goooseman.dev
-      - SECRET
-      - DEBUG=true
-      - AUTH_ANON=true 
-      - AUTH_GOOGLE_CID
-      - AUTH_GOOGLE_CSEC
-      - AUTH_GITHUB_CID
-      - AUTH_GITHUB_CSEC
-      - AUTH_FACEBOOK_CID
-      - AUTH_FACEBOOK_CSEC
-      - AUTH_DISQUS_CID
-      - AUTH_DISQUS_CSEC
-    volumes:
-      - ./var:/srv/var
   hugo:
     image: klakegg/hugo:0.89.4
-    container_name: "hugo"
     volumes:
       - .:/src
-    command: "server --bind 0.0.0.0 --disableFastRender"
     ports:
-      - "1313:1313"
+      - 1313:1313
+    command: server --bind 0.0.0.0 --disableFastRender
+
+  remark42:
+    image: umputun/remark42:latest
+    environment:
+      - REMARK_URL=https://remark42.goooseman.dev
+      - SITE=dev_sparks
+      - SECRET=some-secret-key
+      - AUTH_ANON=true
+      - AUTH_GITHUB_CID=your-github-client-id
+      - AUTH_GITHUB_CSEC=your-github-client-secret
+    volumes:
+      - ./data/remark42:/srv/var
+    ports:
+      - 8080:8080

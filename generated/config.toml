@@ -7,15 +7,21 @@ theme = "devsparks"
   dateFormat = "January 2, 2006"
 
 [markup]
-  [markup.goldmark.renderer]
-    unsafe = true
+  [markup.goldmark]
+    [markup.goldmark.renderer]
+      unsafe = true
 
-[[menu.main]]
-  name = "Hacks"
-  url = "/"
-  weight = 1
+[outputFormats]
+  [outputFormats.REMARK42]
+    mediaType = "text/html"
+    baseName = "index"
+    isHTML = true
+    notAlternative = true
+    permalinkable = false
+    path = "remark42"
 
-[[menu.main]]
-  name = "About"
-  url = "/about"
-  weight = 2
+[outputs]
+  home = ["HTML", "REMARK42"]
+  section = ["HTML"]
+  taxonomy = ["HTML"]
+  term = ["HTML"]

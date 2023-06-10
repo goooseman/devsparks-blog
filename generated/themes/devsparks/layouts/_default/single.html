@@ -4,7 +4,7 @@
   <p class="date">{{ .Date.Format "January 2, 2006" }}</p>
   <div class="tags">
     {{ range .Params.tags }}
-      <span class="tag">{{ . }}</span>
+    <a href="{{ $.Site.BaseURL }}tags/{{ . | urlize }}">{{ . }}</a>
     {{ end }}
   </div>
   <div class="content">
