@@ -1,0 +1,128 @@
+@import url('https://fonts.googleapis.com/css2?family=Fira+Code&display=swap');
+
+:root {
+  --border-width: 2px;
+}
+
+body {
+  font-family: 'Fira Code', monospace;
+}
+
+a {
+  text-decoration: none;
+  border-bottom: var(--border-width) solid;
+}
+
+a:hover {
+  text-decoration: none;
+}
+
+.link-active {
+  border: var(--border-width) solid;
+}
+
+.container {
+  max-width: 600px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+input {
+  border: none;
+  border-bottom: var(--border-width) solid;
+  outline: none;
+}
+
+input:focus,
+input:hover {
+  border: var(--border-width) solid;
+}
+
+input::placeholder {
+  color: inherit;
+}
+
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+main {
+  padding: 50px 0;
+  position: relative;
+  z-index: 1;
+}
+
+main::before,
+main::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  height: 20px;
+  z-index: -1;
+}
+
+main::before {
+  top: 0;
+  background: linear-gradient(to top, rgba(0, 0, 0, 0.1), transparent);
+}
+
+main::after {
+  bottom: 0;
+  background: linear-gradient(to bottom, rgba(0, 0, 0, 0.1), transparent);
+}
+
+footer {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+}
+
+footer img {
+  margin: 20px;
+}
+
+footer p {
+  border: var(--border-width) solid;
+  padding: 20px;
+  text-align: center;
+}
+
+@media screen and (min-width: 680px) {
+  footer {
+    justify-content: space-between;
+  }
+
+  footer img {
+    order: 1;
+  }
+
+  footer p {
+    order: 2;
+    text-align: left;
+  }
+}
+
+.hackerman-tip,
+.padawan-playground {
+  position: relative;
+  border: var(--border-width) solid;
+  margin-top: 25px;
+  margin-bottom: 5px;
+}
+
+.hackerman-tip img,
+.padawan-playground img {
+  position: absolute;
+  left: 20%;
+  top: 0;
+  transform: translateY(-50%);
+}
+
+.hackerman-tip h3,
+.padawan-playground h3 {
+  font-style: italic;
+}

@@ -12,6 +12,11 @@ This project is a static blog composed primarily of these developer lifehacks.
 
 </div>
 
+## TODO
+
+- Telegram icon
+- Images for footer/padawan/hackerman
+
 ## Tech Stack 🛠️
 We use a range of technologies to make this project possible:
 - **Back-end**: Go and Hugo.
