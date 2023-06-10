@@ -133,7 +133,7 @@ Blog address: `devsparks.goooseman.dev`.
 - Back-end: Go, Hugo, Remark42
 - Front-end: HTML, CSS, JavaScript (for interactive elements)
 
-Should have Makefile to serve and build project.
+Should have Makefile to serve and build project with docker.
 Should have docker-compose to serve the project together with remark42.
 
 ### Remark42 integration
