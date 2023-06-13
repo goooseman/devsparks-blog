@@ -10,6 +10,6 @@ You might notice that the blog's aesthetics aren't your typical sleek and polish
 
 While the blog's form changes, we don't forget our past. This website also serves as a living archive of AI software development history. You can journey through time and explore the backups of all previous versions of this website below:
 
-- [20230610-v1.0.0-initial-gpt4](https://1.0.0.devsparks.goooseman.dev)
+- [20230610-v1.0.0-initial-gpt4-8k](https://1.0.0.devsparks.goooseman.dev)
 
 Keep an eye on this space as we continue to evolve and push the boundaries of AI in software development!
