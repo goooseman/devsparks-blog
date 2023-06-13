@@ -30,7 +30,8 @@ Two themes: light and dark.
 - Links: text color both when normal or hovered
 - Links: always have border bottom 2px
 - Links: never underline, not on hover also
-- Navigation links in header: should have `.layout__link__active` class, when page is active. Hacks page should be active when any hack is opened.
+- Links: on hover should change background to `text-color` and color to `background-color` with an animation of sliding from bottom to top
+- Navigation links in header: should have `.layout__link__active` class, when page is active. Hacks page should be active when index or any hack is opened.
 - breakpoints: >680px - desktop, <680px mobile
 - inputs:
     - horizontal line of `border-color` when not active/hover
@@ -40,6 +41,8 @@ Two themes: light and dark.
 
 ### Site layout
 
+- body:
+  - should not have horizontal scroll on mobile
 - `<header>`:
   - everything inside should be wrapped in `.layout__container`
   - contains navigation links: Hacks, About, [GitHub](https://github.com/goooseman/devsparks-blog). Also Fix typo link, switch theme switch on the right.
@@ -136,7 +139,10 @@ Should NOT create content folder.
   - use `<script src="{{ "js/theme-switcher.js" | absURL }}" defer></script>` to connect JS
   - footer and header are in separate files
 - themes/devsparks/layouts/_default/list.html
+  - Contains Hacks titile if it is index
+  - Contains "Tag: ${tag}" title if it is a tag page
 - themes/devsparks/layouts/_default/single.html
+  - should not contain `<main>`, because it should be inside `baseof.html`
 - themes/devsparks/layouts/partials/footer.html
 - themes/devsparks/layouts/partials/header.html
 - themes/devsparks/layouts/shortcodes/hackermans-tip.html
