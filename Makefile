@@ -1,4 +1,8 @@
 .PHONY: smol-rewrite
-
 smol-rewrite:
-	python3 ../developer/main_no_modal.py ./NOTES.md
+    . ./.env
+	python3 ../developer/main_no_modal.py ./NOTES.md ./versions/latest
+
+.PHONY: serve
+serve:
+    cd versions/latest && make serve
