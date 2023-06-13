@@ -4,6 +4,10 @@ As of now I do not have access to 32K GPT4, so our abilities are limited and we 
 
 ### Manual steps
 
+#### Footer text
+
+Footer text is inside footer.md file
+
 #### Remark42 integration
 
 Remark42 is a comments engine which has a special backend and a frontend integration. We have already deployed version at https://r42.goooseman.dev

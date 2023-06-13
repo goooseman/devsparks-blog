@@ -18,7 +18,6 @@ And hey, it even lets you open any folder with your system file explorer (like F
 👉 [Installation instructions](https://github.com/wting/autojump#installation) got you covered. Most popular systems are supported, so just go ahead with `brew/apt-get/yum install autojump`.
 
 {{< hackermans-tip >}}
-Hackerman's tip
 
 If you're into oh-my-zsh as much as I am, then buckle up 'cause there's an [autojump plugin](https://github.com/ohmyzsh/ohmyzsh/tree/master/plugins/autojump). But all it does is initialize autojump in the shell. No biggie.
 
@@ -43,4 +42,5 @@ Hold onto your hats, folks, 'cause Autojump is the quickest way to open an IDE i
 {{< padawans-playground >}}
 
 Wondering why the `.` symbol is used in most commands? That's because these commands follow the `command <path>` API, where the second argument is the path of a file or folder. You can use it like `code README.md` or `code ~/Dev/todo-app`. Already in your desired folder? In Unix systems, `.` refers to the *current folder*, as also used in relative paths like `./components/Cucumber`.
+
 {{< /padawans-playground >}}

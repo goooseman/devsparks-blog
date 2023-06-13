@@ -30,8 +30,7 @@ Two themes: light and dark.
 - Links: text color both when normal or hovered
 - Links: always have border bottom 2px
 - Links: never underline, not on hover also
-- Navigation links in header: should have `.layout__link__active` class, when page active
-- .layout__link__active link should have border 2px left/right/top/bottom
+- Navigation links in header: should have `.layout__link__active` class, when page is active. Hacks page should be active when any hack is opened.
 - breakpoints: >680px - desktop, <680px mobile
 - inputs:
     - horizontal line of `border-color` when not active/hover
@@ -44,7 +43,7 @@ Two themes: light and dark.
 - `<header>`:
   - everything inside should be wrapped in `.layout__container`
   - contains navigation links: Hacks, About, [GitHub](https://github.com/goooseman/devsparks-blog). Also Fix typo link, switch theme switch on the right.
-  - should contain `.layout__header` class and then `.layout__header_left`, `.layout__header_right` 
+  - should contain `.layout__header` class
   - Fix typo button just opens following link in a new tab: "https://github.com/goooseman/devsparks-blog/issues/new?title=DevSparks+Feedback&body=I+found+something+wrong+on+this+page%3A%0A%0A++{CURRENT_PAGE}%0A%0A++Here%27s+what+it+is%3A"
   - switch theme switch
     - should contain `.header__theme_switch` class
@@ -58,7 +57,6 @@ Two themes: light and dark.
 - `<footer>`
   - everything inside should be wrapped in `.layout__container`
   - contains photo of the author with transparent bg and a small about text: Footer Ipsum
-  - text is wrapped with a single border around whole text, not single parapgraph, of `border-color`
   - photo of author: http://placekitten.com/200/200
   - photo of author when hovered: http://placekitten.com/200/200?foo=hover
   - should have flex layout: photo on the left, text on the right
@@ -98,12 +96,14 @@ On the home page footer should be rendered before main content, not after.
 A specific hack page contains:
 
 - Title
-- Date
+- Date (only if exists)
 - Tags (listed inline, not as bullet items)
 - Text content
 - Comments (just render #remark42 div)
 
 Tags should be links, when clicked other hacks by the same tag should be listed.
+
+Any code should be highlighted. Typescript, javascript, java, go, rust support is required.
 
 Do not generate hack itself, only the layout.
 
@@ -111,14 +111,14 @@ Do not generate hack itself, only the layout.
 
 Blog address: `devsparks.goooseman.dev`.
 Project structure: hugo blog
-Hugo theme: `devsparks`
+Hugo theme name: `devsparks`
 
 - Back-end: Go, Hugo, Remark42
 - Front-end: HTML, CSS, JavaScript (for interactive elements)
 
 Should have Makefile
 - serve
-  - to run then run hugo with docker, but add additional mount: `$(PWD)/../content:/src/content`
+  - to run then run hugo with docker, but add additional mount: `$(PWD)/../content:/src/content`. if files are changed, server should rebuild.
 - build
   - to build project with docker
 
@@ -129,12 +129,12 @@ Should NOT create content folder.
 - Makefile
 - .gitignore (`.hugo_build.lock`)
 - config.toml
-- themes/devsparks/index.html
 - themes/devsparks/layouts/_default/baseof.html
-  - use `<link rel="stylesheet" href="{{ "css/main.css" | absURL }}">` to connect styles
+  - use `<link rel="stylesheet" href="{{ "css/main.css" | absURL }}">` to connect all 4 styles files
   - do not use `disabled` on any css
   - connect both themes
   - use `<script src="{{ "js/theme-switcher.js" | absURL }}" defer></script>` to connect JS
+  - footer and header are in separate files
 - themes/devsparks/layouts/_default/list.html
 - themes/devsparks/layouts/_default/single.html
 - themes/devsparks/layouts/partials/footer.html
@@ -142,9 +142,11 @@ Should NOT create content folder.
 - themes/devsparks/layouts/shortcodes/hackermans-tip.html
 - themes/devsparks/layouts/shortcodes/padawans-playground.html
 - themes/devsparks/static/css/main.css
+- themes/devsparks/static/css/syntax-highlighting.css
 - themes/devsparks/static/css/theme-light.css
 - themes/devsparks/static/css/theme-dark.css
 - themes/devsparks/static/js/theme-switcher.js
+- themes/devsparks/static/js/footer-image.js
 
 ### Shared dependencies
 
@@ -156,8 +158,6 @@ ID names of DOM elements:
 
 Classnames:
 - .layout__header
-- .layout__header_left
-- .layout__header_right
 - .header__theme_switch
 - .layout__container
 - .layout__link__active
@@ -166,6 +166,13 @@ Classnames:
 - .tip__container
 - .tip__title
 - .tip__image
+- .article__title
+- .article__date
+- .article__tags
+- .article__content
+- .footer__content
+- .footer__about_text
+- .footer__author-photo
 
 Classname specs:
 
@@ -175,17 +182,25 @@ Classname specs:
 - .tip__image should be absolute positioned on a border with left: 20% and top: 0. 
 - .tip__container should be relative. 
 - .tip__container should have 25px margin top and 5px margin bottom to fix image position overflow. 
-- .tip__title inside section should be italic.
+- .tip__title inside section should be italic and bold.
 - .tip__container should have border of border-color
 - .tip__container should be relative
-- .tip__image should be absolute with top: 0, left: 20%
+- .tip__container should have padding 20px, margin-top 80px, margin-left and right -20px
+- .tip__image should be absolute with bottom: 100%, left: 20%
 - .tip__container should have margin-top: 30px;
 - .header__theme_switch
-  - should have no background, only 2px border
+  - should have transparent background, only 2px border
   - should be square
-- .layout__header should be flex
-- .layout__header_left should be on the left
-- .layout__header_right should be on the right
+  - text should be centered
+- .layout__header should be:
+  - `display: flex`
+  - `justify-content: space-between;`
+  - 10px padding from top
+- .layout__link__active
+  - 2px left/right/top/bottom
+- .footer__about_text
+  - text is wrapped with a single border around whole text, not single parapgraph, of `border-color`
+- .article__content h3 should have `padding-top: 5px` and `border-top: 1px solid currentColor`
 
 Shortcodes (html file without shortcode itself, contents only):
 - hackermans-tip
@@ -194,6 +209,6 @@ Shortcodes (html file without shortcode itself, contents only):
 - hackermans-tip and padawans-playground shortcode should wrap inner content in the following template:
   - <div class="tip-container (hackermans-tip | padawans-playground)">
     - <h4 class="tip-title">Hackerman's tip or Padawan's Playground
-    - <img class="tip-image" /> (Use http://placekitten.com/20/20?theme=light image for light theme and http://placekitten.com/20/20?theme=dark for dark theme.)
+    - <img class="tip-image" /> (Use http://placekitten.com/40/80?theme=light image for light theme and http://placekitten.com/40/80?theme=dark for dark theme.)
     - `{{ .Inner | markdownify }}`
 
