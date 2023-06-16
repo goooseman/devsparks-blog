@@ -1,5 +1,8 @@
 {{ define "main" }}
-  <h1>Hacks</h1>
+  {{ if .IsHome }}
+    <h1>Hacks</h1>
+  {{ end }}
+
   {{ range (where .Site.RegularPages "Type" "in" (slice "hacks")).GroupByDate "2006" }}
     <h2>{{ .Key }}</h2>
     <ul>
@@ -8,7 +11,7 @@
           <span class="date">{{ .Date.Format (.Site.Params.dateFormat | default "January 2, 2006" ) }}</span>
           <a class="title" href="{{ .Params.externalLink | default .RelPermalink }}">{{ .Title }}</a>
         </li>
-      {{- end -}}
+      {{ end }}
     </ul>
   {{ end }}
 {{ end }}

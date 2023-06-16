@@ -1,38 +1,97 @@
-body.light-theme {
-  background-color: #ffc000;
-  color: #40414e;
+
+@import url('https://fonts.googleapis.com/css2?family=Fira+Code&display=swap');
+
+:root {
+  --border-width: 2px;
+  --background-color-light: #ffc000;
+  --text-color-light: #40414e;
+  --border-color-light: #40414e;
+  --background-color-dark: #40414e;
+  --text-color-dark: #ffc000;
+  --border-color-dark: #ffc000;
 }
 
-.light-theme a {
-  color: #40414e;
+body {
+  margin: 0;
+  font-family: 'Fira Code', monospace;
+}
+
+a {
+  color: var(--text-color-light);
   text-decoration: none;
-  border-bottom: 2px solid #40414e;
+  border-bottom: var(--border-width) solid var(--text-color-light);
+  transition: background-color 0.3s, color 0.3s;
 }
 
-.light-theme a:hover {
-  color: #40414e;
+a:hover {
+  background-color: var(--text-color-light);
+  color: var(--background-color-light);
+  background-image: linear-gradient(to top, var(--background-color-light), var(--text-color-light));
+  background-position: 0 100%;
+  background-repeat: no-repeat;
+  background-size: 100% 200%;
 }
 
-.light-theme .layout__link__active {
-  border: 2px solid #40414e;
+.layout__header {
+  display: flex;
+  justify-content: space-between;
+  padding-top: 10px;
 }
 
-.light-theme input {
-  background-color: #ffc000;
-  color: #40414e;
-  border: none;
-  border-bottom: 2px solid #40414e;
+.header__theme_switch {
+  background-color: transparent;
+  border: var(--border-width) solid;
+  width: 20px;
+  height: 20px;
+  text-align: center;
 }
 
-.light-theme input:focus,
-.light-theme input:hover {
-  border: 2px solid #40414e;
+.layout__container {
+  width: 600px;
+  margin: 0 auto;
 }
 
-.light-theme input::placeholder {
-  color: #40414e;
+.layout__container {
+  width: 100%;
+  padding: 20px;
 }
 
-.light-theme .header__theme_switch {
-  border: 2px solid #40414e;
+.section__tip__hackerman,
+.section__tip__padawan {
+  position: relative;
+}
+
+.tip__container {
+  position: relative;
+  margin-top: 25px;
+  margin-bottom: 5px;
+  border: var(--border-width) solid var(--border-color-light);
+  padding: 20px;
+  margin-top: 300px;
+  margin-left: -20px;
+  margin-right: -20px;
+}
+
+.tip__image {
+  position: absolute;
+  bottom: 100%;
+  left: 20%;
+  height: 280px;
+}
+
+.tip__image {
+  filter: invert(100%);
+}
+
+.layout__link__active {
+  border: var(--border-width) solid;
+}
+
+.footer__about_text {
+  border: var(--border-width) solid var(--border-color-light);
+}
+
+.article__content h3 {
+  padding-top: 5px;
+  border-top: 1px solid currentColor;
 }

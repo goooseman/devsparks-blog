@@ -1,47 +1,45 @@
 baseURL = "https://devsparks.goooseman.dev"
 languageCode = "en-us"
-title = "DevSparks"
+title = "DevSparks Blog"
 theme = "devsparks"
 
 [module]
-[[module.mounts]]
-  source = '../../content'
-  target = 'content'
-[[module.mounts]]
-  source = '../../static'
-  target = 'static'
+  [[module.mounts]]
+    source = "../../content"
+    target = "content"
+  [[module.mounts]]
+    source = "../../static"
+    target = "static"
 
 [params]
   dateFormat = "January 2, 2006"
 
-[markup]
-  [markup.goldmark.renderer]
-    unsafe = true
-
-[[menu.main]]
-  name = "Hacks"
-  url = "/"
-  weight = 1
-
-[[menu.main]]
-  name = "About"
-  url = "/about"
-  weight = 2
-
-[[menu.main]]
-  name = "GitHub"
-  url = "https://github.com/goooseman/devsparks-blog"
-  weight = 3
-
 [outputFormats]
-  [outputFormats.REMARK42]
-    mediaType = "text/html"
+  [outputFormats.RSS]
+    mediaType = "application/rss+xml"
     baseName = "index"
-    isHTML = true
+    isPlainText = false
     notAlternative = true
 
-[outputs]
-  home = ["HTML", "REMARK42"]
-  section = ["HTML", "REMARK42"]
-  taxonomy = ["HTML", "REMARK42"]
-  term = ["HTML", "REMARK42"]
+[markup]
+  [markup.goldmark]
+    [markup.goldmark.renderer]
+      unsafe = true
+
+[menu]
+  [[menu.main]]
+    identifier = "hacks"
+    name = "Hacks"
+    url = "/"
+    weight = 1
+  [[menu.main]]
+    identifier = "about"
+    name = "About"
+    url = "/about/"
+    weight = 2
+  [[menu.main]]
+    identifier = "github"
+    name = "GitHub"
+    url = "https://github.com/goooseman/devsparks-blog"
+    weight = 3
+

@@ -1,82 +1,117 @@
+
 @import url('https://fonts.googleapis.com/css2?family=Fira+Code&display=swap');
 
-/* Global styles */
+:root {
+  --border-width: 2px;
+  --light-background-color: #ffc000;
+  --light-text-color: #40414e;
+  --light-border-color: #40414e;
+  --dark-background-color: #40414e;
+  --dark-text-color: #ffc000;
+  --dark-border-color: #ffc000;
+}
+
 body {
-  font-family: 'Fira Code', monospace;
   margin: 0;
+  font-family: 'Fira Code', monospace;
 }
 
 a {
+  color: var(--light-text-color);
   text-decoration: none;
-  border-bottom: 2px solid;
+  border-bottom: var(--border-width) solid var(--light-text-color);
+  transition: background-color 0.3s, color 0.3s;
 }
 
 a:hover {
-  text-decoration: none;
-}
-
-input {
-  border: none;
-  outline: none;
-  background-color: transparent;
-}
-
-input:focus,
-input:hover {
-  border: 2px solid;
-}
-
-input::placeholder {
-  color: inherit;
-}
-
-.layout__container {
-  max-width: 600px;
-  width: 100%;
-  padding-left: 20px;
-  padding-right: 20px;
-  margin: 0 auto;
+  background-color: var(--light-text-color);
+  color: var(--light-background-color);
+  background-image: linear-gradient(to top, var(--light-background-color), var(--light-background-color));
+  background-position: 0 100%;
+  background-repeat: no-repeat;
+  background-size: 100% 200%;
 }
 
 .layout__header {
   display: flex;
   justify-content: space-between;
+  padding-top: 10px;
 }
 
 .header__theme_switch {
-  display: inline-block;
-  width: 24px;
-  height: 24px;
-  border: 2px solid;
+  background-color: transparent;
+  border: var(--border-width) solid;
+  width: 20px;
+  height: 20px;
   text-align: center;
-  cursor: pointer;
+}
+
+.layout__container {
+  width: 600px;
+  margin: 0 auto;
+  padding-left: 20px;
+  padding-right: 20px;
 }
 
 .layout__link__active {
-  border: 2px solid;
+  border: var(--border-width) solid;
+}
+
+.section__tip__hackerman,
+.section__tip__padawan {
+  position: relative;
 }
 
 .tip__container {
   position: relative;
-  border: 2px solid;
   margin-top: 25px;
   margin-bottom: 5px;
-}
-
-.tip__title {
-  font-style: italic;
+  border: var(--border-width) solid var(--light-border-color);
+  padding: 20px;
+  margin-top: 300px;
+  margin-left: -20px;
+  margin-right: -20px;
 }
 
 .tip__image {
   position: absolute;
-  top: 0;
+  bottom: 100%;
   left: 20%;
+  height: 280px;
 }
 
-/* Breakpoints */
-@media screen and (min-width: 680px) {
+.tip__image.dark-theme {
+  filter: invert(100%);
+}
+
+.article__content h3 {
+  padding-top: 5px;
+  border-top: 1px solid currentColor;
+}
+
+.footer__about_text {
+  border: var(--border-width) solid var(--light-border-color);
+}
+
+.footer__author-photo {
+  display: block;
+  margin: 0 auto;
+}
+
+@media (max-width: 680px) {
   .layout__container {
-    padding-left: 0;
-    padding-right: 0;
+    width: 100%;
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+
+  body {
+    overflow-x: hidden;
+  }
+
+  .footer__author-photo {
+    display: block;
+    margin: 0 auto;
   }
 }
+

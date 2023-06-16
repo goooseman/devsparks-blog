@@ -1,42 +1,93 @@
-body.dark-theme {
-  background-color: #40414e;
-  color: #ffc000;
+
+/* themes/devsparks/static/css/theme-dark.css */
+
+:root {
+  --background-color: #40414e;
+  --text-color: #ffc000;
+  --border-color: #ffc000;
 }
 
-.dark-theme a {
-  color: #ffc000;
+body {
+  background-color: var(--background-color);
+  color: var(--text-color);
+}
+
+a {
+  color: var(--text-color);
   text-decoration: none;
-  border-bottom: 2px solid #ffc000;
+  border-bottom: 2px solid var(--text-color);
+  transition: background-color 0.3s, color 0.3s;
 }
 
-.dark-theme a:hover {
-  color: #ffc000;
+a:hover {
+  background-color: var(--text-color);
+  color: var(--background-color);
+  background-image: linear-gradient(to top, var(--background-color), var(--text-color));
 }
 
-.dark-theme .layout__link__active {
-  border: 2px solid #ffc000;
+.layout__link__active {
+  border: 2px solid var(--text-color);
 }
 
-.dark-theme input {
-  background-color: #40414e;
-  color: #ffc000;
-  border: none;
-  border-bottom: 2px solid #ffc000;
+.layout__header {
+  display: flex;
+  justify-content: space-between;
+  padding-top: 10px;
 }
 
-.dark-theme input:focus,
-.dark-theme input:hover {
-  border: 2px solid #ffc000;
+.header__theme_switch {
+  background-color: transparent;
+  border: 2px solid var(--text-color);
+  width: 30px;
+  height: 30px;
+  text-align: center;
 }
 
-.dark-theme input::placeholder {
-  color: #ffc000;
+.layout__container {
+  width: 600px;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 20px;
+  padding-right: 20px;
 }
 
-.dark-theme .header__theme_switch {
-  border: 2px solid #ffc000;
+.section__tip__hackerman .tip__container {
+  border: 2px solid var(--border-color);
+  position: relative;
+  padding: 20px;
+  margin-top: 300px;
+  margin-left: -20px;
+  margin-right: -20px;
 }
 
-.dark-theme .tip__container {
-  border: 2px solid #ffc000;
+.section__tip__hackerman .tip__image {
+  position: absolute;
+  bottom: 100%;
+  left: 20%;
+  height: 280px;
+}
+
+.section__tip__padawan .tip__container {
+  border: 2px solid var(--border-color);
+  position: relative;
+  padding: 20px;
+  margin-top: 300px;
+  margin-left: -20px;
+  margin-right: -20px;
+}
+
+.section__tip__padawan .tip__image {
+  position: absolute;
+  bottom: 100%;
+  left: 20%;
+  height: 280px;
+}
+
+.footer__about_text {
+  border: 2px solid var(--border-color);
+}
+
+.article__content h3 {
+  padding-top: 5px;
+  border-top: 1px solid currentColor;
 }

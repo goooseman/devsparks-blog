@@ -1,5 +1,15 @@
+# .gitignore
+
+
+# Hugo output directory
+/public/
+
+# Hugo cache directory
+/resources/
+
+# Ignore macOS system files
+.DS_Store
+
+# Ignore Hugo generated files
+.hugo_cache/
 .hugo_build.lock
-node_modules/
-public/
-resources/
-cache/

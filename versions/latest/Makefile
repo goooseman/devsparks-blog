@@ -1,10 +1,7 @@
-HUGO_VERSION := 0.89.4
-DOCKER_IMAGE := klakegg/hugo:$(HUGO_VERSION)
-
-.PHONY: serve
+.PHONY: serve build
 serve:
-	docker run --rm -it -v $(PWD):/src -v $(PWD)/../../content:/src/content -v $(PWD)/../../static:/src/static -p 1313:1313 $(DOCKER_IMAGE) server
+    docker run --rm -it -v $(PWD):/src -v $(PWD)/../../content:/src/content -v $(PWD)/../../static:/src/static -p 1313:1313 klakegg/hugo:0.111.3 server
 
-.PHONY: build
 build:
-	hugo
+    docker run --rm -it -v $(PWD):/src -v $(PWD)/../../content:/src/content -v $(PWD)/../../static:/src/static klakegg/hugo:0.113.0
+
