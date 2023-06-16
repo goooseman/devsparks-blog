@@ -62,6 +62,7 @@ Two themes: light and dark.
   - contains photo of the author with transparent bg and a small about text: Footer Ipsum
   - photo of author: `/human.png` (`human@2x.png`)
   - photo of author when hovered: `/robot.png` (`robot@2x.png`)
+  - height of the photo: 160px
   - should have flex layout: photo on the left, text on the right
   - for desktop breakpoint photo on the left column, text on the right
   - for mobile brealpoint photo is aligned to center and above the text
@@ -102,7 +103,7 @@ A specific hack page contains:
 - Date (only if exists)
 - Tags (listed inline, not as bullet items)
 - Text content
-- Comments (just render #remark42 div)
+- Comments (just render #remark42 div only on the Hack page)
 
 Tags should be links, when clicked other hacks by the same tag should be listed.
 
@@ -114,7 +115,7 @@ Do not generate hack itself, only the layout.
 
 Blog address: `devsparks.goooseman.dev`.
 Project structure: hugo blog
-Hugo version: 0.113.0
+Hugo version: 0.111.3
 Hugo theme name: `devsparks`
 
 - Back-end: Go, Hugo, Remark42
@@ -143,12 +144,13 @@ Should NOT create content folder.
   source = '../../static'
   target = 'static'
     ```
+  - Do not include anything about themes, it is CSS/JS only
 - themes/devsparks/layouts/_default/baseof.html
   - use `<link rel="stylesheet" href="{{ "css/main.css" | relURL }}">` to connect all 4 styles files
   - do not use `disabled` on any css
   - connect both themes
   - use `<script src="{{ "js/theme-switcher.js" | relURL }}" defer></script>` to connect JS
-  - footer and header are in separate files
+  - footer and header are in separate files, do not implement them in this file!
 - themes/devsparks/layouts/_default/list.html
   - Contains Hacks titile if it is index
   - Contains "Tag: ${tag}" title if it is a tag page
@@ -159,9 +161,13 @@ Should NOT create content folder.
 - themes/devsparks/layouts/shortcodes/hackermans-tip.html
 - themes/devsparks/layouts/shortcodes/padawans-playground.html
 - themes/devsparks/static/css/main.css
+  - contains all the site CSS, but not theming
 - themes/devsparks/static/css/syntax-highlighting.css
+  - contains only CSS for code syntax highligting, should work for single-lines `code` blocks (\` in markdown) and also multiline ones (\`\`\`) for different programming languages
 - themes/devsparks/static/css/theme-light.css
+  - contains only colors and other changes for light theme, do not contain any common styles
 - themes/devsparks/static/css/theme-dark.css
+  - contains only colors and other changes for dark theme, do not contain any common styles
 - themes/devsparks/static/js/theme-switcher.js
 - themes/devsparks/static/js/footer-image.js
 - themes/devsparks/static/js/remark42.js:
@@ -212,16 +218,16 @@ Classnames:
 
 Classname specs:
 
-- .layout__container class:
+- .layout__container:
   - 600px width on desktop, aligned center
   - 100% width with 20px left/right padding on mobile
-- .tip__image should be absolute positioned on a border with left: 20% and top: 0. 
+- .tip__image should be absolute positioned on a border with left: 20% and bottom: 100% to be on top of `.tip__container`. 
 - .tip__container should be relative. 
-- .tip__container should have 25px margin top and 5px margin bottom to fix image position overflow. 
+- .tip__container should have 300px margin top to fix image position overflow and 5px margin bottom. 
 - .tip__title inside section should be italic and bold.
 - .tip__container should have border of border-color
 - .tip__container should be relative
-- .tip__container should have padding 20px, margin-top 300px, margin-left and right -20px
+- .tip__container should have padding 20px, margin-left and right -20px
 - .tip__image should be absolute with bottom: 100%, left: 20%
 - .tip__image should be color inverted in dark theme
 - .tip__image should be 280px height
@@ -230,7 +236,7 @@ Classname specs:
   - should have transparent background, only 2px border
   - should be square
   - text should be centered
-- .layout__header should be:
+- .layout__header > layout__container should be:
   - `display: flex`
   - `justify-content: space-between;`
   - 10px padding from top
