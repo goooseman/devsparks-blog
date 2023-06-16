@@ -10,7 +10,7 @@ You might notice that the blog's aesthetics aren't your typical sleek and polish
 
 While the blog's form changes, we don't forget our past. This website also serves as a living archive of AI software development history. You can journey through time and explore the backups of all previous versions of this website below:
 
-- [v1.0.0](https://1.0.0.devsparks.goooseman.dev)
+- [v1.0.0](https://devsparks-1-0-0.goooseman.dev)
     - Build with GPT-4 8K, June 2023, [SPEC.md](https://TODO)
 
 Keep an eye on this space as we continue to evolve and push the boundaries of AI in software development!
