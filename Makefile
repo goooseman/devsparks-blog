@@ -11,5 +11,5 @@ serve:
 build:
 	cd versions/latest && hugo
 	mkdir public
-	ln -s ./version/latest/public ./public/latest
-	ln -s ./version/latest/public ./public/20230610-v1.0.0-initial-gpt4-8k
+	ln -s ../versions/latest/public ./public/latest
+	ln -s ../versions/latest/public ./public/20230610-v1.0.0-initial-gpt4-8k
