@@ -114,6 +114,7 @@ Do not generate hack itself, only the layout.
 
 Blog address: `devsparks.goooseman.dev`.
 Project structure: hugo blog
+Hugo version: 0.113.0
 Hugo theme name: `devsparks`
 
 - Back-end: Go, Hugo, Remark42
