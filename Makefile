@@ -1,7 +1,7 @@
 .PHONY: smol-rewrite
 smol-rewrite:
 	. ./.env
-	python3 ../developer/main_no_modal.py ./NOTES.md ./versions/latest
+	python3 ../developer/main_no_modal.py ./SPEC.md ./versions/latest
 
 .PHONY: serve
 serve:
@@ -12,4 +12,4 @@ build:
 	cd versions/latest && hugo
 	mkdir public || echo 'Public already exists'
 	cp -r ./versions/latest/public ./public/latest
-	cp -r ./versions/latest/public ./public/20230610-v1.0.0-initial-gpt4-8k
+	cp -r ./versions/latest/public ./public/v1.0.0
