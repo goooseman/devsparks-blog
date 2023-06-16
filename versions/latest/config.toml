@@ -3,6 +3,14 @@ languageCode = "en-us"
 title = "DevSparks"
 theme = "devsparks"
 
+[module]
+[[module.mounts]]
+  source = '../../content'
+  target = 'content'
+[[module.mounts]]
+  source = '../../static'
+  target = 'static'
+
 [params]
   dateFormat = "January 2, 2006"
 
