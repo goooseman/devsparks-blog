@@ -1,5 +1,3 @@
-export $(shell cat .env | xargs)
-
 .PHONY: smol-rewrite
 smol-rewrite:
 	python3 ../developer/main_no_modal.py ./SPEC.md ./versions/latest
