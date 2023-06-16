@@ -122,7 +122,7 @@ Hugo theme name: `devsparks`
 
 Should have Makefile
 - serve
-  - to run then run hugo with docker, but add additional mounts: `$(PWD)/../../content:/src/content` and `$(PWD)/../../static:/src/static`. if files are changed, server should rebuild. 
+  - to run then run hugo with docker, add additional mounts: `$(PWD):/src`, `$(PWD)/../../content:/src/content` and `$(PWD)/../../static:/src/static`. if files are changed, server should rebuild. 
 - build
   - to build project with docker
 
