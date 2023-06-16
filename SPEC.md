@@ -60,8 +60,8 @@ Two themes: light and dark.
 - `<footer>`
   - everything inside should be wrapped in `.layout__container`
   - contains photo of the author with transparent bg and a small about text: Footer Ipsum
-  - photo of author: http://placekitten.com/200/200
-  - photo of author when hovered: http://placekitten.com/200/200?foo=hover
+  - photo of author: `/human.png` (`human@2x.png`)
+  - photo of author when hovered: `/robot.png` (`robot@2x.png`)
   - should have flex layout: photo on the left, text on the right
   - for desktop breakpoint photo on the left column, text on the right
   - for mobile brealpoint photo is aligned to center and above the text
@@ -121,7 +121,7 @@ Hugo theme name: `devsparks`
 
 Should have Makefile
 - serve
-  - to run then run hugo with docker, but add additional mount: `$(PWD)/../content:/src/content`. if files are changed, server should rebuild.
+  - to run then run hugo with docker, but add additional mounts: `$(PWD)/../../content:/src/content` and `$(PWD)/../../static:/src/static`. if files are changed, server should rebuild. 
 - build
   - to build project with docker
 
@@ -132,6 +132,16 @@ Should NOT create content folder.
 - Makefile
 - .gitignore (`.hugo_build.lock`)
 - config.toml
+  - Add following additional configuration:
+```
+[module]
+[[module.mounts]]
+  source = '../../content'
+  target = 'content'
+[[module.mounts]]
+  source = '../../static'
+  target = 'static'
+```
 - themes/devsparks/layouts/_default/baseof.html
   - use `<link rel="stylesheet" href="{{ "css/main.css" | relURL }}">` to connect all 4 styles files
   - do not use `disabled` on any css
@@ -191,8 +201,10 @@ Classname specs:
 - .tip__title inside section should be italic and bold.
 - .tip__container should have border of border-color
 - .tip__container should be relative
-- .tip__container should have padding 20px, margin-top 80px, margin-left and right -20px
+- .tip__container should have padding 20px, margin-top 300px, margin-left and right -20px
 - .tip__image should be absolute with bottom: 100%, left: 20%
+- .tip__image should be color inverted in dark theme
+- .tip__image should be 280px height
 - .tip__container should have margin-top: 30px;
 - .header__theme_switch
   - should have transparent background, only 2px border
@@ -210,11 +222,12 @@ Classname specs:
 
 Shortcodes (html file without shortcode itself, contents only):
 - hackermans-tip
-- padawans-playground
-
+- padawans-playground 
 - hackermans-tip and padawans-playground shortcode should wrap inner content in the following template:
-  - <div class="tip-container (hackermans-tip | padawans-playground)">
-    - <h4 class="tip-title">Hackerman's tip or Padawan's Playground
-    - <img class="tip-image" /> (Use http://placekitten.com/40/80?theme=light image for light theme and http://placekitten.com/40/80?theme=dark for dark theme.)
+  - <div class="tip__container (section__tip__hackerman | section__tip__padawan)">
+    - <h4 class="tip__title">Hackerman's tip or Padawan's Playground
+    - <img class="tip__image" />
     - `{{ .Inner | markdownify }}`
-
+- image sources for .tip__image:
+  - hackerman: `/hackerman.png` and `/hackerman@2x.png`
+  - padawan: `/padawan.png` and `/padawan@2x.png`
