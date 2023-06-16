@@ -8,5 +8,6 @@ serve:
 .PHONY: build
 build:
 	ln -s ../../content ./content
+	ls -al ./content/
 	hugo
 	ln -s ../../assets ./public/assets
