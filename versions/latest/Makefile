@@ -3,7 +3,7 @@ DOCKER_IMAGE := klakegg/hugo:$(HUGO_VERSION)
 
 .PHONY: serve
 serve:
-	docker run --rm -it -v $(PWD):/src -v $(PWD)/../../content:/src/content -p 1313:1313 $(DOCKER_IMAGE) server
+	docker run --rm -it -v $(PWD):/src -v $(PWD)/../../content:/src/content -v $(PWD)/../../static:/src/static -p 1313:1313 $(DOCKER_IMAGE) server
 
 .PHONY: build
 build:
