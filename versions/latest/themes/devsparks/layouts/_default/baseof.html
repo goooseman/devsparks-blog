@@ -5,10 +5,10 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>{{ .Site.Title }}</title>
   <link href="https://fonts.googleapis.com/css2?family=Fira+Code&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="{{ "css/main.css" | absURL }}">
-  <link rel="stylesheet" href="{{ "css/theme-light.css" | absURL }}" id="light-theme">
-  <link rel="stylesheet" href="{{ "css/theme-dark.css" | absURL }}" id="dark-theme">
-  <script src="{{ "js/theme-switcher.js" | absURL }}" defer></script>
+  <link rel="stylesheet" href="{{ "css/main.css" | relUrl }}">
+  <link rel="stylesheet" href="{{ "css/theme-light.css" | relUrl }}" id="light-theme">
+  <link rel="stylesheet" href="{{ "css/theme-dark.css" | relUrl }}" id="dark-theme">
+  <script src="{{ "js/theme-switcher.js" | relUrl }}" defer></script>
 </head>
 <body>
   <header class="layout__header">

@@ -133,10 +133,10 @@ Should NOT create content folder.
 - .gitignore (`.hugo_build.lock`)
 - config.toml
 - themes/devsparks/layouts/_default/baseof.html
-  - use `<link rel="stylesheet" href="{{ "css/main.css" | absURL }}">` to connect all 4 styles files
+  - use `<link rel="stylesheet" href="{{ "css/main.css" | relUrl }}">` to connect all 4 styles files
   - do not use `disabled` on any css
   - connect both themes
-  - use `<script src="{{ "js/theme-switcher.js" | absURL }}" defer></script>` to connect JS
+  - use `<script src="{{ "js/theme-switcher.js" | relUrl }}" defer></script>` to connect JS
   - footer and header are in separate files
 - themes/devsparks/layouts/_default/list.html
   - Contains Hacks titile if it is index
