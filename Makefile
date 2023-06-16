@@ -12,4 +12,4 @@ build:
 	cd versions/latest && hugo
 	mkdir public
 	cp -r ./versions/latest/public ./public/latest
-	cp -r ../versions/latest/public ./public/20230610-v1.0.0-initial-gpt4-8k
+	cp -r ./versions/latest/public ./public/20230610-v1.0.0-initial-gpt4-8k
