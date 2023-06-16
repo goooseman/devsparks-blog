@@ -12,5 +12,7 @@ While the blog's form changes, we don't forget our past. This website also serve
 
 - [v1.0.0](https://devsparks-1-0-0.goooseman.dev)
     - Build with `gpt-3.5-turbo-16k` 16K, June 2023, [SPEC.md](https://TODO)
+    - DEFAULT_MODEL = "gpt-3.5-turbo-16k-0613"
+    - DEFAULT_MAX_TOKENS = 13600
 
 Keep an eye on this space as we continue to evolve and push the boundaries of AI in software development!
