@@ -133,7 +133,7 @@ Should NOT create content folder.
 - .gitignore (`.hugo_build.lock`)
 - config.toml
   - Add following additional configuration:
-```
+    ```
 [module]
 [[module.mounts]]
   source = '../../content'
@@ -141,7 +141,7 @@ Should NOT create content folder.
 [[module.mounts]]
   source = '../../static'
   target = 'static'
-```
+    ```
 - themes/devsparks/layouts/_default/baseof.html
   - use `<link rel="stylesheet" href="{{ "css/main.css" | relURL }}">` to connect all 4 styles files
   - do not use `disabled` on any css
@@ -163,6 +163,25 @@ Should NOT create content folder.
 - themes/devsparks/static/css/theme-dark.css
 - themes/devsparks/static/js/theme-switcher.js
 - themes/devsparks/static/js/footer-image.js
+- themes/devsparks/static/js/remark42.js:
+  - Should contain the following snippet:
+        ```
+// https://r42.com/docs/configuration/frontend/
+var remark_config = {
+  host: 'https://r42.goooseman.dev',
+  site_id: 'dev_sparks',
+  components: ['embed', 'last-comments'],
+  max_shown_comments: 100,
+  theme: 'dark',
+  show_email_subscription: false,
+  simple_view: false,
+  no_footer: false
+}
+        ```
+  - And this:
+        ```
+!function(e,n){for(var o=0;o<e.length;o++){var r=n.createElement("script"),c=".js",d=n.head||n.body;"noModule"in r?(r.type="module",c=".mjs"):r.async=!0,r.defer=!0,r.src=remark_config.host+"/web/"+e[o]+c,d.appendChild(r)}}(remark_config.components||["embed"],document);
+        ```
 
 ### Shared dependencies
 
