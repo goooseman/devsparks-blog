@@ -3,7 +3,8 @@ export
 
 .PHONY: smol-rewrite
 smol-rewrite:
-	python3 ../developer/main_no_modal.py ./SPEC.md ./versions/latest
+	# https://platform.openai.com/docs/models/gpt-4
+	OPENAI_DEFAULT_MODEL=gpt-3.5-turbo-16k-0613 OPENAI_DEFAULT_MAX_TOKENS=9000 python3 ../developer/main_no_modal.py ./SPEC.md ./versions/latest
 
 .PHONY: serve
 serve:
