@@ -1,4 +1,3 @@
-
 /* themes/devsparks/static/css/theme-dark.css */
 
 :root {
@@ -9,38 +8,31 @@
 
 body {
   background-color: var(--background-color);
-  color: var(--text-color);
 }
 
 a {
   color: var(--text-color);
   text-decoration: none;
   border-bottom: 2px solid var(--text-color);
-  transition: background-color 0.3s, color 0.3s;
 }
 
 a:hover {
   background-color: var(--text-color);
   color: var(--background-color);
-  background-image: linear-gradient(to top, var(--background-color), var(--text-color));
+  animation: slide 0.3s ease-in-out;
+}
+
+@keyframes slide {
+  0% {
+    background-position: bottom;
+  }
+  100% {
+    background-position: top;
+  }
 }
 
 .layout__link__active {
   border: 2px solid var(--text-color);
-}
-
-.layout__header {
-  display: flex;
-  justify-content: space-between;
-  padding-top: 10px;
-}
-
-.header__theme_switch {
-  background-color: transparent;
-  border: 2px solid var(--text-color);
-  width: 30px;
-  height: 30px;
-  text-align: center;
 }
 
 .layout__container {
@@ -51,36 +43,39 @@ a:hover {
   padding-right: 20px;
 }
 
-.section__tip__hackerman .tip__container {
-  border: 2px solid var(--border-color);
+.tip__container {
   position: relative;
-  padding: 20px;
   margin-top: 300px;
+  margin-bottom: 5px;
+  border: 2px solid var(--border-color);
+  padding: 20px;
   margin-left: -20px;
   margin-right: -20px;
 }
 
-.section__tip__hackerman .tip__image {
+.tip__image {
   position: absolute;
   bottom: 100%;
   left: 20%;
   height: 280px;
 }
 
-.section__tip__padawan .tip__container {
-  border: 2px solid var(--border-color);
-  position: relative;
-  padding: 20px;
-  margin-top: 300px;
-  margin-left: -20px;
-  margin-right: -20px;
+.tip__image.dark-theme {
+  filter: invert(100%);
 }
 
-.section__tip__padawan .tip__image {
-  position: absolute;
-  bottom: 100%;
-  left: 20%;
-  height: 280px;
+.header__theme_switch {
+  background-color: transparent;
+  border: 2px solid var(--border-color);
+  width: 30px;
+  height: 30px;
+  text-align: center;
+}
+
+.layout__header > .layout__container {
+  display: flex;
+  justify-content: space-between;
+  padding-top: 10px;
 }
 
 .footer__about_text {

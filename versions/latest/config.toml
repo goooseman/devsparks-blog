@@ -15,11 +15,10 @@ theme = "devsparks"
   dateFormat = "January 2, 2006"
 
 [outputFormats]
-  [outputFormats.RSS]
-    mediaType = "application/rss+xml"
+  [outputFormats.HTML]
+    mediaType = "text/html"
     baseName = "index"
     isPlainText = false
-    notAlternative = true
 
 [markup]
   [markup.goldmark]
@@ -35,7 +34,7 @@ theme = "devsparks"
   [[menu.main]]
     identifier = "about"
     name = "About"
-    url = "/about/"
+    url = "/about"
     weight = 2
   [[menu.main]]
     identifier = "github"

@@ -1,4 +1,3 @@
-
 // https://r42.com/docs/configuration/frontend/
 var remark_config = {
   host: 'https://r42.goooseman.dev',

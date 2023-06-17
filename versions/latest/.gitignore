@@ -1,6 +1,3 @@
-# .gitignore
-
-
 # Hugo output directory
 /public/
 
@@ -11,5 +8,13 @@
 .DS_Store
 
 # Ignore Hugo generated files
-.hugo_cache/
-.hugo_build.lock
+/hugo_stats.json
+/hugo_cache/
+/hugo_modules/
+/hugo_env/
+
+# Ignore Remark42 generated files
+/remark42/
+
+# Ignore Docker files
+.dockerignore

@@ -1,14 +1,13 @@
-
 @import url('https://fonts.googleapis.com/css2?family=Fira+Code&display=swap');
 
 :root {
   --border-width: 2px;
-  --light-background-color: #ffc000;
-  --light-text-color: #40414e;
-  --light-border-color: #40414e;
-  --dark-background-color: #40414e;
-  --dark-text-color: #ffc000;
-  --dark-border-color: #ffc000;
+  --background-color-light: #ffc000;
+  --text-color-light: #40414e;
+  --border-color-light: #40414e;
+  --background-color-dark: #40414e;
+  --text-color-dark: #ffc000;
+  --border-color-dark: #ffc000;
 }
 
 body {
@@ -17,16 +16,16 @@ body {
 }
 
 a {
-  color: var(--light-text-color);
+  color: var(--text-color-light);
   text-decoration: none;
-  border-bottom: var(--border-width) solid var(--light-text-color);
+  border-bottom: var(--border-width) solid var(--text-color-light);
   transition: background-color 0.3s, color 0.3s;
 }
 
 a:hover {
-  background-color: var(--light-text-color);
-  color: var(--light-background-color);
-  background-image: linear-gradient(to top, var(--light-background-color), var(--light-background-color));
+  background-color: var(--text-color-light);
+  color: var(--background-color-light);
+  background-image: linear-gradient(to top, var(--background-color-light), var(--text-color-light));
   background-position: 0 100%;
   background-repeat: no-repeat;
   background-size: 100% 200%;
@@ -41,8 +40,8 @@ a:hover {
 .header__theme_switch {
   background-color: transparent;
   border: var(--border-width) solid;
-  width: 20px;
-  height: 20px;
+  width: 24px;
+  height: 24px;
   text-align: center;
 }
 
@@ -57,45 +56,16 @@ a:hover {
   border: var(--border-width) solid;
 }
 
-.section__tip__hackerman,
-.section__tip__padawan {
-  position: relative;
-}
-
-.tip__container {
-  position: relative;
-  margin-top: 25px;
-  margin-bottom: 5px;
-  border: var(--border-width) solid var(--light-border-color);
-  padding: 20px;
-  margin-top: 300px;
-  margin-left: -20px;
-  margin-right: -20px;
-}
-
-.tip__image {
-  position: absolute;
-  bottom: 100%;
-  left: 20%;
-  height: 280px;
-}
-
-.tip__image.dark-theme {
-  filter: invert(100%);
-}
-
-.article__content h3 {
-  padding-top: 5px;
-  border-top: 1px solid currentColor;
-}
-
-.footer__about_text {
-  border: var(--border-width) solid var(--light-border-color);
+footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-top: 50px;
+  padding-bottom: 50px;
 }
 
 .footer__author-photo {
-  display: block;
-  margin: 0 auto;
+  height: 160px;
 }
 
 @media (max-width: 680px) {
@@ -109,9 +79,12 @@ a:hover {
     overflow-x: hidden;
   }
 
+  footer {
+    flex-direction: column-reverse;
+    align-items: center;
+  }
+
   .footer__author-photo {
-    display: block;
-    margin: 0 auto;
+    margin-bottom: 20px;
   }
 }
-

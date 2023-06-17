@@ -1,15 +1,39 @@
-<!-- themes/devsparks/layouts/partials/header.html -->
-
-<header class="layout__header">
-  <div class="layout__container">
-    <nav>
-      <a href="/" class="layout__link__active">Haks</a>
-      <a href="/about">About</a>
-      <a href="https://github.com/goooseman/devsparks-blog">GitHub</a>
-      <a href="https://github.com/goooseman/devsparks-blog/issues/new?title=DevSparks+Feedback&amp;body=I+found+something+wrong+on+this+page%3A%0A%0A++{CURRENT_PAGE}%0A%0A++Here%27s+what+it+is%3A" target="_blank">Fix typo</a>
-    </nav>
-    <div class="header__theme_switch" id="theme-switch" aria-label="Switch to light theme">
-      🌞
-    </div>
-  </div>
-</header>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DevSparks Blog</title>
+    <link rel="stylesheet" href="{{ "css/main.css" | relURL }}">
+    <link rel="stylesheet" href="{{ "css/theme-light.css" | relURL }}" media="(prefers-color-scheme: light)">
+    <link rel="stylesheet" href="{{ "css/theme-dark.css" | relURL }}" media="(prefers-color-scheme: dark)">
+    <script src="{{ "js/theme-switcher.js" | relURL }}" defer></script>
+</head>
+<body>
+    <header class="layout__header">
+        <div class="layout__container">
+            <nav>
+                <a href="/" class="layout__link__active">Hacks</a>
+                <a href="/about">About</a>
+                <a href="https://github.com/goooseman/devsparks-blog">GitHub</a>
+            </nav>
+            <div class="header__theme_switch" id="theme-switch" aria-label="Switch to light theme">
+                🌞
+            </div>
+        </div>
+    </header>
+    <main>
+        <div class="layout__container">
+            <!-- Content goes here -->
+        </div>
+    </main>
+    <footer>
+        <div class="layout__container">
+            <div class="footer__content">
+                <img src="/human.png" alt="Author Photo" class="footer__author-photo">
+                <p class="footer__about_text">Footer Ipsum</p>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>

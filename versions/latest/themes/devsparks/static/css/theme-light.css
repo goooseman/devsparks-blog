@@ -1,35 +1,42 @@
+/* themes/devsparks/static/css/theme-light.css */
 
-@import url('https://fonts.googleapis.com/css2?family=Fira+Code&display=swap');
-
-:root {
-  --border-width: 2px;
-  --background-color-light: #ffc000;
-  --text-color-light: #40414e;
-  --border-color-light: #40414e;
-  --background-color-dark: #40414e;
-  --text-color-dark: #ffc000;
-  --border-color-dark: #ffc000;
+/* Theming */
+[data-theme="light"] {
+  --background-color: #ffc000;
+  --text-color: #40414e;
+  --border-color: #40414e;
 }
 
+/* Common styling */
 body {
-  margin: 0;
   font-family: 'Fira Code', monospace;
+  border-width: 2px;
 }
 
 a {
-  color: var(--text-color-light);
+  color: var(--text-color);
   text-decoration: none;
-  border-bottom: var(--border-width) solid var(--text-color-light);
-  transition: background-color 0.3s, color 0.3s;
+  border-bottom: 2px solid var(--text-color);
+  transition: background-color 0.3s ease;
 }
 
 a:hover {
-  background-color: var(--text-color-light);
-  color: var(--background-color-light);
-  background-image: linear-gradient(to top, var(--background-color-light), var(--text-color-light));
-  background-position: 0 100%;
-  background-repeat: no-repeat;
-  background-size: 100% 200%;
+  background-color: var(--text-color);
+  color: var(--background-color);
+  background-image: linear-gradient(to top, var(--background-color), var(--text-color));
+}
+
+.layout__link__active {
+  border: 2px solid;
+}
+
+/* Site layout */
+body {
+  overflow-x: hidden;
+}
+
+header {
+  background-color: var(--background-color);
 }
 
 .layout__header {
@@ -38,38 +45,110 @@ a:hover {
   padding-top: 10px;
 }
 
-.header__theme_switch {
-  background-color: transparent;
-  border: var(--border-width) solid;
-  width: 20px;
-  height: 20px;
-  text-align: center;
-}
-
 .layout__container {
   width: 600px;
   margin: 0 auto;
+  padding-left: 20px;
+  padding-right: 20px;
 }
 
-.layout__container {
-  width: 100%;
-  padding: 20px;
+main {
+  background-color: var(--background-color);
+  box-shadow: 0px 10px 10px -10px rgba(0, 0, 0, 0.5);
+  padding-top: 50px;
+  padding-bottom: 50px;
 }
 
-.section__tip__hackerman,
-.section__tip__padawan {
-  position: relative;
+footer {
+  background-color: var(--background-color);
 }
 
+.footer__author-photo {
+  height: 160px;
+}
+
+.footer__container {
+  display: flex;
+  flex-direction: column;
+}
+
+.footer__container.desktop {
+  flex-direction: row;
+}
+
+.footer__container.mobile {
+  align-items: center;
+  justify-content: center;
+}
+
+.footer__about_text {
+  border: 2px solid var(--border-color);
+  padding: 10px;
+}
+
+/* Home page */
+h2 {
+  margin-top: 30px;
+}
+
+ul {
+  list-style-type: none;
+  padding-left: 0;
+}
+
+.date {
+  color: var(--text-color);
+}
+
+.title {
+  color: var(--text-color);
+}
+
+/* Hack page */
+.article__title {
+  font-size: 24px;
+  font-weight: bold;
+}
+
+.article__date {
+  color: var(--text-color);
+}
+
+.article__tags {
+  color: var(--text-color);
+}
+
+.article__tags a {
+  color: var(--text-color);
+}
+
+.article__content h3 {
+  padding-top: 5px;
+  border-top: 1px solid currentColor;
+}
+
+/* Shortcodes */
 .tip__container {
   position: relative;
-  margin-top: 25px;
-  margin-bottom: 5px;
-  border: var(--border-width) solid var(--border-color-light);
-  padding: 20px;
   margin-top: 300px;
+  margin-bottom: 5px;
+  border: 2px solid var(--border-color);
+  padding: 20px;
   margin-left: -20px;
   margin-right: -20px;
+}
+
+.section__tip__hackerman .tip__container {
+  background-color: var(--background-color);
+}
+
+.section__tip__padawan .tip__container {
+  background-color: var(--background-color);
+}
+
+.tip__title {
+  font-style: italic;
+  font-weight: bold;
 }
 
 .tip__image {
@@ -79,19 +158,20 @@ a:hover {
   height: 280px;
 }
 
-.tip__image {
+.section__tip__hackerman .tip__image {
   filter: invert(100%);
 }
 
-.layout__link__active {
-  border: var(--border-width) solid;
+.section__tip__padawan .tip__image {
+  filter: invert(100%);
 }
 
-.footer__about_text {
-  border: var(--border-width) solid var(--border-color-light);
-}
-
-.article__content h3 {
-  padding-top: 5px;
-  border-top: 1px solid currentColor;
+/* Header theme switch */
+.header__theme_switch {
+  background-color: transparent;
+  border: 2px solid;
+  width: 30px;
+  height: 30px;
+  text-align: center;
+  cursor: pointer;
 }

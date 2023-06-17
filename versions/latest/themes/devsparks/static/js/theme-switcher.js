@@ -1,40 +1,24 @@
-
 window.addEventListener('DOMContentLoaded', () => {
   const themeSwitch = document.getElementById('theme-switch');
-  const currentTheme = localStorage.getItem('theme');
+  const currentTheme = localStorage.getItem('theme') || 'light';
 
-  if (currentTheme) {
-    document.documentElement.setAttribute('data-theme', currentTheme);
-    if (currentTheme === 'dark') {
-      themeSwitch.textContent = '🌞';
-      themeSwitch.setAttribute('aria-label', 'Switch to light theme');
-    } else {
-      themeSwitch.textContent = '🌒';
-      themeSwitch.setAttribute('aria-label', 'Switch to dark theme');
-    }
-  } else {
-    const systemTheme = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
-    document.documentElement.setAttribute('data-theme', systemTheme);
-    if (systemTheme === 'dark') {
-      themeSwitch.textContent = '🌞';
-      themeSwitch.setAttribute('aria-label', 'Switch to light theme');
-    } else {
-      themeSwitch.textContent = '🌒';
-      themeSwitch.setAttribute('aria-label', 'Switch to dark theme');
-    }
+  function setTheme(theme) {
+    document.documentElement.setAttribute('data-theme', theme);
+    document.body.classList.remove('light-theme', 'dark-theme');
+    document.body.classList.add(`${theme}-theme`);
+    localStorage.setItem('theme', theme);
   }
 
-  themeSwitch.addEventListener('click', () => {
-    const currentTheme = document.documentElement.getAttribute('data-theme');
-    const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
-    document.documentElement.setAttribute('data-theme', newTheme);
-    localStorage.setItem('theme', newTheme);
-    if (newTheme === 'dark') {
-      themeSwitch.textContent = '🌞';
-      themeSwitch.setAttribute('aria-label', 'Switch to light theme');
-    } else {
-      themeSwitch.textContent = '🌒';
-      themeSwitch.setAttribute('aria-label', 'Switch to dark theme');
-    }
-  });
+  function toggleTheme() {
+    const newTheme = currentTheme === 'light' ? 'dark' : 'light';
+    setTheme(newTheme);
+  }
+
+  themeSwitch.addEventListener('click', toggleTheme);
+
+  if (currentTheme === 'dark') {
+    setTheme('dark');
+  } else {
+    setTheme('light');
+  }
 });
