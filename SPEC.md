@@ -3,24 +3,48 @@
 ## Overview
 
 DevSparks - short, but meaningful lifehacks for developers. 
+
+
+## Technology Stack
+
+Blog address: `devsparks.goooseman.dev`.
+Project structure: hugo blog
+Hugo version: 0.111.3
+Hugo theme name: `devsparks`
+
+- Back-end: Go, Hugo
+- Front-end: HTML, CSS, JavaScript (for interactive elements)
+
+Should have Makefile
+- serve
+  - to run then run hugo with docker, add additional mounts: `$(PWD):/src`, `$(PWD)/../../content:/src/content` and `$(PWD)/../../static:/src/static`. if files are changed, server should rebuild. 
+- build
+  - to build project with docker
+- Makefile use tabs, not spaces for identation!
+
+Should NOT create content folder.
+
 ## Requirements
+
+## Images
+
+Footer and content images have `2x` versions, make sure to use them for Retina display.
 
 ### Theming
 
-Two themes: light and dark.
-- When site is loaded, system theme should be checked. If it is dark (`window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches`), dark theme should be the default. 
-- To watch for system theme changes `window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', event =>  event.matches ? "dark" : "light";)`, should change theme of the website.
-- Adds `data-theme=light|dark` attr to document
-- Adds `light-theme` or `dark-theme` class to body
-- theme variblaes:
+Two themes: light and dark. Theme implementation is JS/CSS only.
+- When site is loaded, system theme should be checked if possible.
+- Website should watch for system theme changes and update site's theme.
+- Adds `body__theme__light` or `body__theme__dark` class to body.
+- theme CSS variblaes:
     - light:
-        - `background-color`: `amber` (`#ffc000`)
-        - `text-color`: `graphite` (`#40414e`)
-        - `border-color`: `graphite` (`#40414e`)
+        - `background-color`: amber (`#ffc000`)
+        - `text-color`: graphite (`#40414e`)
+        - `border-color`: graphite (`#40414e`)
     - dark:
-        - `background-color`: `graphite` (`#40414e`)
-        - `text-color`: `amber` (`#ffc000`)
-        - `border-color`: `amber` (`#ffc000`)
+        - `background-color`: graphite (`#40414e`)
+        - `text-color`: amber (`#ffc000`)
+        - `border-color`: amber (`#ffc000`)
 - `background-color` should be background of whole website
 
 ### Common styling:
@@ -30,42 +54,37 @@ Two themes: light and dark.
 - Links: text color both when normal or hovered
 - Links: always have border bottom 2px
 - Links: never underline, not on hover also
-- Links: on hover should change background to `text-color` and color to `background-color` with an animation of sliding from bottom to top
-- Navigation links in header: should have `.layout__link__active` class, when page is active. Hacks page should be active when index or any hack is opened.
+- Links: on hover should invert color and background color with an animation of sliding from bottom to top
+- Navigation links in header: should have `.layout__link__active` class, when page is active. Hacks page should be active when index or any hack is opened. About should be active, when About page is opened.
 - breakpoints: >680px - desktop, <680px mobile
-- inputs:
-    - horizontal line of `border-color` when not active/hover
-    - bordered when active/hover
-    - placeholder text should also be of `text-color`
-    - background color same as site background
 
 ### Site layout
 
-- body:
-  - should not have horizontal scroll on mobile
+- `.layout__container`
+  - container class to set content's width
+  - `<header>`, `<main>` and `<footer>` should be wrapped inside .layout__container
+  - on mobile phones can't be bigger then screen width
 - `<header>`:
-  - everything inside should be wrapped in `.layout__container`
-  - contains navigation links: Hacks, About, [GitHub](https://github.com/goooseman/devsparks-blog). Also Fix typo link, switch theme switch on the right.
+  - contains navigation links: Hacks, About, [GitHub](https://github.com/goooseman/devsparks-blog), Fix typo link, switch theme toggle.
+  - **Fix typo and switch theme should be aligned to the right side!**
   - should contain `.layout__header` class
-  - Fix typo button just opens following link in a new tab: "https://github.com/goooseman/devsparks-blog/issues/new?title=DevSparks+Feedback&body=I+found+something+wrong+on+this+page%3A%0A%0A++{CURRENT_PAGE}%0A%0A++Here%27s+what+it+is%3A"
+  - Fix typo button just opens following link in a new tab: "https://github.com/goooseman/devsparks-blog/issues/new?title=DevSparks+Feedback&body=I+found+something+wrong+on+this+page%3A%0A%0A++{CURRENT_PAGE}%0A%0A++Here%27s+what+it+is%3A", make sure to replace `{CURRENT_PAGE}` with correct url
   - switch theme switch
     - should contain `.header__theme_switch` class
-    - Should only have 🌞 icon if active theme is dark and 🌒 icon if current theme is light
+    - Should only have 🌞 icon if current theme is dark and 🌒 icon if current theme is light
     - Should have aria-label: 'Switch to light theme' if current theme is dark and 'Switch to dark theme' if current theme is light
     - Should have pointer: cursor when hovered
 - `<main>`
-  - everything inside should be wrapped in `.layout__container`
-  - background color matches other areas of the website. but it has background shadow on top/bottom to make it look like lower then header and footer
+  - it has background shadow on top/bottom to make it look like lower then header and footer to add deepness
   - should have padding top and bottom with 50px
 - `<footer>`
-  - everything inside should be wrapped in `.layout__container`
   - contains photo of the author with transparent bg and a small about text: Footer Ipsum
   - photo of author: `/human.png` (`human@2x.png`)
   - photo of author when hovered: `/robot.png` (`robot@2x.png`)
   - height of the photo: 160px
   - should have flex layout: photo on the left, text on the right
   - for desktop breakpoint photo on the left column, text on the right
-  - for mobile brealpoint photo is aligned to center and above the text
+  - for mobile breakpoint photo is aligned to center and above the text
 
 ### Home page
 
@@ -74,10 +93,10 @@ Contains a "Hacks" title and a list of hacks groupped by year in the format:
 ```
 YEAR
 
-hack title (date)
+hack title (date) (tags inline)
 ```
 
-Here is some sample code to list items:
+Here is some sample code to list items, but change order of date and add tags:
 
 ```
 {{ range (where .Site.RegularPages "Type" "in" (slice "hacks")).GroupByDate "2006" }}
@@ -107,27 +126,14 @@ A specific hack page contains:
 
 Tags should be links, when clicked other hacks by the same tag should be listed.
 
-Any code should be highlighted. Typescript, javascript, java, go, rust support is required.
-
 Do not generate hack itself, only the layout.
 
-## Technology Stack
+### Code syntax highlighting
 
-Blog address: `devsparks.goooseman.dev`.
-Project structure: hugo blog
-Hugo version: 0.111.3
-Hugo theme name: `devsparks`
-
-- Back-end: Go, Hugo, Remark42
-- Front-end: HTML, CSS, JavaScript (for interactive elements)
-
-Should have Makefile
-- serve
-  - to run then run hugo with docker, add additional mounts: `$(PWD):/src`, `$(PWD)/../../content:/src/content` and `$(PWD)/../../static:/src/static`. if files are changed, server should rebuild. 
-- build
-  - to build project with docker
-
-Should NOT create content folder.
+- Any code should be highlighted. 
+- Typescript, javascript, java, go, rust support is required. 
+- Highlighting is inverting text color and background, so text color is used for bg and bg color is used for text. 
+- Should work for single-lines `code` blocks (\` in markdown) and also multiline ones (\`\`\`) for different programming languages
 
 ### Project structure
 
@@ -135,6 +141,7 @@ Should NOT create content folder.
 - .gitignore (`.hugo_build.lock`)
 - config.toml
   - Do not include anything about themes or remark42
+  - Do not use JSON objects in this file
   - Add following additional configuration:
     ```
 [module]
@@ -146,11 +153,11 @@ Should NOT create content folder.
   target = 'static'
     ```
 - themes/devsparks/layouts/_default/baseof.html
-  - use `<link rel="stylesheet" href="{{ "css/main.css" | relURL }}">` to connect all 4 styles files
+  - footer and header are in separate files, just connect!
+  - use `<link rel="stylesheet" href="{{ "css/main.css" | relURL }}">` to connect all styles files
   - do not use `disabled` on any css
   - connect both themes
   - use `<script src="{{ "js/theme-switcher.js" | relURL }}" defer></script>` to connect JS
-  - footer and header are in separate files, do not implement them in this file!
 - themes/devsparks/layouts/_default/list.html
   - Contains Hacks titile if it is index
   - Contains "Tag: ${tag}" title if it is a tag page
@@ -163,7 +170,7 @@ Should NOT create content folder.
 - themes/devsparks/static/css/main.css
   - contains all the site CSS, but not theming
 - themes/devsparks/static/css/syntax-highlighting.css
-  - contains only CSS for code syntax highligting, should work for single-lines `code` blocks (\` in markdown) and also multiline ones (\`\`\`) for different programming languages
+  - contains only CSS for code syntax highligting
 - themes/devsparks/static/css/theme-light.css
   - contains only colors and other changes for light theme, do not contain any common styles
 - themes/devsparks/static/css/theme-dark.css
@@ -212,7 +219,6 @@ Classnames:
 - .article__date
 - .article__tags
 - .article__content
-- .footer__content
 - .footer__about_text
 - .footer__author-photo
 
