@@ -1,24 +1,23 @@
-window.addEventListener('DOMContentLoaded', () => {
-  const themeSwitch = document.getElementById('theme-switch');
-  const currentTheme = localStorage.getItem('theme') || 'light';
+// Check system theme on page load
+document.addEventListener("DOMContentLoaded", function() {
+  var systemTheme = window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light";
+  document.body.classList.add("body__theme__" + systemTheme);
+});
 
-  function setTheme(theme) {
-    document.documentElement.setAttribute('data-theme', theme);
-    document.body.classList.remove('light-theme', 'dark-theme');
-    document.body.classList.add(`${theme}-theme`);
-    localStorage.setItem('theme', theme);
-  }
+// Watch for system theme changes
+window.matchMedia("(prefers-color-scheme: dark)").addEventListener("change", function(e) {
+  var newTheme = e.matches ? "dark" : "light";
+  document.body.classList.remove("body__theme__dark", "body__theme__light");
+  document.body.classList.add("body__theme__" + newTheme);
+});
 
-  function toggleTheme() {
-    const newTheme = currentTheme === 'light' ? 'dark' : 'light';
-    setTheme(newTheme);
-  }
-
-  themeSwitch.addEventListener('click', toggleTheme);
-
-  if (currentTheme === 'dark') {
-    setTheme('dark');
-  } else {
-    setTheme('light');
-  }
+// Theme switch toggle
+var themeSwitch = document.getElementById("theme-switch");
+themeSwitch.addEventListener("click", function() {
+  var currentTheme = document.body.classList.contains("body__theme__dark") ? "dark" : "light";
+  var newTheme = currentTheme === "dark" ? "light" : "dark";
+  document.body.classList.remove("body__theme__dark", "body__theme__light");
+  document.body.classList.add("body__theme__" + newTheme);
+  themeSwitch.setAttribute("aria-label", "Switch to " + (newTheme === "dark" ? "light" : "dark") + " theme");
+  themeSwitch.textContent = newTheme === "dark" ? "🌞" : "🌒";
 });

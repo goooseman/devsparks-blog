@@ -1,46 +1,35 @@
-/* syntax-highlighting.css */
+/* Code syntax highlighting */
+pre code {
+  color: var(--background-color);
+  background-color: var(--text-color);
+}
 
-/* Single-line code blocks */
-code {
-  background-color: var(--background-color);
+/* Typescript syntax highlighting */
+pre code.language-typescript {
   color: var(--text-color);
-  border: 2px solid var(--border-color);
-  padding: 2px;
-  font-family: 'Fira Code', monospace;
-}
-
-/* Multi-line code blocks */
-pre {
   background-color: var(--background-color);
+}
+
+/* JavaScript syntax highlighting */
+pre code.language-javascript {
   color: var(--text-color);
-  border: 2px solid var(--border-color);
-  padding: 10px;
-  font-family: 'Fira Code', monospace;
-  overflow-x: auto;
+  background-color: var(--background-color);
 }
 
-/* Syntax highlighting for different programming languages */
-pre code[class*="language-"] {
-  font-size: 14px;
+/* Java syntax highlighting */
+pre code.language-java {
+  color: var(--text-color);
+  background-color: var(--background-color);
 }
 
-/* Syntax highlighting colors */
-pre code[class*="language-"].javascript {
-  color: #f7df1e;
+/* Go syntax highlighting */
+pre code.language-go {
+  color: var(--text-color);
+  background-color: var(--background-color);
 }
 
-pre code[class*="language-"].typescript {
-  color: #007acc;
-}
-
-pre code[class*="language-"].java {
-  color: #b07219;
-}
-
-pre code[class*="language-"].go {
-  color: #00add8;
-}
-
-pre code[class*="language-"].rust {
-  color: #dea584;
+/* Rust syntax highlighting */
+pre code.language-rust {
+  color: var(--text-color);
+  background-color: var(--background-color);
 }

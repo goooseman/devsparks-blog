@@ -1,21 +1,20 @@
 {{ define "main" }}
-  <article class="article">
+  <article>
     <h1 class="article__title">{{ .Title }}</h1>
-    {{ with .Date }}
-      <p class="article__date">{{ .Format "January 2, 2006" }}</p>
+    {{ if .Date }}
+      <p class="article__date">{{ .Date.Format "January 2, 2006" }}</p>
     {{ end }}
-    {{ with .Params.tags }}
+    {{ if .Params.tags }}
       <p class="article__tags">
-        {{ range . }}
-          <a href="/tags/{{ . | urlize }}">{{ . }}</a>
+        Tags:
+        {{ range .Params.tags }}
+          <a class="tag" href="/tags/{{ . | urlize }}">{{ . }}</a>
         {{ end }}
       </p>
     {{ end }}
     <div class="article__content">
       {{ .Content }}
     </div>
-    {{ if eq .Type "hack" }}
-      <div id="remark42"></div>
-    {{ end }}
+    <div id="remark42"></div>
   </article>
 {{ end }}

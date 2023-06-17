@@ -1,90 +1,76 @@
+/* Fira Code font */
 @import url('https://fonts.googleapis.com/css2?family=Fira+Code&display=swap');
 
+/* Border width */
 :root {
   --border-width: 2px;
-  --background-color-light: #ffc000;
-  --text-color-light: #40414e;
-  --border-color-light: #40414e;
-  --background-color-dark: #40414e;
-  --text-color-dark: #ffc000;
-  --border-color-dark: #ffc000;
 }
 
-body {
-  margin: 0;
-  font-family: 'Fira Code', monospace;
-}
-
+/* Links */
 a {
-  color: var(--text-color-light);
+  color: var(--text-color);
   text-decoration: none;
-  border-bottom: var(--border-width) solid var(--text-color-light);
-  transition: background-color 0.3s, color 0.3s;
+  border-bottom: var(--border-width) solid transparent;
+  transition: color 0.3s, background-color 0.3s;
 }
 
 a:hover {
-  background-color: var(--text-color-light);
-  color: var(--background-color-light);
-  background-image: linear-gradient(to top, var(--background-color-light), var(--text-color-light));
+  color: var(--background-color);
+  background-color: var(--text-color);
+  background-image: linear-gradient(to top, var(--background-color), var(--text-color));
   background-position: 0 100%;
   background-repeat: no-repeat;
-  background-size: 100% 200%;
+  background-size: 100% var(--border-width);
 }
 
-.layout__header {
-  display: flex;
-  justify-content: space-between;
-  padding-top: 10px;
-}
-
-.header__theme_switch {
-  background-color: transparent;
-  border: var(--border-width) solid;
-  width: 24px;
-  height: 24px;
-  text-align: center;
-}
-
-.layout__container {
-  width: 600px;
-  margin: 0 auto;
-  padding-left: 20px;
-  padding-right: 20px;
-}
-
+/* Navigation links in header */
 .layout__link__active {
   border: var(--border-width) solid;
 }
 
-footer {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding-top: 50px;
-  padding-bottom: 50px;
+/* Site layout */
+.layout__container {
+  width: 600px;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 20px;
+  padding-right: 20px;
 }
 
-.footer__author-photo {
-  height: 160px;
+/* Tip container */
+.tip__container {
+  position: relative;
+  border: var(--border-color) var(--border-width) solid;
+  padding: 20px;
+  margin-left: -20px;
+  margin-right: -20px;
+  margin-top: 30px;
 }
 
-@media (max-width: 680px) {
-  .layout__container {
-    width: 100%;
-    padding-left: 20px;
-    padding-right: 20px;
-  }
+/* Tip title */
+.tip__title {
+  font-style: italic;
+  font-weight: bold;
+}
 
-  body {
-    overflow-x: hidden;
-  }
+/* Tip image */
+.tip__image {
+  position: absolute;
+  bottom: 100%;
+  left: 20%;
+  height: 280px;
+}
 
-  footer {
-    flex-direction: column-reverse;
-    align-items: center;
-  }
+/* Dark theme */
+.body__theme__dark {
+  --background-color: graphite;
+  --text-color: amber;
+  --border-color: amber;
+}
 
-  .footer__author-photo {
-    margin-bottom: 20px;
-  }
+/* Light theme */
+.body__theme__light {
+  --background-color: amber;
+  --text-color: graphite;
+  --border-color: graphite;
 }

@@ -7,8 +7,15 @@
         <li>
           <span class="date">{{ .Date.Format (.Site.Params.dateFormat | default "January 2, 2006" ) }}</span>
           <a class="title" href="{{ .Params.externalLink | default .RelPermalink }}">{{ .Title }}</a>
+          {{ if .Params.tags }}
+            <span class="tags">
+              {{ range .Params.tags }}
+                <a class="tag" href="/tags/{{ . | urlize }}">{{ . }}</a>
+              {{ end }}
+            </span>
+          {{ end }}
         </li>
-      {{- end -}}
+      {{ end }}
     </ul>
   {{ end }}
 {{ end }}

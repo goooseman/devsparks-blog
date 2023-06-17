@@ -1,4 +1,4 @@
-baseURL = "https://devsparks.goooseman.dev"
+baseURL = "https://devsparks.goooseman.dev/"
 languageCode = "en-us"
 title = "DevSparks Blog"
 theme = "devsparks"
@@ -10,35 +10,3 @@ theme = "devsparks"
   [[module.mounts]]
     source = "../../static"
     target = "static"
-
-[params]
-  dateFormat = "January 2, 2006"
-
-[outputFormats]
-  [outputFormats.HTML]
-    mediaType = "text/html"
-    baseName = "index"
-    isPlainText = false
-
-[markup]
-  [markup.goldmark]
-    [markup.goldmark.renderer]
-      unsafe = true
-
-[menu]
-  [[menu.main]]
-    identifier = "hacks"
-    name = "Hacks"
-    url = "/"
-    weight = 1
-  [[menu.main]]
-    identifier = "about"
-    name = "About"
-    url = "/about"
-    weight = 2
-  [[menu.main]]
-    identifier = "github"
-    name = "GitHub"
-    url = "https://github.com/goooseman/devsparks-blog"
-    weight = 3
-

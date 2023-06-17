@@ -1,39 +1,13 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>DevSparks Blog</title>
-    <link rel="stylesheet" href="{{ "css/main.css" | relURL }}">
-    <link rel="stylesheet" href="{{ "css/theme-light.css" | relURL }}" media="(prefers-color-scheme: light)">
-    <link rel="stylesheet" href="{{ "css/theme-dark.css" | relURL }}" media="(prefers-color-scheme: dark)">
-    <script src="{{ "js/theme-switcher.js" | relURL }}" defer></script>
-</head>
-<body>
-    <header class="layout__header">
-        <div class="layout__container">
-            <nav>
-                <a href="/" class="layout__link__active">Hacks</a>
-                <a href="/about">About</a>
-                <a href="https://github.com/goooseman/devsparks-blog">GitHub</a>
-            </nav>
-            <div class="header__theme_switch" id="theme-switch" aria-label="Switch to light theme">
-                🌞
-            </div>
-        </div>
-    </header>
-    <main>
-        <div class="layout__container">
-            <!-- Content goes here -->
-        </div>
-    </main>
-    <footer>
-        <div class="layout__container">
-            <div class="footer__content">
-                <img src="/human.png" alt="Author Photo" class="footer__author-photo">
-                <p class="footer__about_text">Footer Ipsum</p>
-            </div>
-        </div>
-    </footer>
-</body>
-</html>
+<header class="layout__header">
+    <div class="layout__container">
+        <nav>
+            <a class="layout__link {{ if .IsHome }}layout__link__active{{ end }}" href="/">Hacks</a>
+            <a class="layout__link {{ if .IsPage "about.md" }}layout__link__active{{ end }}" href="/about">About</a>
+            <a class="layout__link" href="https://github.com/goooseman/devsparks-blog">GitHub</a>
+            <a class="layout__link" href="https://github.com/goooseman/devsparks-blog/issues/new?title=DevSparks+Feedback&body=I+found+something+wrong+on+this+page%3A%0A%0A++{{ .Permalink }}%0A%0A++Here%27s+what+it+is%3A" target="_blank" rel="noopener noreferrer">Fix typo</a>
+            <button id="theme-switch" class="header__theme_switch" aria-label="{{ if eq .Site.Params.theme "dark" }}Switch to light theme{{ else }}Switch to dark theme{{ end }}">
+                {{ if eq .Site.Params.theme "dark" }}🌞{{ else }}🌒{{ end }}
+            </button>
+        </nav>
+    </div>
+</header>

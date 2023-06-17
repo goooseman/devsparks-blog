@@ -1,16 +1,12 @@
-// footer-image.js
+// Footer image hover effect
+const authorPhoto = document.querySelector('.footer__author-photo img');
+const robotPhotoSrc = '/robot.png';
+const humanPhotoSrc = '/human.png';
 
-// Get the photo of the author
-const authorPhoto = document.querySelector('.footer__author-photo');
-
-// Add event listener for hover effect
-authorPhoto.addEventListener('mouseover', () => {
-  // Change the photo to the robot image
-  authorPhoto.src = '/robot.png';
+authorPhoto.addEventListener('mouseover', function() {
+  authorPhoto.src = robotPhotoSrc;
 });
 
-// Add event listener for mouseout
-authorPhoto.addEventListener('mouseout', () => {
-  // Change the photo back to the human image
-  authorPhoto.src = '/human.png';
+authorPhoto.addEventListener('mouseout', function() {
+  authorPhoto.src = humanPhotoSrc;
 });
