@@ -134,6 +134,7 @@ Should NOT create content folder.
 - Makefile
 - .gitignore (`.hugo_build.lock`)
 - config.toml
+  - Do not include anything about themes or remark42
   - Add following additional configuration:
     ```
 [module]
@@ -144,7 +145,6 @@ Should NOT create content folder.
   source = '../../static'
   target = 'static'
     ```
-  - Do not include anything about themes, it is CSS/JS only
 - themes/devsparks/layouts/_default/baseof.html
   - use `<link rel="stylesheet" href="{{ "css/main.css" | relURL }}">` to connect all 4 styles files
   - do not use `disabled` on any css
