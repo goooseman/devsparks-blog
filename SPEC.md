@@ -263,3 +263,194 @@ Shortcodes (html file without shortcode itself, contents only):
 - image sources for .tip__image:
   - hackerman: `/hackerman.png` and `/hackerman@2x.png`
   - padawan: `/padawan.png` and `/padawan@2x.png`
+
+### Hugo documentation
+
+Page Variables 
+.AlternativeOutputFormats
+contains all alternative formats for a given page; this variable is especially useful link rel list in your site’s <head>. (See Output Formats.)
+.Aliases
+aliases of this page
+.Ancestors
+get the ancestors of each page, simplify breadcrumb navigation implementation complexity
+.BundleType
+the bundle type: leaf, branch, or an empty string if the page is not a bundle.
+.Content
+the content itself, defined below the front matter.
+.Data
+the data specific to this type of page.
+.Date
+the date associated with the page; .Date pulls from the date field in a content’s front matter. See also .ExpiryDate, .PublishDate, and .Lastmod.
+.Description
+the description for the page.
+.Draft
+a boolean, true if the content is marked as a draft in the front matter.
+.ExpiryDate
+the date on which the content is scheduled to expire; .ExpiryDate pulls from the expirydate field in a content’s front matter. See also .PublishDate, .Date, and .Lastmod.
+.File
+filesystem-related data for this content file. See also File Variables.
+.Fragments
+Fragments returns the fragments for this page. See Page Fragments.
+.FuzzyWordCount
+the approximate number of words in the content.
+.IsHome
+true in the context of the homepage.
+.IsNode
+always false for regular content pages.
+.IsPage
+always true for regular content pages.
+.IsSection
+true if .Kind is section.
+.IsTranslated
+true if there are translations to display.
+.Keywords
+the meta keywords for the content.
+.Kind
+the page’s kind. Possible return values are page, home, section, taxonomy, or term. Note that there are also RSS, sitemap, robotsTXT, and 404 kinds, but these are only available during the rendering of each of these respective page’s kind and therefore not available in any of the Pages collections.
+.Language
+a language object that points to the language’s definition in the site configuration. .Language.Lang gives you the language code.
+.Lastmod
+the date the content was last modified. .Lastmod pulls from the lastmod field in a content’s front matter.
+If lastmod is not set, and .GitInfo feature is disabled, the front matter date field will be used.
+If lastmod is not set, and .GitInfo feature is enabled, .GitInfo.AuthorDate will be used instead.
+See also .ExpiryDate, .Date, .PublishDate, and .GitInfo.
+
+.LinkTitle
+access when creating links to the content. If set, Hugo will use the linktitle from the front matter before title.
+.Next
+Points up to the next regular page (sorted by Hugo’s default sort). Example: {{ with .Next }}{{ .Permalink }}{{ end }}. Calling .Next from the first page returns nil.
+.NextInSection
+Points up to the next regular page below the same top level section (e.g. in /blog)). Pages are sorted by Hugo’s default sort. Example: {{ with .NextInSection }}{{ .Permalink }}{{ end }}. Calling .NextInSection from the first page returns nil.
+.OutputFormats
+contains all formats, including the current format, for a given page. Can be combined the with .Get function to grab a specific format. (See Output Formats.)
+.Pages
+a collection of associated pages. This value will be nil within the context of regular content pages. See .Pages.
+.Permalink
+the Permanent link for this page; see Permalinks
+.Plain
+the Page content stripped of HTML tags and presented as a string. You may need to pipe the result through the htmlUnescape function when rendering this value with the HTML output format.
+.PlainWords
+the slice of strings that results from splitting .Plain into words, as defined in Go’s strings.Fields.
+.Prev
+Points down to the previous regular page (sorted by Hugo’s default sort). Example: {{ if .Prev }}{{ .Prev.Permalink }}{{ end }}. Calling .Prev from the last page returns nil.
+.PrevInSection
+Points down to the previous regular page below the same top level section (e.g. /blog). Pages are sorted by Hugo’s default sort. Example: {{ if .PrevInSection }}{{ .PrevInSection.Permalink }}{{ end }}. Calling .PrevInSection from the last page returns nil.
+.PublishDate
+the date on which the content was or will be published; .Publishdate pulls from the publishdate field in a content’s front matter. See also .ExpiryDate, .Date, and .Lastmod.
+.RawContent
+raw markdown content without the front matter. Useful with remarkjs.com
+.ReadingTime
+the estimated time, in minutes, it takes to read the content.
+.Resources
+resources such as images and CSS that are associated with this page
+.Ref
+returns the permalink for a given reference (e.g., .Ref "sample.md"). .Ref does not handle in-page fragments correctly. See Cross References.
+.RelPermalink
+the relative permanent link for this page.
+.RelRef
+returns the relative permalink for a given reference (e.g., RelRef "sample.md"). .RelRef does not handle in-page fragments correctly. See Cross References.
+.Site
+see Site Variables.
+.Sites
+returns all sites (languages). A typical use case would be to link back to the main language: <a href="{{ .Sites.First.Home.RelPermalink }}">...</a>.
+.Sites.First
+returns the site for the first language. If this is not a multilingual setup, it will return itself.
+.Summary
+a generated summary of the content for easily showing a snippet in a summary view. The breakpoint can be set manually by inserting <!--more--> at the appropriate place in the content page, or the summary can be written independent of the page text. See Content Summaries for more details.
+.TableOfContents
+the rendered table of contents for the page.
+.Title
+the title for this page.
+.Translations
+a list of translated versions of the current page. See Multilingual Mode for more information.
+.TranslationKey
+the key used to map language translations of the current page. See Multilingual Mode for more information.
+.Truncated
+a boolean, true if the .Summary is truncated. Useful for showing a “Read more…” link only when necessary. See Summaries for more information.
+.Type
+the content type of the content (e.g., posts).
+.Weight
+assigned weight (in the front matter) to this content, used in sorting.
+.WordCount
+the number of words in the content.
+Writable Page-scoped Variables 
+.Scratch
+returns a Scratch to store and manipulate data. In contrast to the .Store method, this scratch is reset on server rebuilds.
+.Store
+returns a Scratch to store and manipulate data. In contrast to the .Scratch method, this scratch is not reset on server rebuilds.
+Section Variables and Methods 
+Also see Sections.
+
+.CurrentSection
+The page’s current section. The value can be the page itself if it is a section or the homepage.
+.FirstSection
+The page’s first section below root, e.g. /docs, /blog etc.
+.InSection $anotherPage
+Whether the given page is in the current section.
+.IsAncestor $anotherPage
+Whether the current page is an ancestor of the given page.
+.IsDescendant $anotherPage
+Whether the current page is a descendant of the given page.
+.Parent
+A section’s parent section or a page’s section.
+.Section
+The section this content belongs to. Note: For nested sections, this is the first path element in the directory, for example, /blog/funny/mypost/ => blog.
+.Sections
+The sections below this content.
+The .Pages Variable 
+.Pages is an alias to .Data.Pages. It is conventional to use the aliased form .Pages.
+
+.Pages compared to .Site.Pages 
+A regular page is a “post” page or a “content” page.
+A leaf bundle is a regular page.
+A list page can list regular pages and other list pages. Some examples are: homepage, section pages, taxonomy (/tags/) and term (/tags/foo/) pages.
+A branch bundle is a list page.
+.Site.Pages
+Collection of all pages of the site: regular pages, sections, taxonomies, etc. – Superset of everything!
+.Site.RegularPages
+Collection of only regular pages.
+The above .Site. .. page collections can be accessed from any scope in the templates.
+
+Below variables return a collection of pages only from the scope of the current list page:
+
+.Pages
+Collection of regular pages and only first-level section pages under the current list page.
+.RegularPages
+Collection of only regular pages under the current list page. This excludes regular pages in nested sections/list pages (those are subdirectories with an _index.md file.
+.RegularPagesRecursive
+Collection of all regular pages under a list page. This includes regular pages in nested sections/list pages.
+Note
+From the scope of regular pages, .Pages and .RegularPages return an empty slice.
+Page Fragments 
+New in v0.111.0
+The .Fragments method returns a list of fragments for the current page.
+
+.Headings
+A recursive list of headings for the current page. Can be used to generate a table of contents.
+.Identifiers
+A sorted list of identifiers for the current page. Can be used to check if a page contains a specific identifier or if a page contains duplicate identifiers:
+{{ if .Fragments.Identifiers.Contains "my-identifier" }}
+    <p>Page contains identifier "my-identifier"</p>
+{{ end }}
+
+{{ if gt (.Fragments.Identifiers.Count "my-identifier")  1 }}
+    <p>Page contains duplicate "my-identifier" fragments</p>
+{{ end }}
+.HeadingsMap
+Holds a map of headings for the current page. Can be used to start the table of contents from a specific heading.
+Also see the Go Doc for the return type.
+
+Fragments in hooks and shortcodes 
+.Fragments are safe to call from render hooks, even on the page you’re on (.Page.Fragments). For shortcodes we recommend that all .Fragments usage is nested inside the {{<>}} shortcode delimiter ({{%%}} takes part in the ToC creation so it’s easy to end up in a situation where you bite yourself in the tail).
+
+The global page function 
+New in v0.111.1
+Hugo almost always passes a Page as the data context into the top level template (e.g. single.html) (the one exception is the multihost sitemap template). This means that you can access the current page with the . variable in the template.
+
+But when you’re deeply nested inside .Render, partial etc., accessing that Page object isn’t always practical or possible.
+
+For this reason, Hugo provides a global page function that you can use to access the current page from anywhere in any template.
+
+{{ page.Title }}
+There are one caveat with this, and this isn’t new, but it’s worth mentioning here: There are situations in Hugo where you may see a cached value, e.g. when using partialCached or in a shortcode.
+
