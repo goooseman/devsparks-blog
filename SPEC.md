@@ -38,13 +38,13 @@ Two themes: light and dark. Theme implementation is JS/CSS only.
 - Adds `body__theme__light` or `body__theme__dark` class to body.
 - theme CSS variblaes:
     - light:
-        - `background-color`: amber (`#ffc000`)
-        - `text-color`: graphite (`#40414e`)
-        - `border-color`: graphite (`#40414e`)
+        - `background-color`: `#ffc000`
+        - `text-color`: `#40414e`
+        - `border-color`: `#40414e`
     - dark:
-        - `background-color`: graphite (`#40414e`)
-        - `text-color`: amber (`#ffc000`)
-        - `border-color`: amber (`#ffc000`)
+        - `background-color`: `#40414e`
+        - `text-color`: `#ffc000`
+        - `border-color`: `#ffc000`
 - `background-color` should be background of whole website
 
 ### Common styling:
