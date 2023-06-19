@@ -81,6 +81,8 @@ Two themes: light and dark. Theme implementation is JS/CSS only.
 - contains navigation links: Hacks, About, [GitHub](https://github.com/goooseman/devsparks-blog), Fix typo link, switch theme toggle.
 - **Fix typo and switch theme should be aligned to the right side!**:
   - Because of that Hacks, About, GitHub should be defined in `[[menu.main]]` inside `config.yaml`
+  - Hacks is root `/`, but if any single hack is opened, menu item should also be active
+  - About is `/about`
   - Fix typo should not be defined in `config.yaml`, it should be hardcoded inside `header.html`
   - All `menu.main` items should be rendered inside one div, Fix typo and theme switcher - inside another div. Their parent should be flex.
 - To render menu items use the following snippet:
@@ -95,10 +97,6 @@ Two themes: light and dark. Theme implementation is JS/CSS only.
 
 ### Site layout
 
-- `.layout__container`
-  - container class to set content's width
-  - `<header>`, `<main>` and `<footer>` should be wrapped inside `.layout__container`: like `<.layout__container><header>`
-  - on mobile phones can't be bigger then screen width
 - `<header>`:
   - should contain `.layout__header` class
 - `<main>`
@@ -107,7 +105,7 @@ Two themes: light and dark. Theme implementation is JS/CSS only.
 - `<footer>`
   - contains photo of the author with transparent bg and a small about text: Footer Ipsum
   - photo of author: `/human.png` (`human@2x.png`)
-  - photo of author when hovered: `/robot.png` (`robot@2x.png`)
+  - photo of author when hovered: `/robot.png` (`robot@2x.png`) (do not forget to use 2x for retina)
   - height of the photo: 160px
   - should have flex layout: photo on the left, text on the right
   - for desktop breakpoint photo on the left column, text on the right
@@ -165,7 +163,12 @@ Do not generate hack itself, only the layout.
 ### Project structure
 
 - Makefile
-- .gitignore (`.hugo_build.lock` and common hugo ignore files, do not ignore theme folder)
+- .gitignore
+  - .hugo_build.lock
+  - /public/
+  - /resources/_gen/
+  - /assets/jsconfig.json
+  - hugo_stats.json
 - config.yaml
   - Do not include anything about themes or remark42
   - Do not use JSON objects in this file
@@ -174,8 +177,8 @@ Do not generate hack itself, only the layout.
   - use `<link rel="stylesheet" href="{{ "css/main.css" | relURL }}">` to connect all styles files, there are 4 css files, connect all of them!
   - do not use `disabled` on any css
   - connect both themes
-  - use `<script src="{{ "js/theme-switcher.js" | relURL }}" defer></script>` to connect JS
-  - There are 3 JS files, connect all of them
+  - use `<script src="{{ "js/theme-switcher.js" | relURL }}" defer></script>` to connect JS, there are 3 JS files, connect all of them
+  - `#remark42` should not be inside `baseof.html`, it is only inside `single.html
 - themes/devsparks/layouts/_default/list.html
   - Contains Hacks titile if it is index
   - Contains "Tag: ${tag}" title if it is a tag page
@@ -191,7 +194,7 @@ Do not generate hack itself, only the layout.
   - contains only colors and other changes for light theme, do not contain any common styles
 - themes/devsparks/static/css/theme-dark.css
   - contains only colors and other changes for dark theme, do not contain any common styles
-- themes/devsparks/static/js/theme-switcher.js
+- themes/devsparks/static/js/theme-switcher.js (should contain JS for theme-switcher in the header)
 - themes/devsparks/static/js/footer-image.js
 - themes/devsparks/static/js/remark42.js:
   - Should contain the following snippet:
@@ -224,7 +227,6 @@ ID names of DOM elements:
 Classnames:
 - .layout__header
 - .header__theme_switch
-- .layout__container
 - .layout__link__active
 - .section__tip__hackerman
 - .section__tip__padawan
@@ -238,11 +240,12 @@ Classnames:
 - .footer__about_text
 - .footer__author-photo
 
-Classname specs:
+CSS specs:
 
-- .layout__container:
+- body:
   - 600px width on desktop, aligned center
   - 100% width with 20px left/right padding on mobile
+  - Content should never be wider then 100wv
 - .tip__image should be absolute positioned on a border with left: 20% and bottom: 100% to be on top of `.tip__container`. 
 - .tip__container should be relative. 
 - .tip__container should have 300px margin top to fix image position overflow and 5px margin bottom. 
@@ -258,7 +261,7 @@ Classname specs:
   - should have transparent background, only 2px border
   - should be square
   - text should be centered
-- .layout__header > layout__container should be:
+- .layout__header should be:
   - `display: flex`
   - `justify-content: space-between;`
   - 10px padding from top
