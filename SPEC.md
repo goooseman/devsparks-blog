@@ -57,6 +57,7 @@ Two themes: light and dark. Theme implementation is JS/CSS only.
         - `background-color`: `#40414e`
         - `text-color`: `#ffc000`
         - `border-color`: `#ffc000`
+- Create such CSS vars in `theme-light.css` and `theme-dark.css` and reuse them in the project
 - `background-color` should be background of whole website
 - Switch theme switch
   - should contain `.header__theme_switch` class
@@ -96,7 +97,7 @@ Two themes: light and dark. Theme implementation is JS/CSS only.
 
 - `.layout__container`
   - container class to set content's width
-  - `<header>`, `<main>` and `<footer>` should be wrapped inside `.layout__container`
+  - `<header>`, `<main>` and `<footer>` should be wrapped inside `.layout__container`: like `<.layout__container><header>`
   - on mobile phones can't be bigger then screen width
 - `<header>`:
   - should contain `.layout__header` class
@@ -164,24 +165,22 @@ Do not generate hack itself, only the layout.
 ### Project structure
 
 - Makefile
-- .gitignore (`.hugo_build.lock` and hugo ignore files)
+- .gitignore (`.hugo_build.lock` and common hugo ignore files, do not ignore theme folder)
 - config.yaml
   - Do not include anything about themes or remark42
   - Do not use JSON objects in this file
   - Add following additional configuration:
 - themes/devsparks/layouts/_default/baseof.html
-  - footer and header are in separate files, just connect!
-  - use `<link rel="stylesheet" href="{{ "css/main.css" | relURL }}">` to connect all styles files
+  - use `<link rel="stylesheet" href="{{ "css/main.css" | relURL }}">` to connect all styles files, there are 4 css files, connect all of them!
   - do not use `disabled` on any css
   - connect both themes
   - use `<script src="{{ "js/theme-switcher.js" | relURL }}" defer></script>` to connect JS
+  - There are 3 JS files, connect all of them
 - themes/devsparks/layouts/_default/list.html
   - Contains Hacks titile if it is index
   - Contains "Tag: ${tag}" title if it is a tag page
 - themes/devsparks/layouts/_default/single.html
   - should not contain `<main>`, because it should be inside `baseof.html`
-- themes/devsparks/layouts/partials/footer.html
-- themes/devsparks/layouts/partials/header.html
 - themes/devsparks/layouts/shortcodes/hackermans-tip.html
 - themes/devsparks/layouts/shortcodes/padawans-playground.html
 - themes/devsparks/static/css/main.css
