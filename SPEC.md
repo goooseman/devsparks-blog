@@ -60,6 +60,8 @@ Two themes: light and dark. Theme implementation is JS/CSS only.
 - Create such CSS vars in `theme-light.css` and `theme-dark.css` and reuse them in the project
 - `background-color` should be background of whole website
 - Switch theme switch
+  - background: transparent
+  - reset all default button styles
   - padding 0
   - should contain `.header__theme_switch` class
   - Should only have 🌞 icon if current theme is dark and 🌒 icon if current theme is light
@@ -82,6 +84,7 @@ Two themes: light and dark. Theme implementation is JS/CSS only.
 - contains navigation links: Hacks, About, [GitHub](https://github.com/goooseman/devsparks-blog), Fix typo link, switch theme toggle.
 - **Fix typo and switch theme should be aligned to the right side!**:
   - Because of that Hacks, About, GitHub should be defined in `[[menu.main]]` inside `config.yaml`
+  - Hacks should have weight 10, About - 20, Github - 30
   - Hacks is root `/`, but if any single hack is opened, menu item should also be active
   - About is `/about`
   - Fix typo should not be defined in `config.yaml`, it should be hardcoded inside `header.html`
@@ -102,11 +105,12 @@ Two themes: light and dark. Theme implementation is JS/CSS only.
   - should contain `.layout__header` class
 - `<main>`
   - it has background shadow on top/bottom to make it look like lower then header and footer to add deepness
-  - should have margin top and bottom with 50px
+  - should have margin 50px -40px
+  - should have padding 20px 40px
 - `<footer>`
   - contains photo of the author with transparent bg and a small about text: Footer Ipsum
   - photo of author: `/human.png` (`human@2x.png`)
-  - photo of author when hovered: `/robot.png` (`robot@2x.png`) (do not forget to use 2x for retina)
+  - photo of author when hovered: `/robot.png` (`robot@2x.png`) (do not forget to use 2x for retina). Implement it in `footer-image.js` and do not forget to change `srcset` not only `src`
   - height of the photo: 160px
   - should have flex layout: photo on the left, text on the right
   - for desktop breakpoint photo on the left column, text on the right
@@ -156,10 +160,17 @@ Do not generate hack itself, only the layout.
 
 ### Code syntax highlighting
 
-- Any code should be highlighted. 
-- Typescript, javascript, java, go, rust support is required. 
-- Highlighting is inverting text color and background, so text color is used for bg and bg color is used for text. 
-- Should work for single-lines `<code>` blocks (\` in markdown) and also multiline ones (\`\`\`) for different programming languages
+- for `<code>` (single line):
+  - invert color and background color: color should be `--background-color`, background-color should be `--color`
+  - do not add any borders or paddings
+- for `<pre>` inside `<div class="highlight">`: 
+  - background-color is --background-color for dark theme and --color for light theme
+  - color should be `white` to keep it the default one
+- `<code>` inside `<pre>` inside `<div class="highlight">`:
+  - background-color: transparent
+  - color: `white`
+- no more other styles should be generated
+- background-color and color should be set on `body`
 
 ### Project structure
 
@@ -183,6 +194,7 @@ Do not generate hack itself, only the layout.
 - themes/devsparks/layouts/_default/list.html
   - Contains Hacks titile if it is index
   - Contains "Tag: ${tag}" title if it is a tag page
+  - Should contain `{{ define "main" }}`
 - themes/devsparks/layouts/_default/single.html
   - should not contain `<main>`, because it should be inside `baseof.html`
 - themes/devsparks/layouts/shortcodes/hackermans-tip.html
