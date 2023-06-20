@@ -60,6 +60,7 @@ Two themes: light and dark. Theme implementation is JS/CSS only.
 - Create such CSS vars in `theme-light.css` and `theme-dark.css` and reuse them in the project
 - `background-color` should be background of whole website
 - Switch theme switch
+  - padding 0
   - should contain `.header__theme_switch` class
   - Should only have 🌞 icon if current theme is dark and 🌒 icon if current theme is light
   - Should have aria-label: 'Switch to light theme' if current theme is dark and 'Switch to dark theme' if current theme is light
@@ -101,7 +102,7 @@ Two themes: light and dark. Theme implementation is JS/CSS only.
   - should contain `.layout__header` class
 - `<main>`
   - it has background shadow on top/bottom to make it look like lower then header and footer to add deepness
-  - should have padding top and bottom with 50px
+  - should have margin top and bottom with 50px
 - `<footer>`
   - contains photo of the author with transparent bg and a small about text: Footer Ipsum
   - photo of author: `/human.png` (`human@2x.png`)
@@ -246,6 +247,7 @@ CSS specs:
   - 600px width on desktop, aligned center
   - 100% width with 20px left/right padding on mobile
   - Content should never be wider then 100wv
+  - background of --background-color
 - .tip__image should be absolute positioned on a border with left: 20% and bottom: 100% to be on top of `.tip__container`. 
 - .tip__container should be relative. 
 - .tip__container should have 300px margin top to fix image position overflow and 5px margin bottom. 
