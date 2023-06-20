@@ -7,7 +7,7 @@ DevSparks - short, but meaningful lifehacks for developers.
 
 ## Technology Stack
 
-Blog address: `devsparks.goooseman.dev`.
+Blog address: `https://devsparks.goooseman.dev` (`baseURL`).
 Project structure: hugo blog
 Hugo version: 0.111.3
 Hugo theme name: `devsparks`
@@ -105,8 +105,8 @@ Two themes: light and dark. Theme implementation is JS/CSS only.
   - should contain `.layout__header` class
 - `<main>`
   - it has background shadow on top/bottom to make it look like lower then header and footer to add deepness
-  - should have margin 50px -40px
-  - should have padding 20px 40px
+  - should have margin `50px -40px`
+  - should have padding `20px 40px`
 - `<footer>`
   - contains photo of the author with transparent bg and a small about text: Footer Ipsum
   - photo of author: `/human.png` (`human@2x.png`)
@@ -185,6 +185,7 @@ Do not generate hack itself, only the layout.
   - Do not include anything about themes or remark42
   - Do not use JSON objects in this file
   - Add following additional configuration:
+    - `relativeUrls: true`
 - themes/devsparks/layouts/_default/baseof.html
   - use `<link rel="stylesheet" href="{{ "css/main.css" | relURL }}">` to connect all styles files, there are 4 css files, connect all of them!
   - do not use `disabled` on any css
