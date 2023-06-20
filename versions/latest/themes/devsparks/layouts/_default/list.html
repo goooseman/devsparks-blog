@@ -1,21 +1,19 @@
 {{ define "main" }}
-  <h1>Hacks</h1>
-  {{ range (where .Site.RegularPages "Type" "in" (slice "hacks")).GroupByDate "2006" }}
-    <h2>{{ .Key }}</h2>
-    <ul>
-      {{ range .Pages }}
-        <li>
-          <span class="date">{{ .Date.Format (.Site.Params.dateFormat | default "January 2, 2006" ) }}</span>
-          <a class="title" href="{{ .Params.externalLink | default .RelPermalink }}">{{ .Title }}</a>
-          {{ if .Params.tags }}
-            <span class="tags">
-              {{ range .Params.tags }}
-                <a class="tag" href="/tags/{{ . | urlize }}">{{ . }}</a>
-              {{ end }}
-            </span>
-          {{ end }}
-        </li>
-      {{ end }}
-    </ul>
-  {{ end }}
+{{ if .IsHome }}
+<h2>Hacks</h2>
+{{ else }}
+<h2>Tag: {{ .Title }}</h2>
+{{ end }}
+
+{{ range (where .Site.RegularPages "Type" "in" (slice "hacks")).GroupByDate "2006" }}
+  <h2>{{ .Key }}</h2>
+  <ul>
+    {{ range .Pages }}
+      <li>
+        <span class="date">{{ .Date.Format (.Site.Params.dateFormat | default "January 2, 2006" ) }}</span>
+        <a class="title" href="{{ .Params.externalLink | default .RelPermalink }}">{{ .Title }}</a>
+      </li>
+    {{ end }}
+  </ul>
+{{ end }}
 {{ end }}

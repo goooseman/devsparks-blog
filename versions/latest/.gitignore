@@ -1,40 +1,7 @@
-# Hugo output directory
-/public/
+# .gitignore
 
-# Hugo cache directory
-/resources/
-
-# Ignore the Hugo binary
-hugo
-
-# Ignore the Hugo build lock file
 .hugo_build.lock
-
-# Ignore the content directory
-/content/
-
-# Ignore the static directory
-/static/
-
-# Ignore the themes directory
-/themes/
-
-# Ignore the Makefile
-Makefile
-
-# Ignore the .gitignore file
-.gitignore
-
-# Ignore the config.toml file
-config.toml
-
-# Ignore the generated CSS files
-/themes/devsparks/static/css/main.css
-/themes/devsparks/static/css/syntax-highlighting.css
-/themes/devsparks/static/css/theme-light.css
-/themes/devsparks/static/css/theme-dark.css
-
-# Ignore the generated JS files
-/themes/devsparks/static/js/theme-switcher.js
-/themes/devsparks/static/js/footer-image.js
-/themes/devsparks/static/js/remark42.js
+/public/
+/resources/_gen/
+/assets/jsconfig.json
+hugo_stats.json

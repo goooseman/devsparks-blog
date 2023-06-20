@@ -1,24 +1,33 @@
-the app is: DevSparks Blog Specification
+The shared dependencies between the files we are generating are:
 
-the files we have decided to generate are: 
-- Makefile
-- .gitignore
-- config.toml
-- themes/devsparks/layouts/_default/baseof.html
-- themes/devsparks/layouts/_default/list.html
-- themes/devsparks/layouts/_default/single.html
-- themes/devsparks/layouts/partials/footer.html
-- themes/devsparks/layouts/partials/header.html
-- themes/devsparks/layouts/shortcodes/hackermans-tip.html
-- themes/devsparks/layouts/shortcodes/padawans-playground.html
-- themes/devsparks/static/css/main.css
-- themes/devsparks/static/css/syntax-highlighting.css
-- themes/devsparks/static/css/theme-light.css
-- themes/devsparks/static/css/theme-dark.css
-- themes/devsparks/static/js/theme-switcher.js
-- themes/devsparks/static/js/footer-image.js
-- themes/devsparks/static/js/remark42.js
+Exported variables:
+- `remark_config`
 
-Now that we have a list of files, we need to understand what dependencies they share.
-Please name and briefly describe what is shared between the files we are generating, including exported variables, data schemas, id names of every DOM elements that javascript functions will use, message names, and function names.
-Exclusively focus on the names of the shared dependencies, and do not add any other explanation.
+Data schemas:
+- None
+
+ID names of every DOM elements that JavaScript functions will use:
+- `theme-switch`
+- `remark42`
+
+Message names:
+- None
+
+Function names:
+- None
+
+Classnames:
+- `.layout__header`
+- `.header__theme_switch`
+- `.layout__link__active`
+- `.section__tip__hackerman`
+- `.section__tip__padawan`
+- `.tip__container`
+- `.tip__title`
+- `.tip__image`
+- `.article__title`
+- `.article__date`
+- `.article__tags`
+- `.article__content`
+- `.footer__about_text`
+- `.footer__author-photo`

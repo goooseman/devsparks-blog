@@ -1,35 +1,50 @@
+/* syntax-highlighting.css */
+
 /* Code syntax highlighting */
 pre code {
-  color: var(--background-color);
+  font-family: "Fira Code", monospace;
+  border: 2px solid var(--border-color);
+  padding: 10px;
   background-color: var(--text-color);
+  color: var(--background-color);
 }
 
-/* Typescript syntax highlighting */
+/* Single-line code blocks */
+code {
+  font-family: "Fira Code", monospace;
+  border: 2px solid var(--border-color);
+  padding: 5px;
+  background-color: var(--text-color);
+  color: var(--background-color);
+}
+
+/* Syntax highlighting for different programming languages */
+/* Typescript */
 pre code.language-typescript {
-  color: var(--text-color);
-  background-color: var(--background-color);
+  background-color: var(--text-color);
+  color: var(--background-color);
 }
 
-/* JavaScript syntax highlighting */
+/* JavaScript */
 pre code.language-javascript {
-  color: var(--text-color);
-  background-color: var(--background-color);
+  background-color: var(--text-color);
+  color: var(--background-color);
 }
 
-/* Java syntax highlighting */
+/* Java */
 pre code.language-java {
-  color: var(--text-color);
-  background-color: var(--background-color);
+  background-color: var(--text-color);
+  color: var(--background-color);
 }
 
-/* Go syntax highlighting */
+/* Go */
 pre code.language-go {
-  color: var(--text-color);
-  background-color: var(--background-color);
+  background-color: var(--text-color);
+  color: var(--background-color);
 }
 
-/* Rust syntax highlighting */
+/* Rust */
 pre code.language-rust {
-  color: var(--text-color);
-  background-color: var(--background-color);
+  background-color: var(--text-color);
+  color: var(--background-color);
 }

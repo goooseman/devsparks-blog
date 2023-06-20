@@ -1,0 +1,19 @@
+baseURL: "devsparks.goooseman.dev"
+languageCode: "en-us"
+title: "DevSparks Blog"
+theme: "devsparks"
+params:
+  dateFormat: "January 2, 2006"
+  mounts:
+    - source: "../../content"
+      target: "content"
+    - source: "../../static"
+      target: "static"
+menus:
+  main:
+    - name: "Hacks"
+      url: "/"
+    - name: "About"
+      url: "/about"
+    - name: "GitHub"
+      url: "https://github.com/goooseman/devsparks-blog"
