@@ -59,7 +59,12 @@ Two themes: light and dark. Theme implementation is JS/CSS only.
         - `border-color`: `#ffc000`
 - Create such CSS vars in `theme-light.css` and `theme-dark.css` and reuse them in the project
 - Do not write any other CSS inside theme-light and theme-dark!
-- `background-color` should be background of whole website
+- `background-color` should be background of whole website. Add in `main.css`:
+```
+  background-color: var(--background-color);
+  color: var(--text-color);
+```
+
 - Switch theme switch
   - background: transparent
   - reset all default button styles
@@ -73,7 +78,7 @@ Two themes: light and dark. Theme implementation is JS/CSS only.
 
 - Fira Code font (`https://fonts.googleapis.com/css2?family=Fira+Code&display=swap`)
 - Border width: 2px (global variable)
-- Links: text color both when normal or hovered
+- Links: text color normal
 - Links: always have border bottom 2px
 - Links: never underline, not on hover also
 - Links: on hover should invert color and background color with an animation of sliding from bottom to top
@@ -84,17 +89,19 @@ Two themes: light and dark. Theme implementation is JS/CSS only.
 
 - contains navigation links: Hacks, About, [GitHub](https://github.com/goooseman/devsparks-blog), Fix typo link, switch theme toggle.
 - **Fix typo and switch theme should be aligned to the right side!**:
-  - Because of that Hacks, About, GitHub should be defined in `[[menu.main]]` inside `config.yaml`
+  - Because of that Hacks, About, GitHub should be defined in `menu.main` inside `config.yaml`
   - Hacks should have weight 10, About - 20, Github - 30
+  - About should have `identifier: about`
+  - Github should have `identifier: github`
   - Hacks is root `/`, but if any single hack is opened, menu item should also be active
   - About is `/about`
   - Fix typo should not be defined in `config.yaml`, it should be hardcoded inside `header.html`
-  - All `menu.main` items should be rendered inside one div, Fix typo and theme switcher - inside another div. Their parent should be flex.
+  - All `menu.main` items should be rendered inside one nav, Fix typo and theme switcher - inside another nav. Their parent should be flex.
 - To render menu items use the following snippet:
 ```
     {{ $currentPage := . }}
     {{ range .Site.Menus.main }}
-      <a class="{{if or ($currentPage.IsMenuCurrent "main" .) ($currentPage.HasMenuCurrent "main" .) }} layout__link__active{{end}}" href="{{.URL}}">{{ .Name }}</a>
+      <a class="{{if or (eq $currentPage.RelPermalink .URL) (eq $currentPage.Section .Identifier) }} layout__link__active{{end}}" href="{{.URL}}">{{ .Name }}</a>
     {{ end }}
 ```
 - Fix typo button just opens following link in a new tab: "https://github.com/goooseman/devsparks-blog/issues/new?title=DevSparks+Feedback&body=I+found+something+wrong+on+this+page%3A%0A%0A++{CURRENT_PAGE}%0A%0A++Here%27s+what+it+is%3A", make sure to replace `{CURRENT_PAGE}` with correct url: `.Permalink` hugo var
@@ -115,7 +122,7 @@ Two themes: light and dark. Theme implementation is JS/CSS only.
   - to implement hover please render two images on the screen, one with display: none, use two separate IDs and toggle their display in JS file
   - robot.png should be display: none by default
   - height of the photo: 160px
-  - should have flex layout: photo on the left, text on the right
+  - `.footer__container` should have flex layout: photo on the left, text on the right
   - for desktop breakpoint photo on the left column, text on the right
   - for mobile breakpoint photo is aligned to center and above the text
 
@@ -169,6 +176,7 @@ Do not generate hack itself, only the layout.
 - for `<pre>` inside `<div class="highlight">`: 
   - background-color is --background-color for dark theme and --color for light theme
   - color should be `white` to keep it the default one
+  - padding: 10px
 - `<code>` inside `<pre>` inside `<div class="highlight">`:
   - background-color: transparent
   - color: `white`
@@ -256,6 +264,7 @@ Classnames:
 - .article__date
 - .article__tags
 - .article__content
+- .footer__container
 - .footer__about_text
 - .footer__author-photo
 
@@ -279,7 +288,7 @@ CSS specs:
 - .tip__container should have margin-top: 30px;
 - .header__theme_switch
   - should have transparent background, only 2px border
-  - should be square
+  - should be square (22px width and height with text-align: center)
   - text should be centered
 - .layout__header should be:
   - `display: flex`
