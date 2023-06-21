@@ -198,6 +198,7 @@ Do not generate hack itself, only the layout.
   - Do not use JSON objects in this file
   - Add following additional configuration:
     - `relativeUrls: true`
+  - Output YAML file for hugo, not markdown here!
 - themes/devsparks/layouts/_default/baseof.html
   - use `<link rel="stylesheet" href="{{ "css/main.css" | relURL }}">` to connect all styles files, there are 4 css files, connect all of them!
   - do not use `disabled` on any css
