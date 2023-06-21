@@ -20,4 +20,7 @@ build:
 	cd versions/v0.0.0 && hugo
 	mkdir public || echo 'Public already exists'
 	cp -r ./versions/v0.0.0/public ./public/v0.0.0
-	cp -r ./versions/v0.0.0/public ./public/latest
+	cd versions/latest && hugo
+	mkdir public || echo 'Public already exists'
+	cp -r ./versions/latest/public ./public/latest
+	cp -r ./versions/latest/public ./public/v0.1.0
