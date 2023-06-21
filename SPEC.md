@@ -91,10 +91,11 @@ Two themes: light and dark. Theme implementation is JS/CSS only.
 - **Fix typo and switch theme should be aligned to the right side!**:
   - Because of that Hacks, About, GitHub should be defined in `menu.main` inside `config.yaml`
   - Hacks should have weight 10, About - 20, Github - 30
+  - Hacks should have `identifier: hacks`
   - About should have `identifier: about`
   - Github should have `identifier: github`
   - Hacks is root `/`, but if any single hack is opened, menu item should also be active
-  - About is `/about`
+  - About is `/about/`
   - Fix typo should not be defined in `config.yaml`, it should be hardcoded inside `header.html`
   - All `menu.main` items should be rendered inside one nav, Fix typo and theme switcher - inside another nav. Their parent should be flex.
 - To render menu items use the following snippet:
@@ -264,6 +265,7 @@ Classnames:
 - .article__date
 - .article__tags
 - .article__content
+- .article__remark42
 - .footer__container
 - .footer__about_text
 - .footer__author-photo
@@ -283,7 +285,6 @@ CSS specs:
 - .tip__container should be relative
 - .tip__container should have padding 20px, margin-left and right -20px
 - .tip__image should be absolute with bottom: 100%, left: 20%
-- .tip__image should be color inverted in dark theme
 - .tip__image should be 280px height
 - .tip__container should have margin-top: 30px;
 - .header__theme_switch
@@ -299,6 +300,7 @@ CSS specs:
 - .footer__about_text
   - text is wrapped with a single border around whole text, not single parapgraph, of `border-color`
 - .article__content h3 should have `padding-top: 5px` and `border-top: 1px solid currentColor`
+- .article__remark42 should have margin-left and right -20px and margin-top of 10px
 
 Shortcodes (html file without shortcode itself, contents only):
 - hackermans-tip
