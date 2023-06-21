@@ -48,7 +48,7 @@ Two themes: light and dark. Theme implementation is JS/CSS only.
 - Website should watch for system theme changes and update site's theme.
 - Website theme should be control with switcher, so both CSS should be always connected
 - Adds `body__theme__light` or `body__theme__dark` class to body.
-- Theme CSS variblaes:
+- Theme CSS variblaes should be attached to `body__theme__light` and `body__theme__dark`:
     - light:
         - `background-color`: `#ffc000`
         - `text-color`: `#40414e`
@@ -111,7 +111,7 @@ Two themes: light and dark. Theme implementation is JS/CSS only.
   - contains photo of the author with transparent bg and a small about text: Footer Ipsum
   - photo of author: `/human.png` (`human@2x.png`)
   - photo of author when hovered: `/robot.png` (`robot@2x.png`) (do not forget to use 2x for retina). Implement it in `footer-image.js` and do not forget to change `srcset` not only `src`
-  - to implement hover please render two images on the screen, one with display: none and toggle them in JS file
+  - to implement hover please render two images on the screen, one with display: none, use two separate IDs and toggle their display in JS file
   - height of the photo: 160px
   - should have flex layout: photo on the left, text on the right
   - for desktop breakpoint photo on the left column, text on the right
@@ -238,6 +238,8 @@ breakpoints: >680px - desktop, <680px mobile
 ID names of DOM elements:
    - theme-switch (for theme toggle button)
    - remark42 (for Remark42 comments integration)
+   - footer-image-human
+   - footer-image-robot
 
 Classnames:
 - .layout__header
