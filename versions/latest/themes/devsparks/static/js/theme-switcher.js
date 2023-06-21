@@ -1,40 +1,13 @@
-// Get the theme switch element
-const themeSwitch = document.getElementById('theme-switch');
-
-// Add event listener to detect theme switch
-themeSwitch.addEventListener('click', () => {
-  // Get the body element
-  const body = document.querySelector('body');
-
-  // Toggle the theme class
-  body.classList.toggle('body__theme__light');
-  body.classList.toggle('body__theme__dark');
-
-  // Get the current theme
-  const currentTheme = body.classList.contains('body__theme__light') ? 'light' : 'dark';
-
-  // Get the theme switch icon element
-  const themeSwitchIcon = themeSwitch.querySelector('span');
-
-  // Update the theme switch icon and aria-label
-  if (currentTheme === 'light') {
-    themeSwitchIcon.textContent = '🌒';
-    themeSwitch.setAttribute('aria-label', 'Switch to dark theme');
-  } else {
-    themeSwitchIcon.textContent = '🌞';
-    themeSwitch.setAttribute('aria-label', 'Switch to light theme');
-  }
-});
-
-// Check the system theme
-const systemTheme = window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
-
-// Get the body element
-const body = document.querySelector('body');
-
-// Set the initial theme based on the system theme
-if (systemTheme === 'dark') {
-  body.classList.add('body__theme__dark');
-} else {
-  body.classList.add('body__theme__light');
+// https://r42.com/docs/configuration/frontend/
+var remark_config = {
+  host: 'https://r42.goooseman.dev',
+  site_id: 'dev_sparks',
+  components: ['embed', 'last-comments'],
+  max_shown_comments: 100,
+  theme: 'dark',
+  show_email_subscription: false,
+  simple_view: false,
+  no_footer: false
 }
+
+!function(e,n){for(var o=0;o<e.length;o++){var r=n.createElement("script"),c=".js",d=n.head||n.body;"noModule"in r?(r.type="module",c=".mjs"):r.async=!0,r.defer=!0,r.src=remark_config.host+"/web/"+e[o]+c,d.appendChild(r)}}(remark_config.components||["embed"],document);

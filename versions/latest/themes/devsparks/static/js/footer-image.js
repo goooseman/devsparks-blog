@@ -1,11 +1,12 @@
-// themes/devsparks/static/js/footer-image.js
+const footerImageHuman = document.getElementById('footer-image-human');
+const footerImageRobot = document.getElementById('footer-image-robot');
 
-// Add event listener to the footer image
-const footerImage = document.querySelector('.footer__author-photo');
-footerImage.addEventListener('mouseover', function() {
-  footerImage.src = '/robot@2x.png';
+footerImageHuman.addEventListener('mouseover', () => {
+  footerImageHuman.style.display = 'none';
+  footerImageRobot.style.display = 'block';
 });
 
-footerImage.addEventListener('mouseout', function() {
-  footerImage.src = '/human@2x.png';
+footerImageRobot.addEventListener('mouseout', () => {
+  footerImageRobot.style.display = 'none';
+  footerImageHuman.style.display = 'block';
 });

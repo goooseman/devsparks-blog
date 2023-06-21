@@ -6,37 +6,35 @@
     <title>{{ .Title }}</title>
     <link rel="stylesheet" href="{{ "css/main.css" | relURL }}">
     <link rel="stylesheet" href="{{ "css/syntax-highlighting.css" | relURL }}">
-    <link rel="stylesheet" href="{{ "css/theme-light.css" | relURL }}" id="theme-light" disabled>
-    <link rel="stylesheet" href="{{ "css/theme-dark.css" | relURL }}" id="theme-dark" disabled>
+    <link rel="stylesheet" href="{{ "css/theme-light.css" | relURL }}">
+    <link rel="stylesheet" href="{{ "css/theme-dark.css" | relURL }}">
     <script src="{{ "js/theme-switcher.js" | relURL }}" defer></script>
 </head>
 <body class="body__theme__light">
     <header class="layout__header">
-        <div>
+        <nav>
             {{ $currentPage := . }}
             {{ range .Site.Menus.main }}
-                <a class="{{if or ($currentPage.IsMenuCurrent "main" .) ($currentPage.HasMenuCurrent "main" .) }} layout__link__active{{end}}" href="{{.URL}}">{{ .Name }}</a>
+                <a class="{{if or (eq $currentPage.RelPermalink .URL) (eq $currentPage.Section .Identifier) }} layout__link__active{{end}}" href="{{.URL}}">{{ .Name }}</a>
             {{ end }}
-        </div>
-        <div>
+        </nav>
+        <nav>
             <a href="https://github.com/goooseman/devsparks-blog">GitHub</a>
             <a href="https://github.com/goooseman/devsparks-blog/issues/new?title=DevSparks+Feedback&body=I+found+something+wrong+on+this+page%3A%0A%0A++{{ .Permalink }}%0A%0A++Here%27s+what+it+is%3A">Fix typo</a>
             <button id="theme-switch" class="header__theme_switch" aria-label="Switch to dark theme">🌞</button>
-        </div>
+        </nav>
     </header>
     <main>
         {{ block "main" . }}{{ end }}
     </main>
     <footer>
-        <div>
-            <img src="/human.png" srcset="/human.png 1x, /human@2x.png 2x" alt="Author Photo" class="footer__author-photo">
-        </div>
-        <div>
+        <div class="footer__container">
+            <img id="footer-image-human" class="footer__author-photo" src="/human.png" srcset="/human@2x.png 2x" alt="Author Photo">
+            <img id="footer-image-robot" class="footer__author-photo" src="/robot.png" srcset="/robot@2x.png 2x" alt="Author Photo">
             <p class="footer__about_text">Footer Ipsum</p>
         </div>
     </footer>
     <script src="{{ "js/footer-image.js" | relURL }}"></script>
-    <div id="remark42"></div>
-    {{ block "scripts" . }}{{ end }}
+    <script src="{{ "js/remark42.js" | relURL }}"></script>
 </body>
 </html>

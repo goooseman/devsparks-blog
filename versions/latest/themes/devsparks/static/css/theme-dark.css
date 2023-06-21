@@ -6,15 +6,16 @@
   --border-color: #ffc000;
 }
 
-body {
+body.body__theme__dark {
   background-color: var(--background-color);
+  color: var(--text-color);
 }
 
 .header__theme_switch {
-  background-color: transparent;
+  background: transparent;
   border: 2px solid var(--border-color);
-  width: 20px;
-  height: 20px;
+  width: 22px;
+  height: 22px;
   text-align: center;
 }
 
@@ -49,11 +50,13 @@ body {
   height: 280px;
 }
 
-.tip__image.dark {
-  filter: invert(100%);
-}
-
 .article__content h3 {
   padding-top: 5px;
   border-top: 1px solid currentColor;
+}
+
+.article__remark42 {
+  margin-left: -20px;
+  margin-right: -20px;
+  margin-top: 10px;
 }

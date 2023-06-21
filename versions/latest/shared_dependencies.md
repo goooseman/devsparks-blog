@@ -1,33 +1,39 @@
-The shared dependencies between the files we are generating are:
+Files to generate:
+- Makefile
+- .gitignore
+- config.yaml
+- themes/devsparks/layouts/_default/baseof.html
+- themes/devsparks/layouts/_default/list.html
+- themes/devsparks/layouts/_default/single.html
+- themes/devsparks/layouts/shortcodes/hackermans-tip.html
+- themes/devsparks/layouts/shortcodes/padawans-playground.html
+- themes/devsparks/static/css/main.css
+- themes/devsparks/static/css/syntax-highlighting.css
+- themes/devsparks/static/css/theme-light.css
+- themes/devsparks/static/css/theme-dark.css
+- themes/devsparks/static/js/theme-switcher.js
+- themes/devsparks/static/js/footer-image.js
+- themes/devsparks/static/js/remark42.js
 
-Exported variables:
-- `remark_config`
-
-Data schemas:
-- None
-
-ID names of every DOM elements that JavaScript functions will use:
-- `theme-switch`
-- `remark42`
-
-Message names:
-- None
-
-Function names:
-- None
-
-Classnames:
-- `.layout__header`
-- `.header__theme_switch`
-- `.layout__link__active`
-- `.section__tip__hackerman`
-- `.section__tip__padawan`
-- `.tip__container`
-- `.tip__title`
-- `.tip__image`
-- `.article__title`
-- `.article__date`
-- `.article__tags`
-- `.article__content`
-- `.footer__about_text`
-- `.footer__author-photo`
+Shared dependencies:
+- breakpoints
+- theme-switch
+- remark42
+- footer-image-human
+- footer-image-robot
+- .layout__header
+- .header__theme_switch
+- .layout__link__active
+- .section__tip__hackerman
+- .section__tip__padawan
+- .tip__container
+- .tip__title
+- .tip__image
+- .article__title
+- .article__date
+- .article__tags
+- .article__content
+- .article__remark42
+- .footer__container
+- .footer__about_text
+- .footer__author-photo

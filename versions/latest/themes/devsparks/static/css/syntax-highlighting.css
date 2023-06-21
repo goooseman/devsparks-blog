@@ -1,50 +1,20 @@
-/* syntax-highlighting.css */
+/* themes/devsparks/static/css/syntax-highlighting.css */
 
-/* Code syntax highlighting */
-pre code {
-  font-family: "Fira Code", monospace;
-  border: 2px solid var(--border-color);
-  padding: 10px;
-  background-color: var(--text-color);
-  color: var(--background-color);
-}
-
-/* Single-line code blocks */
+/* Single line code */
 code {
-  font-family: "Fira Code", monospace;
-  border: 2px solid var(--border-color);
-  padding: 5px;
-  background-color: var(--text-color);
   color: var(--background-color);
+  background-color: var(--color);
 }
 
-/* Syntax highlighting for different programming languages */
-/* Typescript */
-pre code.language-typescript {
-  background-color: var(--text-color);
-  color: var(--background-color);
+/* Code block */
+pre div.highlight {
+  background-color: var(--background-color);
+  color: white;
+  padding: 10px;
 }
 
-/* JavaScript */
-pre code.language-javascript {
-  background-color: var(--text-color);
-  color: var(--background-color);
-}
-
-/* Java */
-pre code.language-java {
-  background-color: var(--text-color);
-  color: var(--background-color);
-}
-
-/* Go */
-pre code.language-go {
-  background-color: var(--text-color);
-  color: var(--background-color);
-}
-
-/* Rust */
-pre code.language-rust {
-  background-color: var(--text-color);
-  color: var(--background-color);
+/* Code inside code block */
+pre div.highlight code {
+  background-color: transparent;
+  color: white;
 }
