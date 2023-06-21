@@ -1,0 +1,62 @@
+/* themes/devsparks/static/css/theme-light.css */
+
+:root {
+  --background-color: #ffc000;
+  --text-color: #40414e;
+  --border-color: #40414e;
+}
+
+.body__theme__light {
+  background-color: var(--background-color);
+  color: var(--text-color);
+}
+
+.header__theme_switch {
+  background: transparent;
+  border: 2px solid var(--border-color);
+  width: 22px;
+  height: 22px;
+  text-align: center;
+}
+
+.layout__header {
+  display: flex;
+  justify-content: space-between;
+  padding-top: 10px;
+}
+
+.layout__link__active {
+  border: 2px solid;
+}
+
+.footer__about_text {
+  border: 2px solid var(--border-color);
+}
+
+.tip__container {
+  position: relative;
+  margin-top: 300px;
+  margin-bottom: 5px;
+  border: 2px solid var(--border-color);
+  padding: 20px;
+  margin-left: -20px;
+  margin-right: -20px;
+}
+
+.tip__image {
+  position: absolute;
+  bottom: 100%;
+  left: 20%;
+  height: 280px;
+}
+
+.article__content h3 {
+  padding-top: 5px;
+  border-top: 1px solid currentColor;
+}
+
+.article__remark42 {
+  margin-left: -20px;
+  margin-right: -20px;
+  margin-top: 10px;
+}

@@ -1,0 +1,87 @@
+@import url('https://fonts.googleapis.com/css2?family=Fira+Code&display=swap');
+
+:root {
+  --border-width: 2px;
+}
+
+a {
+  color: var(--text-color);
+  text-decoration: none;
+  border-bottom: var(--border-width) solid var(--text-color);
+  transition: color 0.3s, background-color 0.3s;
+}
+
+a:hover {
+  color: var(--background-color);
+  background-color: var(--text-color);
+  background-image: linear-gradient(to top, var(--text-color), var(--background-color));
+  background-position: 0 100%;
+  background-repeat: no-repeat;
+  background-size: 100% 200%;
+}
+
+.layout__link__active {
+  border: var(--border-width) solid;
+}
+
+.layout__header {
+  display: flex;
+  justify-content: space-between;
+  padding-top: 10px;
+}
+
+.header__theme_switch {
+  background: transparent;
+  border: var(--border-width) solid;
+  width: 22px;
+  height: 22px;
+  text-align: center;
+}
+
+.section__tip__hackerman .tip__container,
+.section__tip__padawan .tip__container {
+  position: relative;
+  margin-top: 300px;
+  margin-bottom: 5px;
+  border: var(--border-color) solid;
+  padding: 20px;
+  margin-left: -20px;
+  margin-right: -20px;
+}
+
+.section__tip__hackerman .tip__image,
+.section__tip__padawan .tip__image {
+  position: absolute;
+  bottom: 100%;
+  left: 20%;
+  height: 280px;
+}
+
+.tip__title {
+  font-style: italic;
+  font-weight: bold;
+}
+
+.article__content h3 {
+  padding-top: 5px;
+  border-top: var(--border-width) solid currentColor;
+}
+
+.article__remark42 {
+  margin-left: -20px;
+  margin-right: -20px;
+  margin-top: 10px;
+}
+
+body {
+  width: 600px;
+  margin: 0 auto;
+  background-color: var(--background-color);
+}
+
+@media (max-width: 680px) {
+  body {
+    width: 100%;
+    padding: 20px;
+  }
+}
