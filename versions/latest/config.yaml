@@ -19,9 +19,12 @@ menu:
     - name: "Hacks"
       weight: 10
       identifier: "hacks"
+      url: '/'
     - name: "About"
       weight: 20
       identifier: "about"
+      url: '/about/'
     - name: "GitHub"
       weight: 30
       identifier: "github"
+      url: 'https://github.com/goooseman/devsparks-blog'
