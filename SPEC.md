@@ -48,7 +48,7 @@ Two themes: light and dark. Theme implementation is JS/CSS only.
 - Website should watch for system theme changes and update site's theme.
 - Website theme should be control with switcher, so both CSS should be always connected
 - Adds `body__theme__light` or `body__theme__dark` class to body.
-- Theme CSS variblaes should be attached to `body__theme__light` and `body__theme__dark`:
+- Theme CSS variblaes should be attached to `body__theme__light` and `body__theme__dark`, not `:root`:
     - light:
         - `background-color`: `#ffc000`
         - `text-color`: `#40414e`
@@ -58,6 +58,7 @@ Two themes: light and dark. Theme implementation is JS/CSS only.
         - `text-color`: `#ffc000`
         - `border-color`: `#ffc000`
 - Create such CSS vars in `theme-light.css` and `theme-dark.css` and reuse them in the project
+- Do not write any other CSS inside theme-light and theme-dark!
 - `background-color` should be background of whole website
 - Switch theme switch
   - background: transparent
@@ -112,6 +113,7 @@ Two themes: light and dark. Theme implementation is JS/CSS only.
   - photo of author: `/human.png` (`human@2x.png`)
   - photo of author when hovered: `/robot.png` (`robot@2x.png`) (do not forget to use 2x for retina). Implement it in `footer-image.js` and do not forget to change `srcset` not only `src`
   - to implement hover please render two images on the screen, one with display: none, use two separate IDs and toggle their display in JS file
+  - robot.png should be display: none by default
   - height of the photo: 160px
   - should have flex layout: photo on the left, text on the right
   - for desktop breakpoint photo on the left column, text on the right
