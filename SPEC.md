@@ -62,7 +62,7 @@ Two themes: light and dark. Theme implementation is JS/CSS only.
 - Switch theme switch
   - background: transparent
   - reset all default button styles
-  - padding 0
+  - padding: 0
   - should contain `.header__theme_switch` class
   - Should only have 🌞 icon if current theme is dark and 🌒 icon if current theme is light
   - Should have aria-label: 'Switch to light theme' if current theme is dark and 'Switch to dark theme' if current theme is light
@@ -111,6 +111,7 @@ Two themes: light and dark. Theme implementation is JS/CSS only.
   - contains photo of the author with transparent bg and a small about text: Footer Ipsum
   - photo of author: `/human.png` (`human@2x.png`)
   - photo of author when hovered: `/robot.png` (`robot@2x.png`) (do not forget to use 2x for retina). Implement it in `footer-image.js` and do not forget to change `srcset` not only `src`
+  - to implement hover please render two images on the screen, one with display: none and toggle them in JS file
   - height of the photo: 160px
   - should have flex layout: photo on the left, text on the right
   - for desktop breakpoint photo on the left column, text on the right
@@ -152,7 +153,7 @@ A specific hack page contains:
 - Date (only if exists)
 - Tags (listed inline, not as bullet items)
 - Text content
-- Comments (just render #remark42 div only on the Hack page)
+- Comments (just render #remark42 div only inside `single.html`)
 
 Tags should be links, when clicked other hacks by the same tag should be listed.
 
@@ -194,7 +195,7 @@ Do not generate hack itself, only the layout.
   - `#remark42` should not be inside `baseof.html`, it is only inside `single.html
 - themes/devsparks/layouts/_default/list.html
   - Contains Hacks titile if it is index
-  - Contains "Tag: ${tag}" title if it is a tag page
+  - Contains "${title}" if not
   - Should contain `{{ define "main" }}`
 - themes/devsparks/layouts/_default/single.html
   - should not contain `<main>`, because it should be inside `baseof.html`
