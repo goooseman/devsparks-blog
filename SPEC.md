@@ -43,12 +43,12 @@ Footer and content images have `2x` versions, make sure to use them for Retina d
 
 ### Theming
 
-Two themes: light and dark. Theme implementation is JS/CSS only.
+One theme with light and dark variations. Theme implementation is JS/CSS only.
 - When site is loaded, system theme should be checked if possible.
 - Website should watch for system theme changes and update site's theme.
 - Website theme should be control with switcher, so both CSS should be always connected
 - Adds `body__theme__light` or `body__theme__dark` class to body.
-- Theme CSS variblaes should be attached to `body__theme__light` and `body__theme__dark`, not `:root`:
+- Theme CSS variblaes should be attached to `body__theme__light` and `body__theme__dark`:
     - light:
         - `background-color`: `#ffc000`
         - `text-color`: `#40414e`
@@ -57,6 +57,7 @@ Two themes: light and dark. Theme implementation is JS/CSS only.
         - `background-color`: `#40414e`
         - `text-color`: `#ffc000`
         - `border-color`: `#ffc000`
+- Do not use `:root` for theme CSS vars
 - Create such CSS vars in `theme-light.css` and `theme-dark.css` and reuse them in the project
 - Do not write any other CSS inside theme-light and theme-dark!
 - `background-color` should be background of whole website. Add in `main.css`:
@@ -203,7 +204,7 @@ Do not generate hack itself, only the layout.
   - use `<link rel="stylesheet" href="{{ "css/main.css" | relURL }}">` to connect all styles files, there are 4 css files, connect all of them!
   - do not use `disabled` on any css
   - connect both themes
-  - use `<script src="{{ "js/theme-switcher.js" | relURL }}" defer></script>` to connect JS, there are 3 JS files, connect all of them
+  - use `<script src="{{ "js/theme.js" | relURL }}" defer></script>` to connect JS, there are 3 JS files, connect all of them
   - `#remark42` should not be inside `baseof.html`, it is only inside `single.html
 - themes/devsparks/layouts/_default/list.html
   - Contains Hacks titile if it is index
@@ -221,7 +222,7 @@ Do not generate hack itself, only the layout.
   - contains only colors and other changes for light theme, do not contain any common styles
 - themes/devsparks/static/css/theme-dark.css
   - contains only colors and other changes for dark theme, do not contain any common styles
-- themes/devsparks/static/js/theme-switcher.js (should contain JS for theme-switcher in the header)
+- themes/devsparks/static/js/theme.js (should contain JS for theme switcher + system theme monitoring in the header)
 - themes/devsparks/static/js/footer-image.js
 - themes/devsparks/static/js/remark42.js:
   - Should contain the following snippet:
