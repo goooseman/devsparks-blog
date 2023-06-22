@@ -1,3 +1,4 @@
+
 ---
 title: "Jump Around Your Filesystem Like a Pro"
 tags: ["cli", "autojump", "ide"]
