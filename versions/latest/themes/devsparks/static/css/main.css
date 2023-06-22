@@ -43,10 +43,6 @@ a:hover {
   border: 2px solid var(--border-color);
 }
 
-.layout__header nav {
-  display: flex;
-}
-
 .tip__container {
   position: relative;
   margin-top: 300px;
