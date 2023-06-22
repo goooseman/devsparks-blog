@@ -85,6 +85,8 @@ a:hover {
   display: flex;
   flex-direction: column;
   align-items: center;
+  margin-top: 48px;
+  margin-bottom: 12px;
 }
 
 .footer__author-photo {

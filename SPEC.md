@@ -125,6 +125,7 @@ One theme with light and dark variations. Theme implementation is JS/CSS only.
   - robot.png should be display: none by default
   - height of the photo: 160px
   - `.footer__container` should have flex layout: photo on the left, text on the right
+  - `.footer__container` has margin-top: 48px and margin-bottom: 12px;
   - for desktop breakpoint photo on the left column, text on the right
   - for mobile breakpoint photo is aligned to center and above the text
 
