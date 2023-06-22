@@ -171,7 +171,7 @@ On the home page footer should be rendered before main content, not after.
 
 ### Shortcodes
 
-Shortcodes (html file without shortcode itself, contents only):
+Shortcodes (html file without << hugo tags >>):
 - hackermans-tip
 - padawans-playground 
 - spoiler
