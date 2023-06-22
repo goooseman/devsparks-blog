@@ -4,7 +4,7 @@ export
 .PHONY: smol-rewrite
 smol-rewrite:
 	# https://platform.openai.com/docs/models/gpt-4
-	USE_FULL_PROJECT_PROMPT=False OPENAI_DEFAULT_MODEL=gpt-4 OPENAI_DEFAULT_MAX_TOKENS=0 python3 ../developer/main_no_modal.py ./SPEC.md ./versions/latest
+	USE_FULL_PROJECT_PROMPT= OPENAI_DEFAULT_MODEL=gpt-4 OPENAI_DEFAULT_MAX_TOKENS=0 python3 ../developer/main_no_modal.py ./SPEC.md ./versions/latest
 
 smol-debug:
 	# https://platform.openai.com/docs/models/gpt-4
