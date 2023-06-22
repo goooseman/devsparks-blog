@@ -10,6 +10,9 @@ smol-debug:
 	# https://platform.openai.com/docs/models/gpt-4
 	USE_FULL_PROJECT_PROMPT=True OPENAI_DEFAULT_MODEL=gpt-3.5-turbo-16k-0613 OPENAI_DEFAULT_MAX_TOKENS=9000 python3 ../developer/debugger_no_modal.py --directory ./versions/latest 'REPLACEME'
 
+.PHONY: sync-hacks
+sync-hacks:
+	rsync -av /Users/agusman/Library/Mobile\ Documents/com\~apple\~CloudDocs/Obsidian/goooseman-secrets/project-dev-sparks/hacks/* ./content/hacks
 
 .PHONY: serve
 serve:
