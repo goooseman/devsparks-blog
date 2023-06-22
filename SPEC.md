@@ -171,7 +171,7 @@ On the home page footer should be rendered before main content, not after.
 
 ### Shortcodes
 
-Shortcodes (html file without << hugo tags >>):
+Shortcodes definitions:
 - hackermans-tip
 - padawans-playground 
 - spoiler
@@ -188,11 +188,16 @@ Image sources for .tip__image:
   - hackerman: `/hackerman.png` and `/hackerman@2x.png`
   - padawan: `/padawan.png` and `/padawan@2x.png`
 
-#### Spoiler
+#### spoiler shortcode
 
 Has 1 argument: title.
 
-Should wrap content inside html details/summary. Title is passed to summary, content - inside details.
+Wrap inner contenet in the following template:
+<details>
+  <summary>{{ .Get "title" }}</summary>
+
+  {{ .Inner | markdownify }}
+</details>
 
 ### Hack page
 
