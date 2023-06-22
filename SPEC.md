@@ -169,6 +169,31 @@ Here is some sample code to list items, but change order of date and add tags:
 
 On the home page footer should be rendered before main content, not after.
 
+### Shortcodes
+
+Shortcodes (html file without shortcode itself, contents only):
+- hackermans-tip
+- padawans-playground 
+- spoiler
+
+
+#### hackermans-tip and padawans-playground shortcode 
+Wrap inner content in the following template:
+<div class="tip__container (section__tip__hackerman | section__tip__padawan)">
+  <h4 class="tip__title">Hackerman's tip or Padawan's Playground
+    <img class="tip__image" />
+    {{ .Inner | markdownify }}
+
+Image sources for .tip__image:
+  - hackerman: `/hackerman.png` and `/hackerman@2x.png`
+  - padawan: `/padawan.png` and `/padawan@2x.png`
+
+#### Spoiler
+
+Has 1 argument: title.
+
+Should wrap content inside html details/summary. Title is passed to summary, content - inside details.
+
 ### Hack page
 
 A specific hack page contains:
@@ -227,6 +252,7 @@ Do not generate hack itself, only the layout.
   - should not contain `<main>`, because it should be inside `baseof.html`
 - themes/devsparks/layouts/shortcodes/hackermans-tip.html
 - themes/devsparks/layouts/shortcodes/padawans-playground.html
+- themes/devsparks/layouts/shortcodes/spoiler.html
 - themes/devsparks/static/css/main.css
   - contains all the site CSS, but not theming
 - themes/devsparks/static/css/syntax-highlighting.css
@@ -316,15 +342,3 @@ CSS specs:
   - padding: 12px for top/bottom/left/right
 - .article__content h3 should have `padding-top: 8px` and `border-top: 1px` of border-color
 - .article__remark42 should have margin-left and right -24px and margin-top of 12px
-
-Shortcodes (html file without shortcode itself, contents only):
-- hackermans-tip
-- padawans-playground 
-- hackermans-tip and padawans-playground shortcode should wrap inner content in the following template:
-  - <div class="tip__container (section__tip__hackerman | section__tip__padawan)">
-    - <h4 class="tip__title">Hackerman's tip or Padawan's Playground
-    - <img class="tip__image" />
-    - `{{ .Inner | markdownify }}`
-- image sources for .tip__image:
-  - hackerman: `/hackerman.png` and `/hackerman@2x.png`
-  - padawan: `/padawan.png` and `/padawan@2x.png`
