@@ -1,28 +1,26 @@
-/* themes/devsparks/static/css/theme-light.css */
-
 :root {
   --background-color: #ffc000;
   --text-color: #40414e;
   --border-color: #40414e;
 }
 
-.body__theme__light {
+body {
   background-color: var(--background-color);
   color: var(--text-color);
 }
 
-.header__theme_switch {
-  background: transparent;
-  border: 2px solid var(--border-color);
-  width: 22px;
-  height: 22px;
-  text-align: center;
+.layout__header nav a {
+  color: var(--text-color);
+  border-bottom: 2px solid var(--text-color);
 }
 
-.layout__header {
-  display: flex;
-  justify-content: space-between;
-  padding-top: 10px;
+.layout__header nav a:hover {
+  color: var(--background-color);
+  background-color: var(--text-color);
+  background-image: linear-gradient(to top, var(--text-color), var(--background-color));
+  background-position: 0 100%;
+  background-repeat: no-repeat;
+  background-size: 100% 200%;
 }
 
 .layout__link__active {
@@ -30,33 +28,29 @@
 }
 
 .footer__about_text {
-  border: 2px solid var(--border-color);
+  border: var(--border-color) solid;
 }
 
 .tip__container {
-  position: relative;
-  margin-top: 300px;
-  margin-bottom: 5px;
-  border: 2px solid var(--border-color);
-  padding: 20px;
-  margin-left: -20px;
-  margin-right: -20px;
+  border: var(--border-color) solid;
 }
 
-.tip__image {
-  position: absolute;
-  bottom: 100%;
-  left: 20%;
-  height: 280px;
+.header__theme_switch {
+  background: transparent;
+  border: 2px solid;
 }
 
-.article__content h3 {
-  padding-top: 5px;
-  border-top: 1px solid currentColor;
+@media (max-width: 680px) {
+  body {
+    width: 100%;
+    padding: 20px;
+  }
 }
 
-.article__remark42 {
-  margin-left: -20px;
-  margin-right: -20px;
-  margin-top: 10px;
+.footer__container {
+  display: flex;
+}
+
+.footer__author-photo {
+  height: 160px;
 }
