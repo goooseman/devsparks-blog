@@ -20,9 +20,6 @@ Should have Makefile
   - to run then run hugo with docker, add additional mounts: `$(PWD):/src`, `$(PWD)/../../content:/src/content` and `$(PWD)/../../static:/src/static`. if files are changed, server should rebuild. 
 - build
   - to build project with docker
-- Makefile use tabs, not spaces for identation!
-
-Should NOT create content folder.
 
 Should add several Hugo mounts:
 
@@ -47,7 +44,7 @@ One theme with light and dark variations. Theme implementation is JS/CSS only.
 - When site is loaded, system theme should be checked if possible.
 - Website should watch for system theme changes and update site's theme.
 - Website theme should be control with switcher, so both CSS should be always connected
-- Adds `body__theme__light` or `body__theme__dark` class to body.
+- JS Adds `body__theme__light` or `body__theme__dark` class to body.
 - Theme CSS variblaes should be attached to `body__theme__light` and `body__theme__dark`:
     - light:
         - `background-color`: `#ffc000`
@@ -57,15 +54,9 @@ One theme with light and dark variations. Theme implementation is JS/CSS only.
         - `background-color`: `#40414e`
         - `text-color`: `#ffc000`
         - `border-color`: `#ffc000`
-- Do not use `:root` for theme CSS vars
 - Create such CSS vars in `theme-light.css` and `theme-dark.css` and reuse them in the project
 - Do not write any other CSS inside theme-light and theme-dark!
-- `background-color` should be background of whole website. Add in `main.css`:
-```
-  background-color: var(--background-color);
-  color: var(--text-color);
-```
-
+- `background-color` should be background of whole website. Write styles for body.
 - Switch theme switch
   - background: transparent
   - reset all default button styles
@@ -83,20 +74,15 @@ One theme with light and dark variations. Theme implementation is JS/CSS only.
 - Links: always have border bottom 2px
 - Links: never underline, not on hover also
 - Links: on hover should invert color and background color with an animation of sliding from bottom to top
-- Navigation links in header: should have `.layout__link__active` class, when page is active. Hacks page should be active when index or any hack is opened. About should be active, when About page is opened.
+- Navigation links in header: should have `.layout__link__active` class, when page is active.
 - breakpoints: >680px - desktop, <680px mobile
 
 ### Header
 
-- contains navigation links: Hacks, About, [GitHub](https://github.com/goooseman/devsparks-blog), Fix typo link, switch theme toggle.
+- contains navigation links: Hacks, About, Githun, Fix typo link, switch theme toggle.
 - **Fix typo and switch theme should be aligned to the right side!**:
   - Because of that Hacks, About, GitHub should be defined in `menu.main` inside `config.yaml`
-  - Hacks should have weight 10, About - 20, Github - 30
-  - Hacks should have `identifier: hacks`
-  - About should have `identifier: about`
-  - Github should have `identifier: github`
-  - Hacks is root `/`, but if any single hack is opened, menu item should also be active
-  - About is `/about/`
+  - Pages should have url,identifier,weight: Hacks: `/`,hacks,10; About: `/about/`,about,20; Github: `https://github.com/goooseman/devsparks-blog`,github,30
   - Fix typo should not be defined in `config.yaml`, it should be hardcoded inside `header.html`
   - All `menu.main` items should be rendered inside one nav, Fix typo and theme switcher - inside another nav. Their parent should be flex.
 - To render menu items use the following snippet:
@@ -110,16 +96,13 @@ One theme with light and dark variations. Theme implementation is JS/CSS only.
 
 ### Favicon
 
-Please add following html for the favicon support:
+Please add following html for the following favicons support:
+- `/apple-touch-icon.png`
+- `/favicon-32x32.png`
+- `/favicon-16x16.png`
+- `/site.webmanifest`
 
-```
-  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
-  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
-  <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
-  <link rel="manifest" href="/site.webmanifest">
-  <meta name="msapplication-TileColor" content="#ffc000">
-  <meta name="theme-color" content="#ffc000">
-```
+And also meta `msapplication-TileColor: #ffc000` and `theme-color: #ffc000`
 
 ### Site layout
 
@@ -132,7 +115,7 @@ Please add following html for the favicon support:
 - `<footer>`
   - contains photo of the author with transparent bg and a small about text: Footer Ipsum
   - photo of author: `/human.png` (`human@2x.png`)
-  - photo of author when hovered: `/robot.png` (`robot@2x.png`) (do not forget to use 2x for retina). Implement it in `footer-image.js` and do not forget to change `srcset` not only `src`
+  - photo of author when hovered: `/robot.png` (`robot@2x.png`). Implement it in `footer-image.js` and do not forget to change `srcset` not only `src`
   - to implement hover please render two images on the screen, one with display: none, use two separate IDs and toggle their display in JS file
   - robot.png should be display: none by default
   - height of the photo: 160px
@@ -231,12 +214,7 @@ Do not generate hack itself, only the layout.
 ### Project structure
 
 - Makefile
-- .gitignore
-  - .hugo_build.lock
-  - /public/
-  - /resources/_gen/
-  - /assets/jsconfig.json
-  - hugo_stats.json
+- .gitignore (common hugo ignores)
 - config.yaml
   - Do not include anything about themes or remark42
   - Do not use JSON objects in this file
