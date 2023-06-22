@@ -108,6 +108,18 @@ One theme with light and dark variations. Theme implementation is JS/CSS only.
 ```
 - Fix typo button just opens following link in a new tab: "https://github.com/goooseman/devsparks-blog/issues/new?title=DevSparks+Feedback&body=I+found+something+wrong+on+this+page%3A%0A%0A++{CURRENT_PAGE}%0A%0A++Here%27s+what+it+is%3A", make sure to replace `{CURRENT_PAGE}` with correct url: `.Permalink` hugo var
 
+### Favicon
+
+Please add following html for the favicon support:
+
+```
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+  <link rel="manifest" href="/site.webmanifest">
+  <meta name="msapplication-TileColor" content="#ffc000">
+  <meta name="theme-color" content="#ffc000">
+```
 
 ### Site layout
 
