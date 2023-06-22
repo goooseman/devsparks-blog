@@ -115,8 +115,8 @@ One theme with light and dark variations. Theme implementation is JS/CSS only.
   - should contain `.layout__header` class
 - `<main>`
   - it has background shadow on top/bottom to make it look like lower then header and footer to add deepness
-  - should have margin `50px -40px`
-  - should have padding `20px 40px`
+  - should have margin `48px -48px`
+  - should have padding `24px 48px`
 - `<footer>`
   - contains photo of the author with transparent bg and a small about text: Footer Ipsum
   - photo of author: `/human.png` (`human@2x.png`)
@@ -178,7 +178,7 @@ Do not generate hack itself, only the layout.
 - for `<pre>` inside `<div class="highlight">`: 
   - background-color is --background-color for dark theme and --color for light theme
   - color should be `white` to keep it the default one
-  - padding: 10px
+  - padding: 12px
 - `<code>` inside `<pre>` inside `<div class="highlight">`:
   - background-color: transparent
   - color: `white`
@@ -276,19 +276,18 @@ CSS specs:
 
 - body:
   - 600px width on desktop, aligned center
-  - 100% width with 20px left/right padding on mobile
+  - 100% width with 24px left/right padding on mobile
   - Content should never be wider then 100wv
   - background of --background-color
 - .tip__image should be absolute positioned on a border with left: 20% and bottom: 100% to be on top of `.tip__container`. 
 - .tip__container should be relative. 
-- .tip__container should have 300px margin top to fix image position overflow and 5px margin bottom. 
+- .tip__container should have 300px margin top to fix image position overflow and 8px margin bottom. 
 - .tip__title inside section should be italic and bold.
 - .tip__container should have border of border-color
 - .tip__container should be relative
-- .tip__container should have padding 20px, margin-left and right -20px
+- .tip__container should have padding 24px, margin-left and right -24px
 - .tip__image should be absolute with bottom: 100%, left: 20%
 - .tip__image should be 280px height
-- .tip__container should have margin-top: 30px;
 - .header__theme_switch
   - should have transparent background, only 2px border
   - should be square (22px width and height with text-align: center)
@@ -296,13 +295,14 @@ CSS specs:
 - .layout__header should be:
   - `display: flex`
   - `justify-content: space-between;`
-  - 10px padding from top
+  - 12px padding from top
 - .layout__link__active
-  - 2px left/right/top/bottom
+  - 2px left/right/top/bottom border
 - .footer__about_text
   - text is wrapped with a single border around whole text, not single parapgraph, of `border-color`
-- .article__content h3 should have `padding-top: 5px` and `border-top: 1px solid currentColor`
-- .article__remark42 should have margin-left and right -20px and margin-top of 10px
+  - padding: 12px for top/bottom/left/right
+- .article__content h3 should have `padding-top: 8px` and `border-top: 1px` of border-color
+- .article__remark42 should have margin-left and right -24px and margin-top of 12px
 
 Shortcodes (html file without shortcode itself, contents only):
 - hackermans-tip
