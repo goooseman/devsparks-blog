@@ -1,47 +1,42 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="{{ .Site.Language.Lang }}">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>{{ .Title }}</title>
-    <link rel="stylesheet" href="{{ "css/main.css" | relURL }}">
-    <link rel="stylesheet" href="{{ "css/syntax-highlighting.css" | relURL }}">
-    <link rel="stylesheet" href="{{ "css/theme-light.css" | relURL }}">
-    <link rel="stylesheet" href="{{ "css/theme-dark.css" | relURL }}">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>{{ if .Title }}{{ .Title }} | {{ end }}{{ .Site.Title }}</title>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fira+Code&display=swap">
+  <link rel="stylesheet" href="{{ "css/main.css" | relURL }}">
+  <link rel="stylesheet" href="{{ "css/syntax-highlighting.css" | relURL }}">
+  <link rel="stylesheet" href="{{ "css/theme-light.css" | relURL }}">
+  <link rel="stylesheet" href="{{ "css/theme-dark.css" | relURL }}">
+  <script src="{{ "js/theme.js" | relURL }}" defer></script>
+  <script src="{{ "js/footer-image.js" | relURL }}" defer></script>
+  <script src="{{ "js/remark42.js" | relURL }}" defer></script>
 </head>
-<body class="body__theme__light">
-    <header class="layout__header">
-        <nav>
-            {{ $currentPage := . }}
-            {{ range .Site.Menus.main }}
-                <a class="{{ if or (eq $currentPage.RelPermalink .URL) (eq $currentPage.Section .Identifier) }}layout__link__active{{ end }}" href="{{ .URL }}">{{ .Name }}</a>
-            {{ end }}
-        </nav>
-        <nav>
-            <a href="https://github.com/goooseman/devsparks-blog">GitHub</a>
-            <a href="https://github.com/goooseman/devsparks-blog/issues/new?title=DevSparks+Feedback&body=I+found+something+wrong+on+this+page%3A%0A%0A++{{ .Permalink }}%0A%0A++Here%27s+what+it+is%3A">Fix typo</a>
-            <button id="theme-switch" class="header__theme_switch" aria-label="{{ if eq .Site.Params.theme "dark" }}Switch to light theme{{ else }}Switch to dark theme{{ end }}">
-                {{ if eq .Site.Params.theme "dark" }}🌞{{ else }}🌒{{ end }}
-            </button>
-        </nav>
-    </header>
-    <main>
-        {{ block "main" . }}{{ end }}
-    </main>
-    <footer>
-        <div class="footer__container">
-            <img id="footer-image-human" class="footer__author-photo" src="/human.png" srcset="/human.png 1x, /human@2x.png 2x" alt="Author Photo">
-            <img id="footer-image-robot" class="footer__author-photo" src="/robot.png" srcset="/robot.png 1x, /robot@2x.png 2x" alt="Author Photo">
-            <p class="footer__about_text">Hello, I'm Alex.<br />
-            Welcome to DevSparks, a cosy corner of the web where code meets fun. I've always believed that the best way to learn is
-            by doing, and the best way to do is by having fun. That's why I've created DevSparks - to share the joy and the power of
-            development with you.<br />
-            Here, you'll find bite-sized lifehacks about everything from CLI power usage to git tricks, all crafted with a dash of
-            humor and a bucketload of passion.<br />
-            So grab a cup of coffee, get comfy, and let's explore the incredible world of coding together!</p>
-        </div>
-    </footer>
-    <script src="{{ "js/theme.js" | relURL }}" defer></script>
-    <script src="{{ "js/footer-image.js" | relURL }}" defer></script>
+<body class="{{ with .Site.Params.theme }}body__theme__{{ . }}{{ else }}body__theme__light{{ end }}">
+  <header class="layout__header">
+    <nav>
+      {{ $currentPage := . }}
+      {{ range .Site.Menus.main }}
+        <a class="{{if or (eq $currentPage.RelPermalink .URL) (eq $currentPage.Section .Identifier) }} layout__link__active{{end}}" href="{{.URL}}">{{ .Name }}</a>
+      {{ end }}
+    </nav>
+    <nav>
+      <a href="https://github.com/goooseman/devsparks-blog/issues/new?title=DevSparks+Feedback&body=I+found+something+wrong+on+this+page%3A%0A%0A++{{ .Permalink }}%0A%0A++Here%27s+what+it+is%3A" target="_blank" rel="noopener noreferrer">Fix typo</a>
+      <button id="theme-switch" class="header__theme_switch" aria-label="Switch to dark theme">🌒</button>
+    </nav>
+  </header>
+  <main>
+    {{ block "main" . }}{{ end }}
+  </main>
+  <footer>
+    <div class="footer__container">
+      <img id="footer-image-human" src="/human.png" srcset="/human@2x.png 2x" alt="Author photo">
+      <img id="footer-image-robot" src="/robot.png" srcset="/robot@2x.png 2x" alt="Author photo" style="display: none;">
+      <div class="footer__about_text">
+        Footer Ipsum
+      </div>
+    </div>
+  </footer>
 </body>
 </html>

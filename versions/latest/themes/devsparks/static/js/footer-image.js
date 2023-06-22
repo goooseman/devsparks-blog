@@ -1,14 +1,14 @@
-document.addEventListener("DOMContentLoaded", function() {
-  const footerImageHuman = document.getElementById("footer-image-human");
-  const footerImageRobot = document.getElementById("footer-image-robot");
+document.addEventListener("DOMContentLoaded", function () {
+  const humanImage = document.getElementById("footer-image-human");
+  const robotImage = document.getElementById("footer-image-robot");
 
-  footerImageHuman.addEventListener("mouseover", function() {
-    footerImageHuman.style.display = "none";
-    footerImageRobot.style.display = "block";
+  humanImage.addEventListener("mouseenter", function () {
+    humanImage.style.display = "none";
+    robotImage.style.display = "block";
   });
 
-  footerImageRobot.addEventListener("mouseout", function() {
-    footerImageRobot.style.display = "none";
-    footerImageHuman.style.display = "block";
+  robotImage.addEventListener("mouseleave", function () {
+    robotImage.style.display = "none";
+    humanImage.style.display = "block";
   });
 });
