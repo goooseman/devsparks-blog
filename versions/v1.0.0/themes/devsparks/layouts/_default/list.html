@@ -1,0 +1,26 @@
+{{ define "main" }}
+  {{ if eq .Kind "home" }}
+    <h1>Hacks</h1>
+  {{ else }}
+    <h1>{{ .Title }}</h1>
+  {{ end }}
+
+  {{ range (where .Site.RegularPages "Type" "in" (slice "hacks")).GroupByDate "2006" }}
+    <h2>{{ .Key }}</h2>
+    <ul>
+      {{ range .Pages }}
+        <li>
+          <a class="title" href="{{ .Params.externalLink | default .RelPermalink }}">{{ .Title }}</a>
+          <span class="date">{{ .Date.Format (.Site.Params.dateFormat | default "January 2, 2006" ) }}</span>
+          {{ with .Params.tags }}
+            <span class="tags">
+              {{ range . }}
+                <a class="tag" href="{{ $.Site.BaseURL }}tags/{{ . | urlize }}">{{ . }}</a>
+              {{ end }}
+            </span>
+          {{ end }}
+        </li>
+      {{- end -}}
+    </ul>
+  {{ end }}
+{{ end }}
