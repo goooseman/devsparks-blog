@@ -16,6 +16,8 @@ This project is a static blog composed primarily of these developer lifehacks.
 
 - Telegram icon
 - Images for footer/padawan/hackerman
+- Theme persistence
+- Remark42 styles
 
 ## Tech Stack 🛠️
 We use a range of technologies to make this project possible:
