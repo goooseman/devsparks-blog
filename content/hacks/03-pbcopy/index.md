@@ -1,5 +1,5 @@
 ---
-title: "Pbcopy Lifehack: The Power of Copy-Pasting in CLI"
+title: "pbcopy: The Power of Copy-Pasting in CLI"
 date: "2023-06-23T08:49:11.379Z"
 tags: ["cli", "unix", "osx"]
 category: "lifehack"
