@@ -1,7 +1,7 @@
 ---
 title: "Say Goodbye to Cloning: Git Worktrees to the Rescue"
 category: "git"
-date: "2023-06-23T09:49:11.379Z"
+date: "2023-06-23T09:39:11.379Z"
 tags: ["git", "worktree", "productivity"]
 ---
 
