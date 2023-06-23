@@ -1,9 +1,9 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="{{ .Site.Language.Lang }}">
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>{{ if .Title }}{{ .Title }} | {{ end }}{{ .Site.Title }}</title>
+  <title>{{ .Title }}</title>
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fira+Code&display=swap">
   <link rel="stylesheet" href="{{ "css/main.css" | relURL }}">
   <link rel="stylesheet" href="{{ "css/syntax-highlighting.css" | relURL }}">
@@ -15,40 +15,34 @@
   <link rel="manifest" href="/site.webmanifest">
   <meta name="msapplication-TileColor" content="#ffc000">
   <meta name="theme-color" content="#ffc000">
-  <script src="{{ "js/theme.js" | relURL }}" defer></script>
-  <script src="{{ "js/footer-image.js" | relURL }}" defer></script>
-  <script src="{{ "js/remark42.js" | relURL }}" defer></script>
 </head>
-<body class="{{ with .Site.Params.theme }}body__theme__{{ . }}{{ else }}body__theme__light{{ end }}">
+<body class="{{ if eq (getenv "THEME") "dark" }}body__theme__dark{{ else }}body__theme__light{{ end }}">
   <header class="layout__header">
     <nav>
       {{ $currentPage := . }}
       {{ range .Site.Menus.main }}
-        <a class="{{if or (eq $currentPage.RelPermalink .URL) (eq $currentPage.Section .Identifier) }} layout__link__active{{end}}" href="{{.URL}}" target='{{ if in .URL "https://" }}_blank{{ else }}_self{{ end }}'>{{ .Name }}</a>
+        <a class="{{if or (eq $currentPage.RelPermalink .URL) (eq $currentPage.Section .Identifier) }} layout__link__active{{end}}" href="{{.URL}}"  target='{{ if in .URL "https://" }}_blank{{ else }}_self{{ end }}'>{{ .Name }}</a>
       {{ end }}
     </nav>
     <nav>
-      <a href="https://github.com/goooseman/devsparks-blog/issues/new?title=DevSparks+Feedback&body=I+found+something+wrong+on+this+page%3A%0A%0A++{{ .Permalink }}%0A%0A++Here%27s+what+it+is%3A" target="_blank" rel="noopener noreferrer">Fix typo</a>
-      <button id="theme-switch" class="header__theme_switch" aria-label="Switch to dark theme">🌒</button>
+      <a href="https://github.com/goooseman/devsparks-blog/issues/new?title=DevSparks+Feedback&body=I+found+something+wrong+on+this+page%3A%0A%0A++{{ .Permalink }}%0A%0A++Here%27s+what+it+is%3A" target="_blank">Fix typo</a>
+      <button id="theme-switch" class="header__theme_switch" aria-label="Switch theme" onclick="themeSwitcher()"></button>
     </nav>
   </header>
   <main>
     {{ block "main" . }}{{ end }}
   </main>
-  <footer>
+  <footer class="layout__footer">
     <div class="footer__container">
-      <img id="footer-image-human" src="/human.png" srcset="/human@2x.png 2x" alt="Author photo">
-      <img id="footer-image-robot" src="/robot.png" srcset="/robot@2x.png 2x" alt="Author photo" style="display: none;">
+      <img id="footer-image-human" src="/human.png" srcset="/human@2x.png 2x" alt="Author photo" onmouseover="footerImageHover(true)">
+      <img id="footer-image-robot" src="/robot.png" srcset="/robot@2x.png 2x" alt="Author photo" onmouseover="footerImageHover(false)" style="display: none;">
       <div class="footer__about_text">
-        Hello, I'm Alex.<br />
-        Welcome to DevSparks, a cosy corner of the web where code meets fun. I've always believed that the best way to learn is
-        by doing, and the best way to do is by having fun. That's why I've created DevSparks - to share the joy and the power of
-        development with you.<br />
-        Here, you'll find bite-sized lifehacks about everything from CLI power usage to git tricks, all crafted with a dash of
-        humor and a bucketload of passion.<br />
-        So grab a cup of coffee, get comfy, and let's explore the incredible world of coding together!
+        Footer Ipsum
       </div>
     </div>
   </footer>
+  <script src="{{ "js/theme.js" | relURL }}" defer></script>
+  <script src="{{ "js/footer-image.js" | relURL }}" defer></script>
+  <script src="{{ "js/remark42.js" | relURL }}" defer></script>
 </body>
 </html>

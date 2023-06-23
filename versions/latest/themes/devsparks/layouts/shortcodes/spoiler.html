@@ -1,0 +1,5 @@
+{{- $title := .Get "title" -}}
+<details>
+  <summary>{{ $title }}</summary>
+  {{ .Inner | markdownify }}
+</details>

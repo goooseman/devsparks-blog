@@ -2,4 +2,6 @@ body.body__theme__light {
   --background-color: #ffc000;
   --text-color: #40414e;
   --border-color: #40414e;
+  background-color: var(--background-color);
+  color: var(--text-color);
 }

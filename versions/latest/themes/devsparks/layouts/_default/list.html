@@ -4,7 +4,6 @@
   {{ else }}
     <h1>{{ .Title }}</h1>
   {{ end }}
-
   {{ range (where .Site.RegularPages "Type" "in" (slice "hacks")).GroupByDate "2006" }}
     <h2>{{ .Key }}</h2>
     <ul>
@@ -15,7 +14,7 @@
           {{ with .Params.tags }}
             <span class="tags">
               {{ range . }}
-                <a class="tag" href="{{ $.Site.BaseURL }}tags/{{ . | urlize }}">{{ . }}</a>
+                <a href="{{ $.Site.BaseURL }}tags/{{ . | urlize }}">{{ . }}</a>
               {{ end }}
             </span>
           {{ end }}

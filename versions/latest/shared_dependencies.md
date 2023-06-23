@@ -1,22 +1,13 @@
 Shared dependencies:
 
 Exported variables:
-- baseURL: `https://devsparks.goooseman.dev`
-
-Data schemas:
-- None
+- breakpoints: >680px - desktop, <680px mobile
 
 ID names of DOM elements:
 - theme-switch
 - remark42
 - footer-image-human
 - footer-image-robot
-
-Message names:
-- None
-
-Function names:
-- None
 
 Classnames:
 - .layout__header
@@ -35,3 +26,11 @@ Classnames:
 - .footer__container
 - .footer__about_text
 - .footer__author-photo
+
+Function names:
+- themeSwitcher
+- systemThemeMonitoring
+- footerImageHover
+
+Message names:
+- DevSparks Feedback

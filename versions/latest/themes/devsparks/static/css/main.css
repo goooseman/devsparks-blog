@@ -1,25 +1,40 @@
 @import url('https://fonts.googleapis.com/css2?family=Fira+Code&display=swap');
 
+/* Global variables */
+:root {
+  --border-width: 2px;
+}
+
+/* Breakpoints */
+@media (min-width: 680px) {
+  body {
+    width: 600px;
+    margin: 0 auto;
+  }
+}
+
+@media (max-width: 680px) {
+  body {
+    width: 100%;
+    padding: 0 24px;
+  }
+}
+
 body {
   font-family: 'Fira Code', monospace;
-  background-color: var(--background-color);
-  color: var(--text-color);
-  max-width: 600px;
-  margin: 0 auto;
-  padding: 0 24px;
 }
 
 a {
   color: inherit;
   text-decoration: none;
-  border-bottom: 2px solid var(--border-color);
+  border-bottom: var(--border-width) solid;
 }
 
 a:hover {
-  background-image: linear-gradient(to top, var(--text-color), var(--text-color));
+  background-image: linear-gradient(to top, currentColor, currentColor);
+  background-size: 100% 2px;
   background-repeat: no-repeat;
-  background-size: 100% 100%;
-  color: var(--background-color);
+  background-position: 0 100%;
   transition: background-size 0.3s;
 }
 
@@ -31,7 +46,7 @@ a:hover {
 
 .header__theme_switch {
   background: transparent;
-  border: 2px solid var(--border-color);
+  border: var(--border-width) solid;
   width: 22px;
   height: 22px;
   text-align: center;
@@ -40,7 +55,7 @@ a:hover {
 }
 
 .layout__link__active {
-  border: 2px solid var(--border-color);
+  border: var(--border-width) solid;
 }
 
 .tip__container {
@@ -50,7 +65,7 @@ a:hover {
   margin-left: -24px;
   margin-right: -24px;
   padding: 24px;
-  border: 2px solid var(--border-color);
+  border: var(--border-width) solid;
 }
 
 .tip__title {
@@ -67,7 +82,7 @@ a:hover {
 
 .article__content h3 {
   padding-top: 8px;
-  border-top: 1px solid var(--border-color);
+  border-top: 1px solid;
 }
 
 .article__remark42 {
@@ -77,24 +92,7 @@ a:hover {
 }
 
 .footer__about_text {
-  border: 2px solid var(--border-color);
+  border: var(--border-width) solid;
+  border-bottom: 0;
   padding: 12px;
-}
-
-.footer__container {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  margin-top: 48px;
-  margin-bottom: 12px;
-}
-
-.footer__author-photo {
-  height: 160px;
-}
-
-@media (min-width: 680px) {
-  .footer__container {
-    flex-direction: row;
-  }
 }

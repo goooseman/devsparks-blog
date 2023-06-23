@@ -1,10 +1,8 @@
 HUGO_VERSION := 0.111.3
 DOCKER_IMAGE := klakegg/hugo:$(HUGO_VERSION)
 
-.PHONY: serve
 serve:
-	docker run --rm -it -v $(PWD):/src -v $(PWD)/../../content:/src/content -v $(PWD)/../../static:/src/static -p 1313:1313 $(DOCKER_IMAGE) server --bind 0.0.0.0 --disableFastRender
+	docker run --rm -it -v $(PWD):/src -v $(PWD)/../../content:/src/content -v $(PWD)/../../static:/src/static -p 1313:1313 $(DOCKER_IMAGE) server --bind 0.0.0.0
 
-.PHONY: build
 build:
-	docker run --rm -it -v $(PWD):/src -v $(PWD)/../../content:/src/content -v $(PWD)/../../static:/src/static $(DOCKER_IMAGE)
+	docker run --rm -it -v $(PWD):/src -v $(PWD)/../../content:/src/content -v $(PWD)/../../static:/src/static $(DOCKER_IMAGE) --minify
