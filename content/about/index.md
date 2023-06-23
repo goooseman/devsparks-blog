@@ -25,5 +25,11 @@ While the blog's form changes, we don't forget our past. This website also serve
     - DEFAULT_MODEL = "gpt-4"
     - DEFAULT_MAX_TOKENS = 0 (skip param)
     - USE_FULL_PROJECT_PROMPT=False
+- [v1.1.0](https://devsparks-1-1-0.goooseman.dev)
+    - feat: `spoiler` shortcode!
+    - Build with `gpt-4` 16K, June 2023, [SPEC.md](https://github.com/goooseman/devsparks-blog/blob/v1.1.0/SPEC.md)
+    - DEFAULT_MODEL = "gpt-4"
+    - DEFAULT_MAX_TOKENS = 0 (skip param)
+    - USE_FULL_PROJECT_PROMPT=False
 
 Keep an eye on this space as we continue to evolve and push the boundaries of AI in software development!
