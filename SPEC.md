@@ -1,23 +1,17 @@
 # DevSparks Blog Specification
 
-## Overview
-
-DevSparks - short, but meaningful lifehacks for developers. 
-
-
 ## Technology Stack
 
 Blog address: `https://devsparks.goooseman.dev` (`baseURL`).
 Project structure: hugo blog
-Hugo version: 0.111.3
 Hugo theme name: `devsparks`
 
-- Back-end: Go, Hugo
+- Back-end: Go, Hugo v0.111.3
 - Front-end: HTML, CSS, JavaScript (for interactive elements)
 
 Should have Makefile
 - serve
-  - to run then run hugo with docker, add additional mounts: `$(PWD):/src`, `$(PWD)/../../content:/src/content` and `$(PWD)/../../static:/src/static`. if files are changed, server should rebuild. 
+  - to run then run hugo with docker, add additional mounts: `$(PWD):/src`, `$(PWD)/../../content:/src/content` and `$(PWD)/../../static:/src/static`. 
 - build
   - to build project with docker
 
@@ -42,7 +36,7 @@ Footer and content images have `2x` versions, make sure to use them for Retina d
 
 One theme with light and dark variations. Theme implementation is JS/CSS only.
 - When site is loaded, system theme should be checked if possible.
-- Website should watch for system theme changes and update site's theme.
+- Website should watch for system theme changes.
 - Website theme should be control with switcher, so both CSS should be always connected
 - JS Adds `body__theme__light` or `body__theme__dark` class to body.
 - Theme CSS variblaes should be attached to `body__theme__light` and `body__theme__dark`:
@@ -61,7 +55,6 @@ One theme with light and dark variations. Theme implementation is JS/CSS only.
   - background: transparent
   - reset all default button styles
   - padding: 0
-  - should contain `.header__theme_switch` class
   - Should only have 🌞 icon if current theme is dark and 🌒 icon if current theme is light
   - Should have aria-label: 'Switch to light theme' if current theme is dark and 'Switch to dark theme' if current theme is light
   - Should have pointer: cursor when hovered
@@ -119,8 +112,8 @@ And also meta `msapplication-TileColor: #ffc000` and `theme-color: #ffc000`
   - to implement hover please render two images on the screen, one with display: none, use two separate IDs and toggle their display in JS file
   - robot.png should be display: none by default
   - height of the photo: 160px
-  - `.footer__container` should have flex layout: photo on the left, text on the right
-  - `.footer__container` has margin-top: 48px and margin-bottom: 12px;
+  - `.footer__container` should have flex layout: photo on the left, text on the right and `align-itmes: bottom`
+  - `.footer__container` has margin-top: 48px
   - for desktop breakpoint photo on the left column, text on the right
   - for mobile breakpoint photo is aligned to center and above the text
 
@@ -159,6 +152,8 @@ Shortcodes definitions:
 - padawans-playground 
 - spoiler
 
+Avoid using {{< shortcode >}} tag inside shortcode folder, e.g. (`shortcodes/spoiler.html`)
+
 
 #### hackermans-tip and padawans-playground shortcode 
 Wrap inner content in the following template:
@@ -171,16 +166,17 @@ Image sources for .tip__image:
   - hackerman: `/hackerman.png` and `/hackerman@2x.png`
   - padawan: `/padawan.png` and `/padawan@2x.png`
 
-#### spoiler shortcode
+#### {{< spoiler >}} shortcode
 
 Has 1 argument: title.
 
 Wrap inner contenet in the following template:
+```
 <details>
-  <summary>{{ .Get "title" }}</summary>
+  <summary>{{ .Get "title" }}
 
   {{ .Inner | markdownify }}
-</details>
+```
 
 ### Hack page
 
@@ -322,6 +318,7 @@ CSS specs:
   - 2px left/right/top/bottom border
 - .footer__about_text
   - text is wrapped with a single border around whole text, not single parapgraph, of `border-color`
+  - border-bottom is 0
   - padding: 12px for top/bottom/left/right
 - .article__content h3 should have `padding-top: 8px` and `border-top: 1px` of border-color
 - .article__remark42 should have margin-left and right -24px and margin-top of 12px
