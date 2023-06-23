@@ -1,8 +1,10 @@
 code {
-  background-color: var(--color);
+  background-color: var(--text-color);
   color: var(--background-color);
   border: none;
   padding: 0;
+  white-space: break-spaces;
+  word-break: break-word;
 }
 
 .highlight > pre {
