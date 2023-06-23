@@ -302,6 +302,7 @@ CSS specs:
   - 100% width with 24px left/right padding on mobile
   - Content should never be wider then 100wv
   - background of --background-color
+  - display: flex with column direction and justify-content: space between
 - .tip__image should be absolute positioned on a border with left: 20% and bottom: 100% to be on top of `.tip__container`. 
 - hr should be of border-color
 - .tip__container should be relative. 
