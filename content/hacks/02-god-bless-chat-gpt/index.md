@@ -2,9 +2,10 @@
 title: "The Almighty ChatGPT: A Developer's BFF 🤖❤️"
 category: "lifehack"
 tags: ["chatgpt", "bash", "refactoring", "10x"]
+date: "2023-06-14T16:20:11.379Z"
 ---
 
-![Robots rulllz](02-god-bless-chat-gpt.png)
+![Robots rulllz](./02-god-bless-chat-gpt.png)
 
 Welcome back, DevSparks readers! Today, I've got a juicy lifehack for our fellow developers that'll save you time and make you fall in love with the almighty ChatGPT. It's story time, folks! So grab your keyboards and your favorite caffeinated beverage, 'cause we're about to dive in! 🚀
 
@@ -94,14 +95,14 @@ You might be wondering what kind of messages I sent during those 43 attempts:
 ```
 
 ```
-> before the script is executed I want to run some additional preparation to fix problems I've found: `__tests/client/components/DatePicker.test.js` should be moved to `__tests/client/components/inputs/DatePicker.test.js`...
+> before the script is executed I want to run some additional preparation to fix problems I've found: __tests/client/components/DatePicker.test.js should be moved to __tests/client/components/inputs/DatePicker.test.js...
 ```
 
 The point is, don't give up on our AI buddy! Keep refining your requests, and eventually, you'll get the perfect solution.
 
 ## Behold, the Mighty Script! 📜
 
-{{< spoiler >}}
+{{< spoiler title="Full script" >}}
 ```bash
 #!/bin/bash
 
@@ -329,4 +330,4 @@ And there you have it! A neat way to keep track of your revisions using git.
 
 That's all for today, folks! Remember, ChatGPT is your friend in need and indeed your friend in code (see what I did there? 😜). Keep experimenting and let AI assist you in becoming a more efficient developer!
 
-Until next time, happy coding! ✌️
+Until next time, happy coding! 👋
