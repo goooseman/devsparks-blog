@@ -1,0 +1,35 @@
+body.body__theme__dark {
+  background-color: #40414e;
+  color: #ffc000;
+}
+
+body.body__theme__dark a {
+  border-bottom: 2px solid #ffc000;
+}
+
+body.body__theme__dark a:hover {
+  background-color: #ffc000;
+  color: #40414e;
+}
+
+body.body__theme__dark .header__theme_switch {
+  border: 2px solid #ffc000;
+}
+
+body.body__theme__dark .layout__link__active {
+  border: 2px solid #ffc000;
+}
+
+body.body__theme__dark .tip__container {
+  border: 2px solid #ffc000;
+}
+
+body.body__theme__dark .footer__about_text {
+  border: 2px solid #ffc000;
+  border-bottom: 0;
+}
+
+body.body__theme__dark .article__content h3 {
+  border-top: 1px solid #ffc000;
+  padding-top: 8px;
+}

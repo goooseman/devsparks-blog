@@ -1,0 +1,19 @@
+code {
+  background-color: var(--text-color);
+  color: var(--background-color);
+  border: none;
+  padding: 0;
+  white-space: break-spaces;
+  word-break: break-word;
+}
+
+.highlight > pre {
+  background-color: var(--background-color);
+  color: white;
+  padding: 12px;
+}
+
+.highlight > pre > code {
+  background-color: transparent;
+  color: white;
+}

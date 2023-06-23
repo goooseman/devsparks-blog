@@ -1,0 +1,48 @@
+<!doctype html>
+<html lang="{{ .Site.Language.Lang }}">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>{{ .Title }}</title>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fira+Code&display=swap">
+  <link rel="stylesheet" href="{{ "css/main.css" | relURL }}">
+  <link rel="stylesheet" href="{{ "css/syntax-highlighting.css" | relURL }}">
+  <link rel="stylesheet" href="{{ "css/theme-light.css" | relURL }}">
+  <link rel="stylesheet" href="{{ "css/theme-dark.css" | relURL }}">
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+  <link rel="manifest" href="/site.webmanifest">
+  <meta name="msapplication-TileColor" content="#ffc000">
+  <meta name="theme-color" content="#ffc000">
+</head>
+<body class="body__theme__light">
+  <header class="layout__header">
+    <nav>
+      {{ $currentPage := . }}
+      {{ range .Site.Menus.main }}
+        <a class="{{if or (eq $currentPage.RelPermalink .URL) (eq $currentPage.Section .Identifier) }} layout__link__active{{end}}" href="{{.URL}}"  target='{{ if in .URL "https://" }}_blank{{ else }}_self{{ end }}'>{{ .Name }}</a>
+      {{ end }}
+    </nav>
+    <nav>
+      <a href="https://github.com/goooseman/devsparks-blog/issues/new?title=DevSparks+Feedback&body=I+found+something+wrong+on+this+page%3A%0A%0A++{{ .Permalink }}%0A%0A++Here%27s+what+it+is%3A" target="_blank">Fix typo</a>
+      <button id="theme-switch" class="header__theme_switch" aria-label="Switch theme" onclick="themeSwitcher()"></button>
+    </nav>
+  </header>
+  <main>
+    {{ block "main" . }}{{ end }}
+  </main>
+  <footer class="layout__footer">
+    <div class="footer__container">
+      <img id="footer-image-human" src="/human.png" srcset="/human@2x.png 2x" alt="Author photo" onmouseover="footerImageHover(true)">
+      <img id="footer-image-robot" src="/robot.png" srcset="/robot@2x.png 2x" alt="Author photo" onmouseover="footerImageHover(false)" style="display: none;">
+      <div class="footer__about_text">
+        Footer Ipsum
+      </div>
+    </div>
+  </footer>
+  <script src="{{ "js/theme.js" | relURL }}" defer></script>
+  <script src="{{ "js/footer-image.js" | relURL }}" defer></script>
+  <script src="{{ "js/remark42.js" | relURL }}" defer></script>
+</body>
+</html>
