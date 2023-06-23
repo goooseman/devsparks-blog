@@ -2,7 +2,7 @@
 title: "The Almighty ChatGPT: A Developer's BFF 🤖❤️"
 category: "lifehack"
 tags: ["chatgpt", "bash", "refactoring", "10x"]
-date: "2023-06-14T16:20:11.379Z"
+date: "2023-06-22T18:38:11.379Z"
 ---
 
 ![Robots rulllz](./02-god-bless-chat-gpt.png)
