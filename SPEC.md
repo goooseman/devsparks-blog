@@ -166,7 +166,7 @@ Image sources for .tip__image:
   - hackerman: `/hackerman.png` and `/hackerman@2x.png`
   - padawan: `/padawan.png` and `/padawan@2x.png`
 
-#### {{< spoiler >}} shortcode
+#### shortcodes/spoiler.html shortcode
 
 Has 1 argument: title.
 
