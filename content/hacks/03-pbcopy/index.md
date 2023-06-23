@@ -1,6 +1,6 @@
 ---
 title: "Pbcopy Lifehack: The Power of Copy-Pasting in CLI"
-date: "2023-06-23T11:38:11.379Z"
+date: "2023-06-23T08:49:11.379Z"
 tags: ["cli", "unix", "osx"]
 category: "lifehack"
 ---
@@ -8,7 +8,7 @@ category: "lifehack"
 
 Hey DevSparks fan! Are you ready for an epic lifehack? Say goodbye to the mundane task of manually copy-pasting text from files, IPs, or even decoding Base64 strings. We're gonna help you level up your CLI game with this nifty trick called `pbcopy`. And let me tell ya, it's a game changer!
 
-![Mac pbcopy](03-pbcopy.png)
+![Mac pbcopy](./03-pbcopy.png)
 
 ## Unleash the Power of Pbcopy on macOS
 
@@ -32,7 +32,7 @@ New to the command line? Let's break it down: the `|` pipe symbol is used to cha
 
 But wait, there's more! Enter `pbpaste`. This bad boy lets you paste anything from your system clipboard. Use it as temporary storage by piping data from one program to another like this: `any_program | pbcopy` (copies data) and then `pbpaste | any_program` (pastes data). Check out this sweet illustration:
 
-![Pbcopy and pbpaste](03-pbcopy-pbpaste.png)
+![Pbcopy and pbpaste](./03-pbcopy-pbpaste.png)
 
 \{{< /hackermans-tip >}}
 
