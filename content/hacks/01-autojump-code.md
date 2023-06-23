@@ -1,7 +1,7 @@
 
 ---
 title: "Jump Around Your Filesystem Like a Pro"
-tags: ["cli", "autojump", "ide", "unix", "osx"]
+tags: ["cli", "unix", "osx"]
 category: "lifehack"
 date: "2023-06-10T16:20:11.379Z"
 ---
