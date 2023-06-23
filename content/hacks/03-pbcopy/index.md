@@ -8,7 +8,7 @@ category: "lifehack"
 
 Hey DevSparks fan! Are you ready for an epic lifehack? Say goodbye to the mundane task of manually copy-pasting text from files, IPs, or even decoding Base64 strings. We're gonna help you level up your CLI game with this nifty trick called `pbcopy`. And let me tell ya, it's a game changer!
 
-![Mac pbcopy](./03-pbcopy.png)
+![Pipes terminal oldschool illustration](./03-pbcopy.png)
 
 ## Unleash the Power of Pbcopy on macOS
 

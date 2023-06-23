@@ -5,7 +5,7 @@ tags: ["chatgpt", "bash", "refactoring", "10x"]
 date: "2023-06-22T15:38:11.379Z"
 ---
 
-![Robots rulllz](./02-god-bless-chat-gpt.png)
+![Screenshot of funny bash comment prepared for the time of robot ruling our world](./02-god-bless-chat-gpt.png)
 
 Welcome back, DevSparks readers! Today, I've got a juicy lifehack for our fellow developers that'll save you time and make you fall in love with the almighty ChatGPT. It's story time, folks! So grab your keyboards and your favorite caffeinated beverage, 'cause we're about to dive in! 🚀
 
