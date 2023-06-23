@@ -195,10 +195,12 @@ Do not generate hack itself, only the layout.
 ### Code syntax highlighting
 
 - for `<code>` (single line):
-  - invert color and background color: color should be `--background-color`, background-color should be `--color`
+  - invert color and background color: color should be `--background-color`, background-color should be `--text-color`
   - do not add any borders or paddings
+  - `white-space: break-spaces;`
+  - `word-break: break-word;`
 - for `<pre>` inside `<div class="highlight">`: 
-  - background-color is --background-color for dark theme and --color for light theme
+  - background-color is --background-color for dark theme and --text-color for light theme
   - color should be `white` to keep it the default one
   - padding: 12px
 - `<code>` inside `<pre>` inside `<div class="highlight">`:
@@ -292,12 +294,16 @@ Classnames:
 
 CSS specs:
 
+- html,body: width100vw with horizontal scrolling disabled
 - body:
   - 600px width on desktop, aligned center
+  - box-sizing: border-box;
+  - margin: 0;
   - 100% width with 24px left/right padding on mobile
   - Content should never be wider then 100wv
   - background of --background-color
 - .tip__image should be absolute positioned on a border with left: 20% and bottom: 100% to be on top of `.tip__container`. 
+- hr should be of border-color
 - .tip__container should be relative. 
 - .tip__container should have 300px margin top to fix image position overflow and 8px margin bottom. 
 - .tip__title inside section should be italic and bold.
