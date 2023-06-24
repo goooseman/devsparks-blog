@@ -39,6 +39,9 @@ One theme with light and dark variations. Theme implementation is JS/CSS only.
 - Website should watch for system theme changes.
 - Website theme should be control with switcher, so both CSS should be always connected
 - JS Adds `body__theme__light` or `body__theme__dark` class to body.
+- JS When theme is switched do 2 additional actions:
+  - `document.querySelector('meta[name="theme-color"]')?.setAttribute("content", "#ffc000" | "#40414e");` // "#ffc000" is for light theme
+  - `window.REMARK42?.changeTheme("light" | "dark")`;
 - Theme CSS variblaes should be attached to `body__theme__light` and `body__theme__dark`:
     - light:
         - `background-color`: `#ffc000`
@@ -255,7 +258,6 @@ var remark_config = {
   site_id: 'devsparks.goooseman.dev',
   components: ['embed', 'last-comments'],
   max_shown_comments: 100,
-  theme: 'dark',
   show_email_subscription: false,
   simple_view: false,
   no_footer: false

@@ -8,11 +8,19 @@
       body.classList.add('body__theme__dark');
       themeSwitch.innerHTML = '🌞';
       themeSwitch.setAttribute('aria-label', 'Switch to light theme');
+      document
+        .querySelector('meta[name="theme-color"]')
+        ?.setAttribute("content", "#40414e");
+      window.REMARK42?.changeTheme("dark");
     } else {
       body.classList.remove('body__theme__dark');
       body.classList.add('body__theme__light');
       themeSwitch.innerHTML = '🌒';
       themeSwitch.setAttribute('aria-label', 'Switch to dark theme');
+      document
+        .querySelector('meta[name="theme-color"]')
+        ?.setAttribute("content", "#ffc000");
+      window.REMARK42?.changeTheme("light");
     }
   }
 
