@@ -11,6 +11,9 @@ Hey DevSparks fan! Are you ready for an epic lifehack? Say goodbye to the mundan
 ![Pipes terminal oldschool illustration](./03-pbcopy.png)
 _linux terminal, pipe, copy, cloned 1930s era comic strip contemporary pop art collage --ar 16:9 --v 5.1_
 
+Video version:
+<iframe width="560" height="315" src="https://www.youtube.com/embed/yqWX86uT5jM" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+
 ## Unleash the Power of pbcopy on macOS
 
 For all my fellow Mac enthusiasts out there, feast your eyes on the magic of `pbcopy`! This CLI command lets you copy anything straight to your system clipboard. Check out these wicked examples:

@@ -11,6 +11,9 @@ _jump, cloned 1930s era comic strip contemporary pop art collage --ar 16:9 --v 5
 
 Yo, devs! Ever felt tired of typing long paths in your terminal to navigate between projects? Wanna switch between directories faster than a ninja? Your prayers have been answered. Introducing the *Autojump* CLI tool! This bad boy is gonna make your life a whole lot easier. 🚀
 
+Video version:
+<iframe width="560" height="315" src="https://www.youtube.com/embed/yqWX86uT5jM" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+
 ### Get on the Autojump Train
 
 Autojump is a super handy CLI app that builds a database of your frequently used directories and helps you jump around like a boss.

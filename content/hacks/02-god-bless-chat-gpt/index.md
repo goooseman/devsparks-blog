@@ -12,6 +12,9 @@ Welcome back, DevSparks readers! Today, I've got a juicy lifehack for our fellow
 
 ![Screenshot of funny bash comment prepared for the time of robot ruling our world](./02-god-bless-chat-gpt.png)
 
+Video version:
+<iframe width="560" height="315" src="https://www.youtube.com/embed/yqWX86uT5jM" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+
 ## When ChatGPT Saved My Bacon 🥓
 
 Let me paint a picture for ya. I had this 2SP ticket to restructure a project, moving around ~800 files and colocating test files with their production code counterparts (also changing `.test` to `.spec` in the process). Now, as any sane developer would do, I decided to write a bash script to automate this task instead of messing with it manually. And of course we, humans, are not born to write bash, so I've kindle asked ChatGPT to help me with a following prompt:
