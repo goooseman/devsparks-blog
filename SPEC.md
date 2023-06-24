@@ -95,7 +95,7 @@ Please add following html for the following favicons support:
 - `/favicon-16x16.png`
 - `/site.webmanifest`
 
-And also meta `msapplication-TileColor: #ffc000` and `theme-color: #ffc000`
+And also meta `msapplication-TileColor: #ffc000`
 
 ### Site layout
 
