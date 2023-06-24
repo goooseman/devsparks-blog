@@ -24,10 +24,13 @@ Want to see how the AI turns a specification into a fully functioning program? C
 
 ## TODO ✅
 
-- Telegram icon
 - Images for footer/padawan/hackerman
 - Theme persistence
 - Remark42 styles
+- Subscribe page: youtube link, email subscription
+- Videos for each lifehack
+- Remove iOS color
+- RSS meta
 
 ## Tech Stack 🛠️
 We use a range of technologies to make this project possible:
