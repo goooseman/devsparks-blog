@@ -8,7 +8,7 @@ This project is a static blog composed primarily of these developer lifehacks.
 
 [![Dev Sparks YouTube](https://img.shields.io/badge/Dev%20Sparks-YouTube-%23FF0000?style=for-the-badge&logo=youtube)](https://www.youtube.com/@Dev_Sparks) [![Telegram](https://img.shields.io/badge/Dev%20Sparks-Telegram-%2326A5E4?style=for-the-badge&logo=telegram)](https://t.me/+xsHFeSD6HDhhMjRk)
 [![WhatsApp](https://img.shields.io/badge/Dev%20Sparks-WhatsApp-%2325D366?style=for-the-badge&logo=whatsapp)](https://chat.whatsapp.com/IB353IHFJR2AGLy7Xlxkg4)
-[![Twitter](https://img.shields.io/badge/Dev%20Sparks-Twitter-%231DA1F2?style=for-the-badge&logo=twitter)](https://twitter.com/DevSparks)
+[![Twitter](https://img.shields.io/badge/Dev%20Sparks-Twitter-%231DA1F2?style=for-the-badge&logo=twitter)](https://twitter.com/DevSparksDev)
 
 
 ![Built With Hugo](https://img.shields.io/badge/Built%20With-Hugo-%2300ADD8?style=for-the-badge&logo=goland) ![Comments Remark42](https://img.shields.io/badge/Comments-Remark42-%239E9E9E?style=for-the-badge&logo=googlechat&logoColor=white)
