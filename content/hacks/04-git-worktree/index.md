@@ -10,8 +10,8 @@ _git worktree, cloned 1930s era comic strip contemporary pop art collage --ar 16
 
 Ever found yourself in need of working with multiple branches or versions of your project at once? Tired of cloning the entire repo again and again, only to wait for that painfully slow `git clone`? Well, my fellow devs, it's time to step up your Git game with **Git Worktrees**! 🌳
 
-Video version:
-<iframe width="560" height="315" src="https://www.youtube.com/embed/yqWX86uT5jM" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+`Prefer visuals to text? Every lifehack comes with a video companion!`
+{{< youtube id="yqWX86uT5jM" title="Video version of this article" >}}
 
 ## What's a Git Worktree?
 

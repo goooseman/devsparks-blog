@@ -12,8 +12,8 @@ Welcome back, DevSparks readers! Today, I've got a juicy lifehack for our fellow
 
 ![Screenshot of funny bash comment prepared for the time of robot ruling our world](./02-god-bless-chat-gpt.png)
 
-Video version:
-<iframe width="560" height="315" src="https://www.youtube.com/embed/yqWX86uT5jM" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+`Prefer visuals to text? Every lifehack comes with a video companion!`
+{{< youtube id="yqWX86uT5jM" title="Video version of this article" >}}
 
 ## When ChatGPT Saved My Bacon 🥓
 

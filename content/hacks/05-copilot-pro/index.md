@@ -12,8 +12,8 @@ Are you ready to crank your coding skills up to 11? Then it's time you start har
 
 ![Copilot writing a haiku about legacy code](./05-copilot-pro.gif)
 
-Video version:
-<iframe width="560" height="315" src="https://www.youtube.com/embed/yqWX86uT5jM" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+`Prefer visuals to text? Every lifehack comes with a video companion!`
+{{< youtube id="yqWX86uT5jM" title="Video version of this article" >}}
 
 ## Comment2Code: Magic at Your Fingertips
 
