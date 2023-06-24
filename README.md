@@ -29,7 +29,6 @@ Want to see how the AI turns a specification into a fully functioning program? C
 - Remark42 styles
 - Subscribe page: youtube link, email subscription
 - Videos for each lifehack
-- Remove iOS color
 - RSS meta
 
 ## Tech Stack 🛠️
