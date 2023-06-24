@@ -8,6 +8,7 @@ document.addEventListener('DOMContentLoaded', () => {
       body.classList.remove('body__theme__dark');
       document.querySelector('meta[name="theme-color"]')?.setAttribute('content', '#ffc000');
       window.REMARK42?.changeTheme('light');
+      window.remark_config?.theme = "light";
       themeSwitch.innerHTML = '🌒';
       themeSwitch.setAttribute('aria-label', 'Switch to dark theme');
     } else {
@@ -15,6 +16,7 @@ document.addEventListener('DOMContentLoaded', () => {
       body.classList.remove('body__theme__light');
       document.querySelector('meta[name="theme-color"]')?.setAttribute('content', '#40414e');
       window.REMARK42?.changeTheme('dark');
+      window.remark_config?.theme = 'dark';
       themeSwitch.innerHTML = '🌞';
       themeSwitch.setAttribute('aria-label', 'Switch to light theme');
     }

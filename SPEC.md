@@ -42,7 +42,8 @@ One theme with light and dark variations. Theme implementation is JS/CSS only.
 - JS saves current theme to sessionStorage. If saved session exists, it should overwrite system one.
 - JS When theme is switched do 2 additional actions:
   - `document.querySelector('meta[name="theme-color"]')?.setAttribute("content", "#ffc000" | "#40414e");` // "#ffc000" is for light theme
-  - `window.REMARK42?.changeTheme("light" | "dark")`;
+  - `window.REMARK42?.changeTheme("light" | "dark");`
+  - `window.remark_config?.theme = "light" | "dark";`
 - Theme CSS variblaes should be attached to `body__theme__light` and `body__theme__dark`:
     - light:
         - `background-color`: `#ffc000`
@@ -254,7 +255,7 @@ Do not generate hack itself, only the layout.
   - Should contain the following snippet:
         ```
 // https://r42.com/docs/configuration/frontend/
-var remark_config = {
+window.remark_config = {
   host: 'https://r42.goooseman.dev',
   site_id: 'devsparks.goooseman.dev',
   components: ['embed', 'last-comments'],

@@ -1,5 +1,5 @@
 // https://r42.com/docs/configuration/frontend/
-var remark_config = {
+window.remark_config = {
   host: "https://r42.goooseman.dev",
   site_id: "devsparks.goooseman.dev",
   components: ["embed", "last-comments"],

@@ -1,4 +1,7 @@
 body.body__theme__dark {
+  --background-color: #40414e;
+  --text-color: #ffc000;
+  --border-color: #ffc000;
   background-color: #40414e;
   color: #ffc000;
 }
