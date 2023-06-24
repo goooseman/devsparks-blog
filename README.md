@@ -28,7 +28,6 @@ Want to see how the AI turns a specification into a fully functioning program? C
 - Images for footer/padawan/hackerman
 - Theme persistence
 - Remark42 styles
-- Home page title
 
 ## Tech Stack 🛠️
 We use a range of technologies to make this project possible:
