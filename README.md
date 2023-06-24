@@ -33,6 +33,8 @@ Want to see how the AI turns a specification into a fully functioning program? C
 - Theme persistence
 - Remark42 styles
 - Videos for each lifehack
+- Twitter/Telegram/WhatsApp auto-post
+- Youtube responsive
 
 ## Tech Stack 🛠️
 We use a range of technologies to make this project possible:
