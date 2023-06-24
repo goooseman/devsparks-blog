@@ -23,19 +23,19 @@ For all my fellow Mac enthusiasts out there, feast your eyes on the magic of `pb
 - `echo 'SGFpbCBBSSBLaW5nIPCfkZEK' | base64 -d | pbcopy` (decodes a Base64 string)
 - `kustomize build | pbcopy` (copies K8S YAMLs built with [kustomize](https://kustomize.io))
 
-\{{< padawans-playground >}}
+{{< padawans-playground >}}
 
 New to the command line? Let's break it down: the `|` pipe symbol is used to chain commands together. It takes the output of one command and feeds it into another. So when you see `cmd1 | cmd2`, it means "run cmd1 and send its output to cmd2."
 
-\{{< /padawans-playground >}}
+{{< /padawans-playground >}}
 
-\{{< hackermans-tip >}}
+{{< hackermans-tip >}}
 
 But wait, there's more! Enter `pbpaste`. This bad boy lets you paste anything from your system clipboard. Use it as temporary storage by piping data from one program to another like this: `any_program | pbcopy` (copies data) and then `pbpaste | any_program` (pastes data). Check out this sweet illustration:
 
 ![pbcopy and pbpaste](./03-pbcopy-pbpaste.png)
 
-\{{< /hackermans-tip >}}
+{{< /hackermans-tip >}}
 
 
 ## A Treat for JavaScript Devs
