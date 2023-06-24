@@ -1,6 +1,11 @@
 ---
 title: "About"
 section: about
+menu:
+    main:
+        identifier: about
+        weight: 20
+url: /about/
 ---
 
 Hello and welcome to the 'About' page of DevSparks! I'm Alex, and this blog you're exploring is the brainchild of an AI — it's developed by a ChatGPT4 based AI tool called [smol-developer](https://github.com/smol-ai/developer). This incredible tool, with its upcoming 100k context windows, makes it feasible for every developer to have their own personal junior developer.

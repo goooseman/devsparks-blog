@@ -74,15 +74,15 @@ One theme with light and dark variations. Theme implementation is JS/CSS only.
 
 - contains navigation links: Hacks, About, Githun, Fix typo link, switch theme toggle.
 - **Fix typo and switch theme should be aligned to the right side!**:
-  - Because of that Hacks, About, GitHub should be defined in `menu.main` inside `config.yaml`
-  - Pages should have url,identifier,weight: Hacks: `/`,hacks,10; About: `/about/`,about,20; Github: `https://github.com/goooseman/devsparks-blog`,github,30
+  - GitHub link should be defined in `menu.main` inside `config.yaml`
+  - url: `https://github.com/goooseman/devsparks-blog`, identifier: github, weight: 30
   - Fix typo should not be defined in `config.yaml`, it should be hardcoded inside `header.html`
   - All `menu.main` items should be rendered inside one nav, Fix typo and theme switcher - inside another nav. Their parent should be flex.
 - To render menu items use the following snippet:
 ```
     {{ $currentPage := . }}
     {{ range .Site.Menus.main }}
-      <a class="{{if or (eq $currentPage.RelPermalink .URL) (eq $currentPage.Section .Identifier) }} layout__link__active{{end}}" href="{{.URL}}"  target='{{ if in .URL "https://" }}_blank{{ else }}_self{{ end }}'>{{ .Name }}</a>
+      <a class="{{if or (eq $currentPage.RelPermalink .URL) (eq $currentPage.Section .Identifier) }} layout__link__active{{end}}" href="{{.URL}}"  target='{{ if in .URL "https://" }}_blank{{ else }}_self{{ end }}'>{{ .Name }}{{ .Post }}</a>
     {{ end }}
 ```
 - Fix typo button just opens following link in a new tab: "https://github.com/goooseman/devsparks-blog/issues/new?title=DevSparks+Feedback&body=I+found+something+wrong+on+this+page%3A%0A%0A++{CURRENT_PAGE}%0A%0A++Here%27s+what+it+is%3A", make sure to replace `{CURRENT_PAGE}` with correct url: `.Permalink` hugo var
@@ -218,6 +218,7 @@ Do not generate hack itself, only the layout.
   - Do not use JSON objects in this file
   - Add following additional configuration:
     - `relativeUrls: true`
+    - `markup.goldmark.renderer: true`
   - Output YAML file for hugo, not markdown here!
 - themes/devsparks/layouts/_default/baseof.html
   - use `<link rel="stylesheet" href="{{ "css/main.css" | relURL }}">` to connect all styles files, there are 4 css files, connect all of them!

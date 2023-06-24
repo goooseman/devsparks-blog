@@ -4,7 +4,7 @@ section: subscribe
 menu:
     main:
         identifier: subscribe
-        weight: 50
+        weight: 25
 url: /subscribe/
 
 ---

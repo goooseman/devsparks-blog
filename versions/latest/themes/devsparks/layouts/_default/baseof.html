@@ -21,7 +21,7 @@
     <nav>
       {{ $currentPage := . }}
       {{ range .Site.Menus.main }}
-        <a class="{{if or (eq $currentPage.RelPermalink .URL) (eq $currentPage.Section .Identifier) }} layout__link__active{{end}}" href="{{.URL}}"  target='{{ if in .URL "https://" }}_blank{{ else }}_self{{ end }}'>{{ .Name }}</a>
+        <a class="{{if or (eq $currentPage.RelPermalink .URL) (eq $currentPage.Section .Identifier) }} layout__link__active{{end}}" href="{{.URL}}"  target='{{ if in .URL "https://" }}_blank{{ else }}_self{{ end }}'>{{ .Name }}{{ .Post }}</a>
       {{ end }}
     </nav>
     <nav>
