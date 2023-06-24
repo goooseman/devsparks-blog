@@ -29,7 +29,6 @@ Want to see how the AI turns a specification into a fully functioning program? C
 - Remark42 styles
 - Subscribe page: youtube link, email subscription
 - Videos for each lifehack
-- RSS meta
 
 ## Tech Stack 🛠️
 We use a range of technologies to make this project possible:

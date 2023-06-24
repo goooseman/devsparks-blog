@@ -96,6 +96,7 @@ Please add following html for the following favicons support:
 - `/site.webmanifest`
 
 And also meta `msapplication-TileColor: #ffc000`
+And also `/index.xml` RSS feed meta
 
 ### Site layout
 
