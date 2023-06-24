@@ -250,7 +250,7 @@ Do not generate hack itself, only the layout.
 // https://r42.com/docs/configuration/frontend/
 var remark_config = {
   host: 'https://r42.goooseman.dev',
-  site_id: 'dev_sparks',
+  site_id: 'devsparks.goooseman.dev',
   components: ['embed', 'last-comments'],
   max_shown_comments: 100,
   theme: 'dark',

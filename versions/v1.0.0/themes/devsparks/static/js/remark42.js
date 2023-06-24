@@ -1,13 +1,13 @@
 // https://r42.com/docs/configuration/frontend/
 var remark_config = {
-  host: 'https://r42.goooseman.dev',
-  site_id: 'dev_sparks',
-  components: ['embed', 'last-comments'],
+  host: "https://r42.goooseman.dev",
+  site_id: "devsparks.goooseman.dev",
+  components: ["embed", "last-comments"],
   max_shown_comments: 100,
-  theme: 'dark',
+  theme: "dark",
   show_email_subscription: false,
   simple_view: false,
-  no_footer: false
+  no_footer: false,
 };
 
 !function(e, n) {
