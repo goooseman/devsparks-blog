@@ -39,6 +39,7 @@ One theme with light and dark variations. Theme implementation is JS/CSS only.
 - Website should watch for system theme changes.
 - Website theme should be control with switcher, so both CSS should be always connected
 - JS Adds `body__theme__light` or `body__theme__dark` class to body.
+- JS saves current theme to sessionStorage. If saved session exists, it should overwrite system one.
 - JS When theme is switched do 2 additional actions:
   - `document.querySelector('meta[name="theme-color"]')?.setAttribute("content", "#ffc000" | "#40414e");` // "#ffc000" is for light theme
   - `window.REMARK42?.changeTheme("light" | "dark")`;
