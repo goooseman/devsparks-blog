@@ -260,7 +260,6 @@ window.remark_config = {
   site_id: 'devsparks.goooseman.dev',
   components: ['embed', 'last-comments'],
   max_shown_comments: 100,
-  show_email_subscription: false,
   simple_view: false,
   no_footer: false
 }

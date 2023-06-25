@@ -5,7 +5,6 @@ var remark_config = {
   components: ["embed", "last-comments"],
   max_shown_comments: 100,
   theme: "dark",
-  show_email_subscription: false,
   simple_view: false,
   no_footer: false,
 };
