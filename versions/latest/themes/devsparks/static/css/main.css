@@ -60,7 +60,16 @@ a:hover {
 .layout__header {
   display: flex;
   justify-content: space-between;
-  padding-top: 12px;
+}
+
+.layout__header a, .layout__header button {
+  display: inline-block;
+  margin-top: 12px;
+  vertical-align: top;
+}
+
+.layout__header .layout__header-right {
+  text-align: right;
 }
 
 .header__theme_switch {

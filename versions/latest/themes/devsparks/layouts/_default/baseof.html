@@ -25,7 +25,7 @@
         <a class="{{if or (eq $currentPage.RelPermalink .URL) (eq $currentPage.Section .Identifier) }} layout__link__active{{end}}" href="{{.URL}}"  target='{{ if in .URL "https://" }}_blank{{ else }}_self{{ end }}'>{{ .Name }}{{ .Post }}</a>
       {{ end }}
     </nav>
-    <nav>
+    <nav class="layout__header-right">
       <a href="https://github.com/goooseman/devsparks-blog/issues/new?title=DevSparks+Feedback&body=I+found+something+wrong+on+this+page%3A%0A%0A++{{ .Permalink }}%0A%0A++Here%27s+what+it+is%3A" target="_blank">Fix typo</a>
       <button id="theme-switch" class="header__theme_switch" aria-label="Switch theme" onclick="themeSwitcher()"></button>
     </nav>

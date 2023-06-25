@@ -281,6 +281,7 @@ ID names of DOM elements:
 
 Classnames:
 - .layout__header
+- .layout__header-right
 - .header__theme_switch
 - .layout__link__active
 - .section__tip__hackerman
@@ -325,7 +326,9 @@ CSS specs:
 - .layout__header should be:
   - `display: flex`
   - `justify-content: space-between;`
-  - 12px padding from top
+- .layout__header a and button should be:
+  - vertical-align: top; with display: inline-block and margin-top: 12px
+- .layout__header-right should have text-align: right
 - .layout__link__active
   - 2px left/right/top/bottom border
 - .footer__about_text
