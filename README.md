@@ -34,7 +34,7 @@ Want to see how the AI turns a specification into a fully functioning program? C
 - Remark42 styles
 - Videos for each lifehack
 - Twitter/Telegram/WhatsApp auto-post
-- Youtube responsive
+- Css cache
 
 ## Tech Stack 🛠️
 We use a range of technologies to make this project possible:
