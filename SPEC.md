@@ -230,7 +230,9 @@ Do not generate hack itself, only the layout.
   - use `<link rel="stylesheet" href="{{ "css/main.css" | relURL }}">` to connect all styles files, there are 4 css files, connect all of them!
   - do not use `disabled` on any css
   - connect both themes
-  - use `<script src="{{ "js/theme.js" | relURL }}" defer></script>` to connect JS, there are 3 JS files, connect all of them
+  - use `<script src="{{ "js/theme.js" | relURL }}"></script>` to connect JS, there are 3 JS files, connect all of them
+  - theme.js should not use `defer` to prevent bug with flickering interface. other JS - should be `defer`
+  - `<script data-goatcounter="https://devsparksa.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>` should also be in the end of the body
   - `#remark42` should not be inside `baseof.html`, it is only inside `single.html
 - themes/devsparks/layouts/_default/list.html
   - Contains Hacks titile if it is index
