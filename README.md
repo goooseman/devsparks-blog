@@ -35,6 +35,8 @@ Want to see how the AI turns a specification into a fully functioning program? C
 - Videos for each lifehack
 - Twitter/Telegram/WhatsApp auto-post
 - Css cache
+- Play with text align
+- autojump is not explainatory enough, visual playground?
 
 ## Tech Stack 🛠️
 We use a range of technologies to make this project possible:
