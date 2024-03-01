@@ -37,6 +37,7 @@ Want to see how the AI turns a specification into a fully functioning program? C
 - Css cache
 - Play with text align
 - autojump is not explainatory enough, visual playground?
+- image captions styles
 
 ## Tech Stack 🛠️
 We use a range of technologies to make this project possible:
