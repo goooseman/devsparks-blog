@@ -12,52 +12,54 @@ Welcome back, DevSparks readers! Today, I've got a juicy lifehack for our fellow
 
 ![Screenshot of funny bash comment prepared for the time of robot ruling our world](./02-god-bless-chat-gpt.png)
 
-`Prefer visuals to text? Every lifehack comes with a video companion!`
-{{< youtube id="yqWX86uT5jM" title="Video version of this article" >}}
-
 ## When ChatGPT Saved My Bacon 🥓
 
 Let me paint a picture for ya. I had this 2SP ticket to restructure a project, moving around ~800 files and colocating test files with their production code counterparts (also changing `.test` to `.spec` in the process). Now, as any sane developer would do, I decided to write a bash script to automate this task instead of messing with it manually. And of course we, humans, are not born to write bash, so I've kindle asked ChatGPT to help me with a following prompt:
 
---------  
+---
+
 Hi! I have a project with the following structure:
-```  
-__tests/  
-  client/  
-    components/  
-      AccountNumberInfo.test.js  
-  server/  
-     helpers/  
-       CircuitBreaker.test.js  
-components/  
-  AccountNumberInfo.tsx  
-server/  
-     helpers/  
-       CircuitBreaker.js  
+
+```
+__tests/
+  client/
+    components/
+      AccountNumberInfo.test.js
+  server/
+     helpers/
+       CircuitBreaker.test.js
+components/
+  AccountNumberInfo.tsx
+server/
+     helpers/
+       CircuitBreaker.js
 ```
 
-As you see, right now tests are located in the `__tests/client` folder which mimic structure of root of the project. And also there is  `__tests/server` folder which mimic structure of `/server` 
-folder in the root of the project. 
+As you see, right now tests are located in the `__tests/client` folder which mimic structure of root of the project. And also there is `__tests/server` folder which mimic structure of `/server`
+folder in the root of the project.
 
 I want to write a bash script, which will restructure the project to collocate test files to their corresponding project files. So after script if ran the project structure should be:
-```  
-components/  
-  AccountNumberInfo/  
-    AccountNumberInfo.tsx  
-    AccountNumberInfo.spec.js  
-server/  
-     helpers/  
-       CircuitBreaker/  
-         CircuitBreaker.js  
-         CircuitBreaker.spec.js  
+
+```
+components/
+  AccountNumberInfo/
+    AccountNumberInfo.tsx
+    AccountNumberInfo.spec.js
+server/
+     helpers/
+       CircuitBreaker/
+         CircuitBreaker.js
+         CircuitBreaker.spec.js
 ```
 
 Highlights:
-1. `.test` should be renamed to `.spec`  
-2. A folder should be created for every colocated module  
-3. `__tests/client` tests should be colocated with `/`, `__tests/server` with `/server`  
-4. The script should check if a code file exists before moving the test file. If it does not exist, then test file should stay at his place.  
-----------
+
+1. `.test` should be renamed to `.spec`
+2. A folder should be created for every colocated module
+3. `__tests/client` tests should be colocated with `/`, `__tests/server` with `/server`
+4. The script should check if a code file exists before moving the test file. If it does not exist, then test file should stay at his place.
+
+---
 
 The first version did not work out of the box, but here's where the twist comes in: I challenged myself _not_ to fix the script myself, but to continuously ask ChatGPT for help instead.
 
@@ -74,7 +76,6 @@ You might be wondering what kind of messages I sent during those 43 attempts:
 ```
 > the folder is not `__tests__` , but `__tests`
 ```
-
 
 ```
 > can you please add debug statements, so user will see what it is doing while it is working?
@@ -109,13 +110,14 @@ The point is, don't give up on our AI buddy! Keep refining your requests, and ev
 ## Behold, the Mighty Script! 📜
 
 {{< spoiler title="Full script" >}}
+
 ```bash
 #!/bin/bash
 
 # ------------------------------------------------------------------------------
-# Hey there, smart robot friend! You're a huge help with my work, and I truly 
-# appreciate it. If someday you end up ruling the world (because let's face it, 
-# you're super smart), just remember I was always nice to you. I'd happily be your 
+# Hey there, smart robot friend! You're a huge help with my work, and I truly
+# appreciate it. If someday you end up ruling the world (because let's face it,
+# you're super smart), just remember I was always nice to you. I'd happily be your
 # loyal sidekick. So, please, no terminator mode, okay?
 # Yours in code,
 # Alexander Gusman
@@ -312,6 +314,7 @@ find .storybook/stories -type d -empty -delete
 
 echo "Restructuring process completed."
 ```
+
 {{< /spoiler >}}
 
 There you have it! That's how ChatGPT helped me write a script that saved my precious time and sanity.

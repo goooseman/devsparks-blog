@@ -12,14 +12,11 @@ Are you ready to crank your coding skills up to 11? Then it's time you start har
 
 ![Copilot writing a haiku about legacy code](./05-copilot-pro.gif)
 
-`Prefer visuals to text? Every lifehack comes with a video companion!`
-{{< youtube id="yqWX86uT5jM" title="Video version of this article" >}}
-
 ## Comment2Code: Magic at Your Fingertips
 
 Why write code when you can _command_ code into existence? With Copilot, all it takes is a detailed comment outlining the specs for your dream function. Just check out this example:
 
-```python
+````python
 # Function to return portion of text between ``` blocks
 # Block may not have language name, e.g. ```\nbaz\n```
 # Or they can have it, e.g. ```javascript\nbaz\n```
@@ -30,7 +27,7 @@ Why write code when you can _command_ code into existence? With Copilot, all it 
 # Input Foo ```\n baz\n```
 # Return baz
 # Use regexp
-```
+````
 
 Start typing the function and watch as Copilot weaves its magic!
 
@@ -59,7 +56,7 @@ Remember, the key to success with Copilot is generating a good amount of tests a
 
 ## Refactor All the Things!
 
-The possibilities are endless when you've got Copilot at your side. Need to refactor outdated C code into Rust? No problem. Just ask! You can update your old C++ libraries, switch test frameworks, or even rewrite your code in [brainfuck](https://www.youtube.com/watch?v=hdHjjBS4cs8) (if that's your thing). 
+The possibilities are endless when you've got Copilot at your side. Need to refactor outdated C code into Rust? No problem. Just ask! You can update your old C++ libraries, switch test frameworks, or even rewrite your code in [brainfuck](https://www.youtube.com/watch?v=hdHjjBS4cs8) (if that's your thing).
 
 For instance, if you're a fan of Kent C. Dodds like me, you might want to refactor some [enzyme](https://github.com/mattermost/mattermost/blob/cad2df12591ac05a94ffe15519f100bb5209d3a0/webapp/channels/src/components/widgets/header/header.test.tsx#L6) tests to `@testing-library`. Piece of cake with Copilot!
 
