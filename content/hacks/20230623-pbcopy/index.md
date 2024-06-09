@@ -1,13 +1,19 @@
 ---
 title: "pbcopy: The Power of Copy-Pasting in CLI"
-date: "2023-06-23T08:49:11.379Z"
-tags: ["cli", "unix", "osx"]
-category: "lifehack"
+date: 2023-06-23T08:49:11.379Z
+tags:
+  - cli
+  - unix
+  - osx
+category: lifehack
+aliases:
+  - /hacks/03-pbcopy
 ---
+
 
 Hey DevSparks fan! Are you ready for an epic lifehack? Say goodbye to the mundane task of manually copy-pasting text from files, IPs, or even decoding Base64 strings. We're gonna help you level up your CLI game with this nifty trick called `pbcopy`. And let me tell ya, it's a game changer!
 
-![Pipes terminal oldschool illustration](./03-pbcopy.png)
+![Pipes terminal oldschool illustration](03-pbcopy.png)
 _linux terminal, pipe, copy, cloned 1930s era comic strip contemporary pop art collage --ar 16:9 --v 5.1_
 
 ## Unleash the Power of pbcopy on macOS
@@ -32,16 +38,17 @@ New to the command line? Let's break it down: the `|` pipe symbol is used to cha
 
 But wait, there's more! Enter `pbpaste`. This bad boy lets you paste anything from your system clipboard. Use it as temporary storage by piping data from one program to another like this: `any_program | pbcopy` (copies data) and then `pbpaste | any_program` (pastes data). Check out this sweet illustration:
 
-![pbcopy and pbpaste](./03-pbcopy-pbpaste.png)
+![pbcopy and pbpaste](03-pbcopy-pbpaste.png)
 
 {{< /hackermans-tip >}}
+
 
 ## A Treat for JavaScript Devs
 
 If you're a JS dev, we've got something special for ya. Did you know there's a sneaky little `copy` function hiding in your browser console? Just pop open your console while debugging, and use it to copy large objects with ease:
 
 ```javascript
-copy(props); // will copy all the JSON, so you can paste it to your IDE
+copy(props) // will copy all the JSON, so you can paste it to your IDE
 ```
 
 It works like a charm with big ol' data structures too.

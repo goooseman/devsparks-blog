@@ -12,7 +12,7 @@ smol-debug:
 
 .PHONY: sync-hacks
 sync-hacks:
-	rsync -av /Users/agusman/Library/Mobile\ Documents/com\~apple\~CloudDocs/Obsidian/goooseman-secrets/project-dev-sparks/hacks/* ./content/hacks
+	rsync -av ~/Library/Mobile\ Documents/iCloud~md~obsidian/Documents/goooseman-secrets/project-dev-sparks/hacks/ ./content/hacks --delete
 
 .PHONY: serve
 serve:

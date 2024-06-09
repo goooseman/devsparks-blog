@@ -3,12 +3,15 @@ title: "Jump Around Your Filesystem Like a Pro"
 tags: ["cli", "unix", "osx"]
 category: "lifehack"
 date: "2023-06-10T16:20:11.379Z"
+aliases:
+
+- "/hacks/01-autojump-code"
 ---
 
-![Jump oldschool illustration](./01-autojump-code.png)
+![Jump oldschool illustration](01-autojump-code.png)
 _jump, cloned 1930s era comic strip contemporary pop art collage --ar 16:9 --v 5.1_
 
-Yo, devs! Ever felt tired of typing long paths in your terminal to navigate between projects? Wanna switch between directories faster than a ninja? Your prayers have been answered. Introducing the _Autojump_ CLI tool! This bad boy is gonna make your life a whole lot easier. 🚀
+Yo, devs! Ever felt tired of typing long paths in your terminal to navigate between projects? Wanna switch between directories faster than a ninja? Your prayers have been answered. Introducing the *Autojump* CLI tool! This bad boy is gonna make your life a whole lot easier. 🚀
 
 ### Get on the Autojump Train
 
@@ -44,6 +47,6 @@ Hold onto your hats, folks, 'cause Autojump is the quickest way to open an IDE i
 
 {{< padawans-playground >}}
 
-Wondering why the `.` symbol is used in most commands? That's because these commands follow the `command <path>` API, where the second argument is the path of a file or folder. You can use it like `code README.md` or `code ~/Dev/todo-app`. Already in your desired folder? In Unix systems, `.` refers to the _current folder_, as also used in relative paths like `./components/Cucumber`.
+Wondering why the `.` symbol is used in most commands? That's because these commands follow the `command <path>` API, where the second argument is the path of a file or folder. You can use it like `code README.md` or `code ~/Dev/todo-app`. Already in your desired folder? In Unix systems, `.` refers to the *current folder*, as also used in relative paths like `./components/Cucumber`.
 
 {{< /padawans-playground >}}
