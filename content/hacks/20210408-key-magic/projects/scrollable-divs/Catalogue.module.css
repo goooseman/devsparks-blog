@@ -1,0 +1,31 @@
+.container {
+  display: flex;
+  width: 100%;
+  height: 500px;
+  background-color: #eff5f3;
+  box-shadow: 3px 4px 8px rgba(0, 0, 0, 0.15);
+}
+
+.column {
+  flex-basis: 50%;
+  flex-grow: 0;
+  flex-shrink: 0;
+  overflow-y: auto;
+  border-right: 1px solid black;
+}
+
+.column:last-of-type {
+  border-right: none;
+}
+
+.columnLink {
+  display: block;
+  padding: 16px 32px;
+  cursor: pointer;
+  color: inherit;
+  text-decoration: none;
+}
+
+.columnLinkActive {
+  background-color: #cdd5ee;
+}

@@ -28,15 +28,15 @@ Want to see how the AI turns a specification into a fully functioning program? C
 
 ## TODO ✅
 
-- Images for footer/padawan/hackerman
-- Theme persistence
-- Remark42 styles
-- Videos for each lifehack
-- Twitter/Telegram/WhatsApp auto-post
-- Css cache
-- Play with text align
-- autojump is not explainatory enough, visual playground?
-- image captions styles
+- [x] Images for footer/padawan/hackerman
+- [x] Theme persistence
+- [ ] Remark42 styles
+- [ ] Twitter/Telegram/WhatsApp auto-post
+- [ ] image captions styles
+- [ ] replace https://blog-assets.goooseman.ru/ with new domain
+- [ ] tables style
+- [ ] quote style
+- [ ] image optimiser
 
 ## Tech Stack 🛠️
 
