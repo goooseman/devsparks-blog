@@ -317,8 +317,11 @@ CSS specs:
 - .tip__container should have 300px margin top to fix image position overflow and 8px margin bottom. 
 - .tip__title inside section should be italic and bold.
 - .tip__container should have border of border-color
-- .tip__container should be relative
 - .tip__container should have padding 24px, margin-left and right -24px
+- .wide__container should have border of border-color
+- .wide__container should have padding 12px, margin-left and right -120px
+- .wide__container should have margin-left and right -64px on screen less then 840px
+- .wide__container should have margin-left and right -24px on screen less then 730px
 - .tip__image should be absolute with bottom: 100%, left: 20%
 - .tip__image should be 280px height
 - .header__theme_switch

@@ -96,6 +96,15 @@ a:hover {
   border: var(--border-width) solid;
 }
 
+.wide__container {
+  position: relative;
+  margin-bottom: 8px;
+  margin-left: -120px;
+  margin-right: -120px;
+  padding: 12px;
+  border: var(--border-width) solid;
+}
+
 .tip__title {
   font-style: italic;
   font-weight: bold;
@@ -127,4 +136,18 @@ a:hover {
 
 .footer__container img {
   display: block;
+}
+
+@media (max-width: 840px) {
+  .wide__container {
+    margin-left: -64px;
+    margin-right: -64px;
+  }
+}
+
+@media (max-width: 730px) {
+  .wide__container {
+    margin-left: -24px;
+    margin-right: -24px;
+  }
 }

@@ -16,6 +16,7 @@ Classnames:
 - .section__tip__hackerman
 - .section__tip__padawan
 - .tip__container
+- .wide__container
 - .tip__title
 - .tip__image
 - .article__title
