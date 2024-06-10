@@ -8,7 +8,7 @@ aliases:
 ---
  _/offtopic Friday mode on_
  
-![A picture of two journalists working on a newspaper](./news.png)
+![A picture of two journalists working on a newspaper](./news.webp)
 _news news newspapers, cloned 1930s era comic strip contemporary pop art collage --v 5.1 --ar 16:9_
 ### A post about RSS 🗞️
 

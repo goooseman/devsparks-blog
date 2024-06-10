@@ -11,7 +11,7 @@ aliases:
   - /hacks/05-copilot-pro
 ---
 
-![Copilot](05-copilot-pro.png)
+![Copilot](05-copilot-pro.webp)
 _copilot, cloned 1930s era comic strip contemporary pop art collage --ar 16:9 --v 5.1 --no text fonts letters watermark words typography slogans signature_
 
 Are you ready to crank your coding skills up to 11? Then it's time you start harnessing the full potential of GitHub Copilot. Sure, it's a handy autocomplete tool, but with a bit of creativity and some pro tips, you can transform Copilot into a productivity powerhouse! Let's dive in and explore how you can unleash the beast.

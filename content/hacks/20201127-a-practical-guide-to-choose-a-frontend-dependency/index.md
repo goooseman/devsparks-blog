@@ -32,7 +32,7 @@ Even though we will have meaningful criteria, we are unable to compare such a la
 - Read one of those “20 best libraries to do SOMETHING in CURRENT_YEAR” articles, [like this one](https://thenextweb.com/dd/2015/06/12/20-best-javascript-chart-libraries/). Of course, those articles are extremely superficial, but they can be a good source of finding something to compare with.
 - Search [npmjs.com](https://npmjs.com) by a keyword, [like this](https://www.npmjs.com/search?q=keywords:charts). 
 - Search [bundlephobia.com](https://bundlephobia.com) to find similar packages to one another. This service was created to measure the bundle size of dependencies, but it has comprehensive "Similar Packages” functionality. For example, here are similar packages for a popular chart.js library:
-![Similar packages to chart.js](./similar-packages.png)
+![Similar packages to chart.js](./similar-packages.webp)
 _[bundlephobia.com](https://bundlephobia.com) is a great service, which I will come back to in the next part_
 
 So here is the list of libraries I will choose from:
@@ -68,7 +68,7 @@ I remember the time when developers did not think about the size of their depend
 
 I’ve already mentioned a perfect tool to measure the dependency size: [bundlephobia.com](https://bundlephobia.com). Let’s have a closer look.
 
-![bundlephobia report example](./bundle-size.png)
+![bundlephobia report example](./bundle-size.webp)
 _Pay attention to the explicit tree shaking support symbol in the v3 beta on the version graph to the right_
 
 What is important here?
@@ -76,7 +76,7 @@ What is important here?
 1. Minified + Gzipped size is the most important one, if you [have gzip support enabled](https://medium.com/devux/how-to-enable-gzip-compression-on-your-website-4b6541dfd409) on your server. If you do not have it enabled, then enable it, there is no excuse to have it disabled in 2020. 
 2. Take a look at the composition. In this example, 59.4% of the bundle size is occupied by  `moment` dependency. If you already have `moment` included in the project, only an additional 50.2KB are loaded.
 3. If your application should work fast on the low-end mobile phones, take a look at minified size also. Some of the libraries can be compressed by gzip really well (because they have a lot of recurring code blocks), but they have a huge size after being uncompressed. That means that [it will take a longer time for a browser to parse and compile the JS code](https://medium.com/reloading/javascript-start-up-performance-69200f43b201).
-4. If a library has a tree-shakable badge, it includes an ESM export and [it declares itself as side-effect free](https://webpack.js.org/guides/tree-shaking/#clarifying-tree-shaking-and-sideeffects). It practically means that if you import only a part of the library (e.g. one chart type), the bundle size of the project is increased not by the size of the whole library, but by only it's part. **Disclaimer!** There are a lot of libraries, which work perfectly with tree shaking, but they do not have this badge, because a package maintainer did not add a special `sideEffects` property to the `package.json` file. ![tree shaking badge](./tree-shakeable.png)
+4. If a library has a tree-shakable badge, it includes an ESM export and [it declares itself as side-effect free](https://webpack.js.org/guides/tree-shaking/#clarifying-tree-shaking-and-sideeffects). It practically means that if you import only a part of the library (e.g. one chart type), the bundle size of the project is increased not by the size of the whole library, but by only it's part. **Disclaimer!** There are a lot of libraries, which work perfectly with tree shaking, but they do not have this badge, because a package maintainer did not add a special `sideEffects` property to the `package.json` file. ![tree shaking badge](./tree-shakeable.webp)
 
 Let’s write out all minified + gzip sizes (taking into consideration, that our project does **not** include `moment`):
 
@@ -98,7 +98,7 @@ There is no metric to measure the maintenance of the package. Of course, you can
 
 There are no objective metrics to measure that, but anyway we should compare the libs somehow. There is a really handy tool to do that: [npmtrends.com](https://www.npmtrends.com/). I’ve built up a [comparison list of the libs we have left in the list](https://www.npmtrends.com/d3-vs-chartist-vs-frappe-charts-vs-highcharts-vs-uplot).
 
-![npmtrends comparison of the libs](./npm-trends.png)
+![npmtrends comparison of the libs](./npm-trends.webp)
 _Wow! d3 has only 6 opened issues! Highcharts has very strange stats just because they have an incorrect GitHub repo link in `package.json`. The real stats [can be checked manually](https://github.com/highcharts/highcharts)._
 
 Each of these values does not help us on their own, but we can use a combination of this to build up some score. I’m using the following score:
@@ -123,7 +123,7 @@ To speak frankly, I do not count the points like this. This simplification is cr
 
 We do not add a library to the project to increase the bundle size or to get a maintainable 3rd party code in the project. We add it to solve a problem and to deliver new functionality. So this is the most important step: we need to research all libraries’ documentation and check out how easy it will be to implement a chart like this:
 
-![chart design](./chart-design.png)
+![chart design](./chart-design.webp)
 _This is the most difficult chart we have in the design: horizontal stack bars with numbers inside the bar. Take attention to the X-Axis custom labels with ticks._
 
 To measure this difficulty we will use SP (Story Points). Of course this measurement is not precise enough, but we need to relatively compare the difficulty of different tasks (in our case of one task with different libraries), that’s exactly what story points were created for. Each team has its own SP grade, I use the Fibonacci number sequence from 0 to 8 (0, 1, 2, 3, 5, 8).

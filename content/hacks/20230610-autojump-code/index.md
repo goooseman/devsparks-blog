@@ -8,7 +8,7 @@ aliases:
 - "/hacks/01-autojump-code"
 ---
 
-![Jump oldschool illustration](01-autojump-code.png)
+![Jump oldschool illustration](01-autojump-code.webp)
 _jump, cloned 1930s era comic strip contemporary pop art collage --ar 16:9 --v 5.1_
 
 Yo, devs! Ever felt tired of typing long paths in your terminal to navigate between projects? Wanna switch between directories faster than a ninja? Your prayers have been answered. Introducing the *Autojump* CLI tool! This bad boy is gonna make your life a whole lot easier. 🚀

@@ -10,7 +10,7 @@ aliases:
   - /hacks/04-git-worktree
 ---
 
-![Tree oldschool illustration](04-git-worktree.png)
+![Tree oldschool illustration](04-git-worktree.webp)
 _git worktree, cloned 1930s era comic strip contemporary pop art collage --ar 16:9 --v 5.1_
 
 Ever found yourself in need of working with multiple branches or versions of your project at once? Tired of cloning the entire repo again and again, only to wait for that painfully slow `git clone`? Well, my fellow devs, it's time to step up your Git game with **Git Worktrees**! 🌳

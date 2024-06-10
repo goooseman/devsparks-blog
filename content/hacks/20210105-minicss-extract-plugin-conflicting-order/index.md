@@ -26,7 +26,7 @@ despite it was not able to fulfill desired ordering with these modules:
    - couldn't fulfill desired order of chunk group(s) , 
 ```
 
-![Console output](./warning-console.png)
+![Console output](./warning-console.webp)
 
 The [original GitHub issue](https://github.com/webpack-contrib/mini-css-extract-plugin/issues/250) has more than 81 comments of people trying to find a solution. But it does not provide you with clear instructions on how to fix the problem, so let's investigate it together and find a solution!
 

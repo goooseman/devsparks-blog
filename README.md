@@ -30,6 +30,9 @@ Want to see how the AI turns a specification into a fully functioning program? C
 
 - [x] Images for footer/padawan/hackerman
 - [x] Theme persistence
+- [ ] webp for hackerman and padawan
+- [ ] choose new bg color
+- [ ] .css files hashing
 - [ ] Remark42 styles
 - [ ] Twitter/Telegram/WhatsApp auto-post
 - [ ] image captions styles
