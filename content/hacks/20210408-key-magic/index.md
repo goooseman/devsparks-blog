@@ -218,7 +218,7 @@ Before we begin to implement something, it is always a good idea to start with a
 
 
 <div class="wide__container" style="background-color: white; " >
-<iframe  style="width:100%; height: 1160px; border:1px solid black; padding: 5px; overflow:hidden;" src="https://blog-assets.goooseman.ru/2021/08-04-key-magic/manual-fix-diff.html"></iframe>
+<iframe  style="width:100%; height: 1160px; border:1px solid black; padding: 5px; overflow:hidden;" src="/hacks/20210408-key-magic/assets/manual-fix-diff.html"></iframe>
 </div>
 
 
@@ -239,7 +239,7 @@ But what key should we use for the second column to reset it after the item is c
 *Ohhh, this one is much simpler and does not use refs! [Here is the GitHub PR](https://github.com/goooseman/key-magic-scrollable-divs/pull/2/files), one line change only!*
 
 <div class="wide__container" style="background-color: white; ">
-<iframe  style="width:100%; height: 260px; border:1px solid black; padding: 5px; overflow:hidden;"  src="https://blog-assets.goooseman.ru/2021/08-04-key-magic/key-fix-diff.html"></iframe>
+<iframe  style="width:100%; height: 260px; border:1px solid black; padding: 5px; overflow:hidden;"  src="/hacks/20210408-key-magic/assets/key-fix-diff.html"></iframe>
 </div>
 
 {{< hackermans-tip >}}

@@ -42,7 +42,7 @@ Plans to try GitHub Workspaces!
 - [ ] Remark42 styles
 - [ ] Twitter/Telegram/WhatsApp auto-post
 - [ ] image captions styles
-- [ ] replace https://blog-assets.goooseman.ru/ with new domain
+- [x] replace https://blog-assets.goooseman.ru/ with new domain
 - [ ] tables style
 - [ ] quote style
 - [ ] image optimiser
