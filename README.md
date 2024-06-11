@@ -36,7 +36,7 @@ Plans to try GitHub Workspaces!
 
 - [x] Images for footer/padawan/hackerman
 - [x] Theme persistence
-- [ ] webp for hackerman and padawan
+- [x] webp for hackerman and padawan
 - [ ] choose new bg color
 - [ ] .css files hashing
 - [ ] Remark42 styles

@@ -113,10 +113,10 @@ And also `/index.xml` RSS feed meta
   - should have padding `24px 48px`
 - `<footer>`
   - contains photo of the author with transparent bg and a small about text: Footer Ipsum
-  - photo of author: `/human.png` (`human@2x.png`)
-  - photo of author when hovered: `/robot.png` (`robot@2x.png`). Implement it in `footer-image.js` and do not forget to change `srcset` not only `src`
+  - photo of author: `/human.webp` (`human@2x.webp`)
+  - photo of author when hovered: `/robot.webp` (`robot@2x.webp`). Implement it in `footer-image.js` and do not forget to change `srcset` not only `src`
   - to implement hover please render two images on the screen, one with display: none, use two separate IDs and toggle their display in JS file
-  - robot.png should be display: none by default
+  - robot.webp should be display: none by default
   - height of the photo: 160px
   - `.footer__container` should have flex layout: photo on the left, text on the right and `align-itmes: bottom`
   - `.footer__container` has margin-top: 48px
@@ -169,8 +169,8 @@ Wrap inner content in the following template:
     {{ .Inner | markdownify }}
 
 Image sources for .tip__image:
-  - hackerman: `/hackerman.png` and `/hackerman@2x.png`
-  - padawan: `/padawan.png` and `/padawan@2x.png`
+  - hackerman: `/hackerman.webp` and `/hackerman@2x.webp`
+  - padawan: `/padawan.webp` and `/padawan@2x.webp`
 
 #### shortcodes/spoiler.html shortcode
 
