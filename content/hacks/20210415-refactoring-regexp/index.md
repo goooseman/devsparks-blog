@@ -22,7 +22,7 @@ But you have 3 different patterns of this `classes` variable usage project-wise:
 | Old code                            | Refactored code                                    |
 | ----------------------------------- | -------------------------------------------------- |
 | `className={classes[theme]}`        | `className={clsx(classes[theme], classes.common)}` |
-| ``className={`${classes[theme]}`}`` | `className={${classes[theme]} ${classes.common`}`  |
+| ``className={`${classes[theme]}`}`` | ``className={`${classes[theme]} ${classes.common`}``  |
 | `className={clsx(classes[theme])}`  | `className={clsx(classes[theme], classes.common)}` |
 
 One of the ways to solve this problem is to [develop a script which refactors each file of the project one-by-one](/hacks/20210330-refactor-large-codebases-with-nodejs/), but that's too expensive. The team should find an easier way to implement the ticket, or they should *skip it*.
