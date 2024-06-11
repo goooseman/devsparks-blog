@@ -49,6 +49,23 @@ hr {
   border-color: var(--border-color);
 }
 
+blockquote {
+  margin: 12px 0 12px 24px;
+  position: relative;
+}
+
+blockquote:after {
+  content: ' ';
+  display: block;
+  position: absolute;
+  height: 100%;
+  width: 4px;
+  left: -24px;
+  top: 0;
+  bottom: 0;
+  background-color: var(--text-color);
+}
+
 a:hover {
   background-image: linear-gradient(to top, var(--text-color), var(--text-color));
   background-size: 100% 100%;

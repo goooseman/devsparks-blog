@@ -74,6 +74,7 @@ One theme with light and dark variations. Theme implementation is JS/CSS only.
 - Links: on hover should invert color and background color with an animation of sliding from bottom to top
 - Navigation links in header: should have `.layout__link__active` class, when page is active.
 - breakpoints: >680px - desktop, <680px mobile
+- blockquote: reset margins, margin-left: 24px, vertical margins: 12, right margin: 0, add black vertical 4px bar to the very left by using pseudo-element
 
 ### Header
 

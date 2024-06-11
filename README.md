@@ -44,7 +44,7 @@ Plans to try GitHub Workspaces!
 - [ ] image captions styles
 - [x] replace https://blog-assets.goooseman.ru/ with new domain
 - [ ] tables style
-- [ ] quote style
+- [x] quote style
 - [ ] image optimiser
 
 ## Tech Stack 🛠️
