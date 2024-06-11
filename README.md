@@ -20,11 +20,17 @@ This project is a static blog composed primarily of these developer lifehacks.
 
 Welcome to devsparks-blog, an extraordinary project developed and managed not by humans, but entirely by Artificial Intelligence! This is not your typical blog; instead, it's a demonstration of the evolution and capabilities of AI in software development.
 
+#### 2023
+
 This project uses [smol-developer](https://github.com/smol-ai/developer) ([My PR](https://github.com/smol-ai/developer/pull/105)), a sophisticated AI model that writes code based on given specifications. Powered by GPT technology, it takes on the role of a junior developer, crafting and managing the entire blog single-handedly.
 
 We keep a version history for each blog update. This version history helps in tracking the development and evolution of AI over time. This history can be found on the [/about](https://devsparks.goooseman.dev/about/) page.
 
 Want to see how the AI turns a specification into a fully functioning program? Check out the most recent SPEC.md file in this repository. It will give you insights into the process and potentially inspire you to write your own specifications. You can then guide the AI to create a program tailored specifically to your needs. Remember, with the right specification, AI could bring your most imaginative projects to life.
+
+#### 2024
+
+Plans to try GitHub Workspaces!
 
 ## TODO ✅
 
