@@ -103,6 +103,7 @@ Please add following html for the following favicons support:
 
 And also meta `msapplication-TileColor: #ffc000`
 And also `/index.xml` RSS feed meta
+Add also og and twitter meta tags, blog params: `image`, `description`, `Title`
 
 ### Site layout
 

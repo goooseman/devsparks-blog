@@ -4,7 +4,9 @@ tags:
   - blogging
 category: programming
 date: 2024-06-06T00:00:00.000Z
-aliases:
+aliases: 
+image: ./news.webp
+description: Sharing my favorite tech blog authors
 ---
  _/offtopic Friday mode on_
  

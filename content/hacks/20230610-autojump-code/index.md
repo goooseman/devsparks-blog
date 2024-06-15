@@ -1,11 +1,15 @@
 ---
-title: "Jump Around Your Filesystem Like a Pro"
-tags: ["cli", "unix", "osx"]
-category: "lifehack"
-date: "2023-06-10T16:20:11.379Z"
+title: Jump Around Your Filesystem Like a Pro
+tags:
+  - cli
+  - unix
+  - osx
+category: lifehack
+date: 2023-06-10T16:20:11.379Z
 aliases:
-
-- "/hacks/01-autojump-code"
+  - /hacks/01-autojump-code
+image: ./01-autojump-code.webp
+description: Handy CLI util to navigate through your filesystem!
 ---
 
 ![Jump oldschool illustration](01-autojump-code.webp)

@@ -12,6 +12,7 @@ tags:
 category: testing
 description: "From this article you will learn: why is it better to use end-to-end tests and integration tests that uses real browser; what is the performance decrease when one switches from jsdom to real browser rendering for integration tests"
 date: 2024-06-15T00:00:00.000Z
+image: ./why-e2e-tests-title.webp
 ---
 _tl;dr_
 
