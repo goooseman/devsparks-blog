@@ -8,7 +8,7 @@ menu:
 url: /about/
 ---
 
-Hello and welcome to the 'About' page of DevSparks! I'm Alex, and this blog you're exploring is the brainchild of an AI — it's code and design is developed without writing any code by any carbon-based form of life.
+Hello and welcome to the 'About' page of DevSparks! I'm Alex, and this blog you're exploring is the brainchild of an AI — it's **code and design** is developed without writing any code by any carbon-based form of life.
 
 More info: [GitHub](https://github.com/goooseman/devsparks-blog)
 
