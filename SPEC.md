@@ -342,5 +342,5 @@ CSS specs:
   - text is wrapped with a single border around whole text, not single parapgraph, of `border-color`
   - border-bottom is 0
   - padding: 12px for top/bottom/left/right
-- .article__content h3 should have `padding-top: 8px` and `border-top: 1px` of border-color
+- .article__content h3 and h5 should have `padding-top: 8px` and `border-top: 1px` of border-color
 - .article__remark42 should have margin-left and right -24px and margin-top of 12px
