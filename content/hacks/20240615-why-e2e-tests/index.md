@@ -86,7 +86,7 @@ Sure, if that's your scene, you might think the previous segment on complex micr
 
 But even in my smaller pet projects, I've consistently bumped into some challenges when using `@testing-library` for integration tests:
 
-##### The Limitations of jsdom
+#### The Limitations of jsdom
 
 [jsdom](https://github.com/jsdom/jsdom) is a fantastic tool—kudos to the devs for emulating a browser environment in pure Node.js! But let's face it: jsdom isn't a real browser. This fact can trip up developers who are new to `@testing-library`, especially when they try to test browser-specific functionalities.
 
@@ -120,7 +120,7 @@ The bottom line? These hurdles are definitely surmountable—I’ve been tacklin
 
 ![Matrix meme: avoiding jsdom restrictions](./meme-avoiding-jsdom-restrictions.webp)
 
-##### Not All Third-Party Libraries Are Test-Friendly
+#### Not All Third-Party Libraries Are Test-Friendly
 
 I’m a big fan of [using as few mocks as possible in integration tests](https://kentcdodds.com/blog/the-merits-of-mocking). The philosophy is straightforward: the more you mock, the less confidence you have in your tests because they become less reflective of real-world usage.
 
@@ -143,7 +143,7 @@ But such a test:
 2. Doesn't instill much confidence, especially if the PayPal SDK gets updated.
 
 ![Mock me if you can](./06-why-e2e-tests-mock-me.webp)
-##### The Sneaky Bugs of Environment Changes
+#### The Sneaky Bugs of Environment Changes
 
 Picture this: you're at a startup, and one fine day, the manager bursts in with news. After much analysis, the big brains have decided to roll out a 40% discount for customers, aiming to boost revenue by the fiscal year-end and stave off bankruptcy. You spring into action, crafting a special banner in the footer and validating it with an integration test:
 
@@ -174,7 +174,7 @@ Ever heard the old adage, "jSdOm iS FaStEr tHaN OpEnInG A ReAl bRoWsEr"? Well, i
 
 Sure, back in the day, running tests with Selenium felt like a slow crawl. But times, they are a-changin'.
 
-##### Embrace End-to-End Tests with Modern Tools
+#### Embrace End-to-End Tests with Modern Tools
 
 E2E tests used to be the slowpokes of the testing world, plagued by cumbersome tools like Selenium and Cypress which were slow and flaky.
 
@@ -192,7 +192,7 @@ If we dial it down to just two browsers (Chrome and Mobile Chrome), the entire s
 
 And let me tell you, the development experience has been transformed. We're talking smoother, faster, with a much shorter feedback loop.
 
-##### Playwright Component Tests: A Fresh Take on Integration Tests
+#### Playwright Component Tests: A Fresh Take on Integration Tests
 
 I've dabbled quite a bit with [Playwright component tests](https://playwright.dev/docs/test-components) and, let me tell ya, the experience is a mixed bag of nuts. When stacked against good ol' `jsdom` integration tests, Playwright is usually about 30-40% slower. However, for certain specific scenarios, it actually matched or even outpaced `jsdom`. Now, 30-40% might sound steep, but when you roll out the entire test suite, the difference in speed barely registers.
 
@@ -200,7 +200,7 @@ The real kicker? If you've already got a suite of integration tests, pivoting to
 
 So, here's the scoop: Playwright component tests are a solid pick for new projects, but for the existing ones, it's like trying to teach an old dog new tricks—doable, but challenging.
 
-##### Experimenting with Vitest Browser Mode for Integration Tests
+#### Experimenting with Vitest Browser Mode for Integration Tests
 
 Recently, I stumbled across a new way to run integration tests in your browser: [vitest browser mode](https://vitest.dev/guide/browser). Haven't tried it in a real project yet, but hey, why not dive in together?
 
