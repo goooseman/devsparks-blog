@@ -46,7 +46,7 @@ One theme with light and dark variations. Theme implementation is JS/CSS only.
   - `window.remark_config.theme = "light" | "dark"; if window.remark_config exist`
 - Theme CSS variblaes should be attached to `body__theme__light` and `body__theme__dark`:
     - light:
-        - `background-color`: `#9fa8da`
+        - `background-color`: `#E0F2F1`
         - `text-color`: `#40414e`
         - `border-color`: `#40414e`
     - dark:
