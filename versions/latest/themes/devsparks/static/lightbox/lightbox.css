@@ -1,0 +1,18 @@
+.article__content img {
+    transition: transform 0.3s ease;
+}
+
+.fullscreen-img {
+    animation: zoomIn 0.3s ease forwards;
+}
+
+@keyframes zoomIn {
+    from {
+        transform: translate(-50%, -50%) scale(0.5);
+        opacity: 0;
+    }
+    to {
+        transform: translate(-50%, -50%) scale(1);
+        opacity: 1;
+    }
+}
