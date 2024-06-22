@@ -10,7 +10,7 @@ tags:
 date: 2023-06-22T15:38:11.379Z
 aliases:
   - /hacks/02-god-bless-chat-gpt
-image: ./02-god-bless-chat-gpt-title.webp
+image: /hacks/20230622-god-bless-chat-gpt/02-god-bless-chat-gpt-title.png
 description: Using ChatGPT for your every-day development routine!
 ---
 

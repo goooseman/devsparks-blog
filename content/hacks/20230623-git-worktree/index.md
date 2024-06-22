@@ -8,7 +8,7 @@ tags:
   - productivity
 aliases:
   - /hacks/04-git-worktree
-image: ./04-git-worktree.webp
+image: /hacks/20230623-git-worktree/04-git-worktree.png
 description: Making another copy of a local git repository with git worktrees!
 ---
 

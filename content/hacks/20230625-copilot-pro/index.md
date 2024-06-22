@@ -9,7 +9,7 @@ category: programming
 date: 2023-06-25T06:13:11.379Z
 aliases:
   - /hacks/05-copilot-pro
-image: ./05-copilot-pro.webp
+image: /hacks/20230625-copilot-pro/05-copilot-pro.png
 description: Pro usage of GitHub copilot explained
 ---
 

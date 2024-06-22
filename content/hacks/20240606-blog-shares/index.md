@@ -5,7 +5,7 @@ tags:
 category: programming
 date: 2024-06-06T00:00:00.000Z
 aliases: 
-image: ./news.webp
+image: /hacks/20240606-blog-shares/news.png
 description: Sharing my favorite tech blog authors
 ---
  _/offtopic Friday mode on_

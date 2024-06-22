@@ -8,7 +8,7 @@ tags:
 category: lifehack
 aliases:
   - /hacks/03-pbcopy
-image: ./03-pbcopy.webp
+image: ./03-pbcopy.png
 description: Handy copy/paste CLI commands for OSX and Linux!
 ---
 

@@ -4,7 +4,8 @@ tags:
   - refactoring
 category: programming
 date: 2021-04-15T00:00:00.000Z
-aliases:
+aliases: 
+image: /hacks/20210415-refactoring-regexp/change.jpg
 ---
 # Refactoring large projects with the help of RegExp
 

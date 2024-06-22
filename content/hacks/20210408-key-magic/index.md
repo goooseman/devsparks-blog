@@ -5,7 +5,7 @@ tags:
   - react
 category: programming
 date: 2021-04-08T00:00:00.000Z
-aliases: []
+aliases:
 ---
 # Magic "key" prop in React
 
