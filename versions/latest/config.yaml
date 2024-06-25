@@ -1,4 +1,4 @@
-baseURL: "https://devsparks.goooseman.dev"
+baseURL: "https://devsparks.goooseman.dev/"
 title: "DevSparks"
 theme: "devsparks"
 relativeUrls: true
