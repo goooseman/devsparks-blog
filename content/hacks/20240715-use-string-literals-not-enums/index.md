@@ -140,3 +140,18 @@ enum STATUS_CODES {
 ```
 
 Here, the status code integers need to be used in the code, but their human-readable names enhance development experience. In cases like this, the improved DX is worth the additional runtime overhead and the need to import something at the consumer level.
+
+### UPD1: about enumeration
+
+As reddit user [winky9827](https://www.reddit.com/user/winky9827/) correctly [noted](https://www.reddit.com/r/typescript/comments/1e3yyaj/comment/ldb98uv/?utm_source=share&utm_medium=web3x&utm_name=web3xcss&utm_term=1&utm_content=share_button):
+
+> The problem with string literal types is that they cannot be enumerated easily. I much prefer this instead:
+
+```typescript
+const usPoliticalParties = ['Democrat','Republican'] as const
+export type UsPoliticalParties = typeof usPoliticalParties[number];
+```
+
+> Best of both worlds.
+
+Can not disagree with him: if enumeration is needed, this may be a good trade-off. But I would use it only for the cases when enumeration is really needed, because from my experience such syntax is hard to be understood by TS newcomers.
