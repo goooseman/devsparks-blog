@@ -8,7 +8,7 @@ description: Why is it better to use string literals ('type1' | 'type2') instead
 date: 2024-07-15T00:00:00.000Z
 image: /hacks/20240715-use-string-literals-not-enums/goooseman_different_spider_mans_pointing_at_each_other_meme_c_a64242b9-afdb-44b6-82a3-b77df6677d12_1.jpg
 ---
-![Image with two spider mans pointing at each other](goooseman_different_spider_mans_pointing_at_each_other_meme_c_a64242b9-afdb-44b6-82a3-b77df6677d12_1.png)
+![Image with two spider mans pointing at each other](goooseman_different_spider_mans_pointing_at_each_other_meme_c_a64242b9-afdb-44b6-82a3-b77df6677d12_1.webp)
 _different spider mans pointing at each other meme, cloned 1930s era comic strip contemporary pop art collage --v 6.0 --ar 16:9_
 
 Today, I've got a quick tip for all you TypeScript fans out there.
@@ -48,7 +48,7 @@ const getCryptoPrice = (crypto: CryptoCurrency) => {
 
 ### Reasons Why
 
-![thats-another-reason-why-gill.gif](thats-another-reason-why-gill.gif)
+![A meme with old lady explaining difficult stuff](thats-another-reason-why-gill.gif)
 
 #### 🛠️ Development Experience
 
@@ -64,7 +64,7 @@ import { getCryptoPrice, CryptoCurrency } from 'services/crypto';
 
 And what do we need this extra import for? You might think it’s for autocompletion. Nope, guess again! Autocompletion works just fine with string literals, without any extra imports. Just take a look:
 
-![string-autocomplete.gif](string-autocomplete.gif)
+![How autocomplete works in IDE gif](string-autocomplete.gif)
 _Works like magic: import a function, and arguments are autocompleted!_
 
 #### ✂️ Okama's Razor
@@ -78,10 +78,10 @@ As stated in the [official docs](https://www.typescriptlang.org/docs/handbook/en
 
 Check it out yourself on this [interactive playground](https://www.typescriptlang.org/play/?#code/KYOwrgtgBAwgTgTwA4BcD2MxzqAxgqAbwCgooAiAIQBUZyoBeCmugGlIoFFqAJep8tz7sy5agHkAcjHEBJSfwoTpchSIoBlcQBlF5LbvXkACjr2nDHMQCUAGnup3yxAL7FiuNCADOKKAHNgFHhkdGM4AEtcYEYoAApcRFQ0AC5YJPRMbDwEAEpGAD4iFwBudxRkGJDkrJwQfA0USJB-WKpaegAfLl4upSkZeT79Myhuk1Hxx3syjy9fAKDqsMjoxubWpgSM1PTQjCw6hqaIlvyGIsJS90DgnfCo4HXT-ziAchY33JKgA).
 
-![example-ts-enum.png](example-ts-enum.png)
+![Screenshot from playground with enums](example-ts-enum.webp)
 *Take a look on the right pane which has compiled code*
 
-![example-ts-string-literal.png](example-ts-string-literal.png)
+![Screenshot from playground with string literals](example-ts-string-literal.webp)
 *Looks nicer, no?*
 
 Sure, the object is small, but why leave it in the code when it can be avoided altogether? We're using TypeScript just for type checking, so let's do it in a way that doesn't add any extra **runtime overhead**!
@@ -98,7 +98,7 @@ And here you can also use the share functionality to send the code snippet to yo
 
 {{< hackermans-tip >}}
 
-BTW, I really love how the "Share" link functionality is implemented here: Instead of persisting your code snippet in some persistent storage, they just store it in the URL itself.
+BTW, I really love how the "Share" link functionality is implemented here: instead of persisting your code snippet in some persistent storage, they just store it in the URL itself.
 
 Take a look at the URL: `https://www.typescriptlang.org/play/?#code/KYOwrgtgBAwgTgTwA4BcD2MxzqAxgqAbwCgooAiAIQBUZyoBeCmugGlIoFFqAJep8tz7sy5agHkAcjHEBJSfwoTpchSIoBlcQBlF5LbvXkACjr2nDHMQCUAGnup3yxAL7FiuNCADOKKAHNgFHhkdGM4AEtcYEYoAApcRFQ0AC5YJPRMbDwEAEpGAD4iFwBudxRkGJDkrJwQfA0USJB-WKpaegAfLl4upSkZeT79Myhuk1Hxx3syjy9fAKDqsMjoxubWpgSM1PTQjCw6hqaIlvyGIsJS90DgnfCo4HXT-ziAchY33JKgA`.
 
@@ -116,13 +116,13 @@ const getUsPartySlogan = (party: "republicans" | "democrats") => {};
 
 ### And What About Refactoring?
 
-![refactoring-meme.webp](refactoring-meme.webp)
+![A meme about new hires leaving legacy project](refactoring-meme.webp)
 
 Enum proponents might argue that using enums is better for future refactorings. If a value changes, you can simply use the "Find Reference" feature in your IDE to locate all enum usage across the project and update them.
 
 But having experience in refactoring large, enterprise-level legacy codebases, I can tell you that the same goes for string literals. Just update the string literal to a new value and use the "Problems" tab in the IDE to find all typing errors throughout the project and fix them accordingly.
 
-![problems-ide.png](problems-ide.png)
+![Problems pane in VS code](problems-ide.webp)
 
 ### So, No Use-Cases for Enums at All?
 
