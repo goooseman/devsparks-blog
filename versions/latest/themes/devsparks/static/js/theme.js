@@ -6,7 +6,7 @@ document.addEventListener('DOMContentLoaded', () => {
     if (theme === 'light') {
       body.classList.add('body__theme__light');
       body.classList.remove('body__theme__dark');
-      document.querySelector('meta[name="theme-color"]')?.setAttribute('content', '#ffc000');
+      document.querySelector('meta[name="theme-color"]')?.setAttribute('content', '#E0F2F1');
       window.REMARK42?.changeTheme('light');
       if (window.remark_config) {
         window.remark_config.theme = "light";

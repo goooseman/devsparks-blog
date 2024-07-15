@@ -41,7 +41,7 @@ One theme with light and dark variations. Theme implementation is JS/CSS only.
 - JS Adds `body__theme__light` or `body__theme__dark` class to body.
 - JS saves current theme to sessionStorage. If saved session exists, it should overwrite system one.
 - JS When theme is switched do 2 additional actions:
-  - `document.querySelector('meta[name="theme-color"]')?.setAttribute("content", "#ffc000" | "#40414e");` // "#ffc000" is for light theme
+  - `document.querySelector('meta[name="theme-color"]')?.setAttribute("content", "#E0F2F1" | "#40414e");`
   - `window.REMARK42?.changeTheme("light" | "dark");`
   - `window.remark_config.theme = "light" | "dark"; if window.remark_config exist`
 - Theme CSS variblaes should be attached to `body__theme__light` and `body__theme__dark`:
@@ -101,7 +101,7 @@ Please add following html for the following favicons support:
 - `/favicon-16x16.png`
 - `/site.webmanifest`
 
-And also meta `msapplication-TileColor: #ffc000`
+And also meta `msapplication-TileColor: #E0F2F1`
 And also `/index.xml` RSS feed meta
 Add also og and twitter meta tags, blog params: `image`, `description`, `Title`
 
