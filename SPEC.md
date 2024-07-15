@@ -166,7 +166,7 @@ Avoid using {{< shortcode >}} tag inside shortcode folder, e.g. (`shortcodes/spo
 #### hackermans-tip and padawans-playground shortcode 
 Wrap inner content in the following template:
 <div class="tip__container (section__tip__hackerman | section__tip__padawan)">
-  <h4 class="tip__title">Hackerman's tip or Padawan's Playground
+  <p class="tip__title">Hackerman's tip or Padawan's Playground
     <img class="tip__image" />
     {{ .Inner | markdownify }}
 
