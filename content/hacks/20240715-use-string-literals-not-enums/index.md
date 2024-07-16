@@ -155,3 +155,35 @@ export type UsPoliticalParties = typeof usPoliticalParties[number];
 > Best of both worlds.
 
 Can not disagree with him: if enumeration is needed, this may be a good trade-off. But I would use it only for the cases when enumeration is really needed, because from my experience such syntax is hard to be understood by TS newcomers.
+
+### UPD2: use `${enum}`
+
+As reddit user [AdventurousDeer577/](https://www.reddit.com/user/AdventurousDeer577/) [added](https://www.reddit.com/r/react/comments/1e3yzkp/comment/ldbdzkn/?utm_source=share&utm_medium=web3x&utm_name=web3xcss&utm_term=1&utm_content=share_button)
+
+> `${Enum}` removes the need for importing the type. It will work just as it would for a string literal.
+> Also string literals are not iterable, but enums are. You can use Object.values(Enum) (or keys, or entries, ...).
+> Different use cases, different implementations - one does not replace the other
+
+
+And indeed it looks like a good solution, combined together with a comment from **  
+Álvaro** under this post to use `const enum` to avoid any overhead it looks like the best solution:
+
+```typescript
+// services/crypto.ts
+const enum CryptoCurrency {
+  "BTC" = "BTC",
+  "ETH" = "ETH",
+  "TONCOIN" = "TONCOIN",
+  "SOL" = "SOL",
+  "POL" = "POL",
+  "TRX" = "TRX"
+}
+
+const getCryptoPrice = (crypto: `${CryptoCurrency}`) => {
+  // logic here
+}
+
+getCryptoPrice('BTC');
+```
+
+[Playground link](https://www.typescriptlang.org/play/?#code/PTAEGcFMCcDcEsDGlzEdAngBwC4HsA6HcAKETwDtwdRIKBXAW1AGFNc8X7po7ENQAbxKhQAIgBCAFRZjQAXnHTZAGhHiAolIAScxWK261osVIDyAORZmAkhb3jzV2-ePiAymYAyDsZ59uYgAK3r4hAeqmAEoAGr5SsWIkAL4kZJTUoADmkDhs2PhB0EiQCqAAFOgFeABcoAAGACSC+RxcPHwYyfUAlAoAfELqIKAANnhZSKAAFjCQKWk5eeyFxcjlAOTKGz0A3EA)
