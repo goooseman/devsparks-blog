@@ -42,7 +42,6 @@ One theme with light and dark variations. Theme implementation is JS/CSS only.
 - JS saves current theme to sessionStorage. If saved session exists, it should overwrite system one.
 - JS When theme is switched do 2 additional actions:
   - `document.querySelector('meta[name="theme-color"]')?.setAttribute("content", "#E0F2F1" | "#40414e");`
-  - `window.REMARK42?.changeTheme("light" | "dark");`
   - `window.remark_config.theme = "light" | "dark"; if window.remark_config exist`
 - Theme CSS variblaes should be attached to `body__theme__light` and `body__theme__dark`:
     - light:
@@ -194,7 +193,6 @@ A specific hack page contains:
 - Date (only if exists)
 - Tags (listed inline, not as bullet items)
 - Text content
-- Comments (just render #remark42 div only inside `single.html`)
 
 Tags should be links, when clicked other hacks by the same tag should be listed.
 
@@ -222,7 +220,6 @@ Do not generate hack itself, only the layout.
 - Makefile
 - .gitignore (common hugo ignores)
 - config.yaml
-  - Do not include anything about themes or remark42
   - Do not use JSON objects in this file
   - Add following additional configuration:
     - `relativeUrls: true`
@@ -235,7 +232,6 @@ Do not generate hack itself, only the layout.
   - use `<script src="{{ "js/theme.js" | relURL }}"></script>` to connect JS, there are 3 JS files, connect all of them
   - theme.js should not use `defer` to prevent bug with flickering interface. other JS - should be `defer`
   - `<script data-goatcounter="https://gc.goooseman.dev/count" async src="//gc.goooseman.dev/count.js"></script>` should also be in the end of the body
-  - `#remark42` should not be inside `baseof.html`, it is only inside `single.html
 - themes/devsparks/layouts/_default/list.html
   - Contains Hacks titile if it is index
   - Contains "${title}" if not
@@ -255,23 +251,6 @@ Do not generate hack itself, only the layout.
   - contains only colors and other changes for dark theme, do not contain any common styles
 - themes/devsparks/static/js/theme.js (should contain JS for theme switcher + system theme monitoring in the header)
 - themes/devsparks/static/js/footer-image.js
-- themes/devsparks/static/js/remark42.js:
-  - Should contain the following snippet:
-        ```
-// https://r42.com/docs/configuration/frontend/
-window.remark_config = {
-  host: 'https://r42.goooseman.dev',
-  site_id: 'devsparks.goooseman.dev',
-  components: ['embed', 'last-comments'],
-  max_shown_comments: 100,
-  simple_view: false,
-  no_footer: false
-}
-        ```
-  - And this:
-        ```
-!function(e,n){for(var o=0;o<e.length;o++){var r=n.createElement("script"),c=".js",d=n.head||n.body;"noModule"in r?(r.type="module",c=".mjs"):r.async=!0,r.defer=!0,r.src=remark_config.host+"/web/"+e[o]+c,d.appendChild(r)}}(remark_config.components||["embed"],document);
-        ```
 
 ### Shared dependencies
 
@@ -279,7 +258,6 @@ breakpoints: >680px - desktop, <680px mobile
 
 ID names of DOM elements:
    - theme-switch (for theme toggle button)
-   - remark42 (for Remark42 comments integration)
    - footer-image-human
    - footer-image-robot
 
@@ -297,7 +275,6 @@ Classnames:
 - .article__date
 - .article__tags
 - .article__content
-- .article__remark42
 - .footer__container
 - .footer__about_text
 - .footer__author-photo
@@ -343,4 +320,3 @@ CSS specs:
   - border-bottom is 0
   - padding: 12px for top/bottom/left/right
 - .article__content h3 and h4 should have `padding-top: 8px` and `border-top: 1px` of border-color
-- .article__remark42 should have margin-left and right -24px and margin-top of 12px

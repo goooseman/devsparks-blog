@@ -5,7 +5,6 @@ Exported variables:
 
 ID names of DOM elements:
 - theme-switch
-- remark42
 - footer-image-human
 - footer-image-robot
 
@@ -23,7 +22,6 @@ Classnames:
 - .article__date
 - .article__tags
 - .article__content
-- .article__remark42
 - .footer__container
 - .footer__about_text
 - .footer__author-photo
