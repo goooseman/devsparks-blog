@@ -20,6 +20,8 @@ serve:
 
 .PHONY: build
 build:
+    curl https://gc.zgo.at/count.js > ./static/c.js
+
 	cd versions/v0.0.0 && hugo
 	mkdir public || echo 'Public already exists'
 	cp -r ./versions/v0.0.0/public ./public/v0.0.0
