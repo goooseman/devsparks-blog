@@ -231,7 +231,7 @@ Do not generate hack itself, only the layout.
   - connect both themes
   - use `<script src="{{ "js/theme.js" | relURL }}"></script>` to connect JS, there are 3 JS files, connect all of them
   - theme.js should not use `defer` to prevent bug with flickering interface. other JS - should be `defer`
-  - `<script data-goatcounter="https://gc.goooseman.dev/count" async src="//gc.goooseman.dev/count.js"></script>` should also be in the end of the body
+  - `<script data-goatcounter="https://gc.goooseman.dev/count" async src="//gc.zgo.at/count.js"></script>` should also be in the end of the body
 - themes/devsparks/layouts/_default/list.html
   - Contains Hacks titile if it is index
   - Contains "${title}" if not
