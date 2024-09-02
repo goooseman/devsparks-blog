@@ -6,7 +6,9 @@ document.addEventListener('DOMContentLoaded', () => {
     if (theme === 'light') {
       body.classList.add('body__theme__light');
       body.classList.remove('body__theme__dark');
-      document.querySelector('meta[name="theme-color"]')?.setAttribute('content', '#E0F2F1');
+      document
+        .querySelector('meta[name="theme-color"]')
+        ?.setAttribute("content", "#eff1f5");
       if (window.remark_config) {
         window.remark_config.theme = "light";
       }
@@ -15,7 +17,9 @@ document.addEventListener('DOMContentLoaded', () => {
     } else {
       body.classList.add('body__theme__dark');
       body.classList.remove('body__theme__light');
-      document.querySelector('meta[name="theme-color"]')?.setAttribute('content', '#40414e');
+      document
+        .querySelector('meta[name="theme-color"]')
+        ?.setAttribute("content", "#303446");
       if (window.remark_config) {
         window.remark_config.theme = "dark";
       }

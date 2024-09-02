@@ -1,7 +1,7 @@
 body.body__theme__light {
-  --background-color: #E0F2F1;
-  --text-color: #40414e;
-  --border-color: #40414e;
+  --background-color: #eff1f5;
+  --text-color: #4c4f69;
+  --border-color: #bcc0cc;
   background-color: var(--background-color);
   color: var(--text-color);
 }

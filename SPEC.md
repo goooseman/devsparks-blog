@@ -41,17 +41,17 @@ One theme with light and dark variations. Theme implementation is JS/CSS only.
 - JS Adds `body__theme__light` or `body__theme__dark` class to body.
 - JS saves current theme to sessionStorage. If saved session exists, it should overwrite system one.
 - JS When theme is switched do 2 additional actions:
-  - `document.querySelector('meta[name="theme-color"]')?.setAttribute("content", "#E0F2F1" | "#40414e");`
+  - `document.querySelector('meta[name="theme-color"]')?.setAttribute("content", "#eff1f5" | "#303446");`
   - `window.remark_config.theme = "light" | "dark"; if window.remark_config exist`
 - Theme CSS variblaes should be attached to `body__theme__light` and `body__theme__dark`:
     - light:
-        - `background-color`: `#E0F2F1`
-        - `text-color`: `#40414e`
-        - `border-color`: `#40414e`
-    - dark:
-        - `background-color`: `#40414e`
-        - `text-color`: `#ffc000`
-        - `border-color`: `#ffc000`
+    - `background-color`: `#eff1f5`
+    - `text-color`: `#4c4f69`
+    - `border-color`: `#bcc0cc`
+  - dark (Catpuccin frappe):
+    - `background-color`: `#303446`
+    - `text-color`: `#c6d0f5`
+    - `border-color`: `#51576d` (Surface1)
 - Create such CSS vars in `theme-light.css` and `theme-dark.css` and reuse them in the project
 - Do not write any other CSS inside theme-light and theme-dark!
 - `background-color` should be background of whole website. Write styles for body.
